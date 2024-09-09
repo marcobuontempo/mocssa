@@ -4,11 +4,11 @@ import styles from './styles.module.css'
 export default function index() {
   return (
     <ArtworkContainer
-      title='Artwork Title'
-      attribution='Inspired by XX / Original Design'
-      creator='Creator Name'
-      categories={[]}
-      ghSrc='/artwork-link'
+      title='Grimace'
+      attribution='Inspired by generic grimace emoji'
+      creator='Marco Buontempo'
+      categories={['one div']}
+      ghSrc='/grimace'
     >
       <div className={styles.artwork} />
     </ArtworkContainer>

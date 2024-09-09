@@ -1,0 +1,92 @@
+.artwork {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: lightblue;
+}
+
+.artwork::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 75%;
+  width: 75%;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: 10px solid rgba(255, 255, 255, 0.9);
+  background:
+    /* EYES */ radial-gradient(
+      ellipse 29% 36% at 36% 39%,
+      rgba(255, 166, 0, 0.325) 0%,
+      rgba(255, 166, 0, 0.15) 20%,
+      transparent 22% 100%
+    ),
+    radial-gradient(
+      ellipse 35% 45% at 36% 38%,
+      rgba(85, 28, 28, 0.75) 0% 13%,
+      rgba(85, 28, 28, 0.8) 18% 20%,
+      rgba(255, 255, 255, 0.4) 21%,
+      transparent 30% 100%
+    ),
+    radial-gradient(
+      ellipse 29% 36% at 64% 39%,
+      rgba(255, 166, 0, 0.325) 0%,
+      rgba(255, 166, 0, 0.15) 20%,
+      transparent 22% 100%
+    ),
+    radial-gradient(
+      ellipse 35% 45% at 64% 38%,
+      rgba(85, 28, 28, 0.75) 0% 13%,
+      rgba(85, 28, 28, 0.8) 18% 20%,
+      rgba(255, 255, 255, 0.4) 21%,
+      transparent 30% 100%
+    ),
+    /* HEAD */ radial-gradient(circle, transparent 0% 63%, orange 67%),
+    linear-gradient(to top, rgb(255, 166, 0, 0.75) 50%, transparent 95%), white;
+  box-shadow: 0px 0px 5px 3px rgba(0, 0, 0, 0.8);
+}
+
+.artwork::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 14%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 55%;
+  border-radius: 15% / 45%;
+  border: 4px solid rgba(115, 45, 45, 0.825);
+  box-shadow: 0px 5px 4px rgba(255, 255, 255, 0.65);
+  /* MOUTH */
+  background: linear-gradient(
+      to top,
+      transparent 0% 45%,
+      rgba(115, 45, 45, 0.825) 45% 55%,
+      transparent 55% 100%
+    ),
+    radial-gradient(
+      ellipse 80% 70%,
+      transparent 0%,
+      rgba(255, 255, 255, 0.9) 85%,
+      white 100%
+    ),
+    linear-gradient(
+      to right,
+      white 0% 15%,
+      rgba(100, 100, 100, 0.9) 15% 17%,
+      white 17% 33%,
+      rgba(100, 100, 100, 0.9) 33% 35%,
+      white 35% 49%,
+      rgba(100, 100, 100, 0.9) 49% 51%,
+      white 51% 65%,
+      rgba(100, 100, 100, 0.9) 65% 67%,
+      white 67% 83%,
+      rgba(100, 100, 100, 0.9) 83% 85%,
+      white 85% 100%
+    );
+}
