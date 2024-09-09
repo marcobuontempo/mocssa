@@ -10,7 +10,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  border: 5px solid var(--lightblue);
+  border: 2px solid rgba(255, 255, 255, 0.1);
   background:
     /* WHITE CIRCLE FOR LAYERING NEXT LAYER OVER */ radial-gradient(
       ellipse 100% 100% at 50% 55%,
