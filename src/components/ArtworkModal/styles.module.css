@@ -1,0 +1,72 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100dvw;
+  height: 100dvh;
+  background: rgba(0, 0, 0, 0.99);
+  z-index: 100000;
+  padding: 10px;
+}
+
+.header, .information {
+  text-align: center;
+  color: white;
+}
+
+.exit {
+  display: block;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  height: 3.5em;
+  background-content: cover;
+  cursor: pointer;
+  filter: invert(1);
+}
+
+.header {
+  padding: 10px 0px;
+}
+
+.title {
+  font-weight: bold;
+  padding-bottom: 5px;
+  font-size: 50px;
+  word-wrap: wrap;
+}
+
+.creator {
+  font-size: 18px;
+  font-style: italic;
+}
+
+.information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+}
+
+.category_title {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.categories {
+  display: flex;
+  gap: 15px;
+  justify-content: space-around;
+}
+
+.github {
+  background: white;
+  font-weight: bold;
+  padding: 5px;
+}

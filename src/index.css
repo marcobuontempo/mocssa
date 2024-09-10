@@ -1,11 +1,12 @@
 #root {
-  background-size: 10px 10px;
+  background-size: 12px 12px;
   background-image: radial-gradient(
     ellipse 10% 10% at 50% 50%,
     silver 20%,
     cornsilk 75%
   );
   background-repeat: repeat;
+  font-family: monospace;
 }
 
 .mocssa-title {

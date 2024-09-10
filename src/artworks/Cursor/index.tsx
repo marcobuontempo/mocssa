@@ -1,9 +1,9 @@
-import ArtworkContainer from '../../components/ArtworkContainer'
+import ArtworkFrame from '../../components/ArtworkFrame'
 import styles from './styles.module.css'
 
 export default function index() {
   return (
-    <ArtworkContainer
+    <ArtworkFrame
       title='Cursor'
       attribution='Inspired by Windows98'
       creator='Marco Buontempo'
@@ -13,6 +13,6 @@ export default function index() {
       <div className={styles.artwork}>
         {"Fatal Error!\n\n    OK"}
       </div>
-    </ArtworkContainer>
+    </ArtworkFrame>
   )
 }

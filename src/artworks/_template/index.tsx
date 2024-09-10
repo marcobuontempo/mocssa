@@ -1,9 +1,9 @@
-import ArtworkContainer from '../../components/ArtworkContainer'
+import ArtworkFrame from '../../components/ArtworkFrame'
 import styles from './styles.module.css'
 
 export default function index() {
   return (
-    <ArtworkContainer
+    <ArtworkFrame
       title='Artwork Title'
       attribution='Inspired by XX / Original Design'
       creator='Creator Name'
@@ -11,6 +11,6 @@ export default function index() {
       ghSrc='/artwork-link'
     >
       <div className={styles.artwork} />
-    </ArtworkContainer>
+    </ArtworkFrame>
   )
 }

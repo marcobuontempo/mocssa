@@ -1,9 +1,9 @@
-import ArtworkContainer from '../../components/ArtworkContainer'
+import ArtworkFrame from '../../components/ArtworkFrame'
 import styles from './styles.module.css'
 
 export default function index() {
   return (
-    <ArtworkContainer
+    <ArtworkFrame
       title='CryptoPunk'
       attribution='Inspired by CryptoPunk #7804, designed by Larva Labs Studio'
       creator='Marco Buontempo'
@@ -11,6 +11,6 @@ export default function index() {
       ghSrc='/CryptoPunk'
     >
       <div className={styles.artwork} />
-    </ArtworkContainer>
+    </ArtworkFrame>
   )
 }

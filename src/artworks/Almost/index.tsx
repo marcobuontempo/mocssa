@@ -1,9 +1,9 @@
-import ArtworkContainer from '../../components/ArtworkContainer'
+import ArtworkFrame from '../../components/ArtworkFrame'
 import styles from './styles.module.css'
 
 export default function index() {
   return (
-    <ArtworkContainer
+    <ArtworkFrame
       title='Almost'
       attribution='Inspired by the original DVD screensaver'
       creator='Marco Buontempo'
@@ -11,6 +11,6 @@ export default function index() {
       ghSrc='/Almost'
     >
       <div className={styles.artwork} />
-    </ArtworkContainer>
+    </ArtworkFrame>
   )
 }

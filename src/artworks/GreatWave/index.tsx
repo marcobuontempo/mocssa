@@ -1,9 +1,9 @@
-import ArtworkContainer from '../../components/ArtworkContainer'
+import ArtworkFrame from '../../components/ArtworkFrame'
 import styles from './styles.module.css'
 
 export default function index() {
   return (
-    <ArtworkContainer
+    <ArtworkFrame
       title='Great Wave'
       attribution='Inspired by The Great Wave off Kanagawa, designed by Katsushika Hokusai'
       creator='Marco Buontempo'
@@ -11,6 +11,6 @@ export default function index() {
       ghSrc='/GreatWave'
     >
       <div className={styles.artwork} />
-    </ArtworkContainer>
+    </ArtworkFrame>
   )
 }

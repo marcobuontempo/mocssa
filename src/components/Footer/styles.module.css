@@ -2,6 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 30px;
+  border-top: 1px solid black;
+  height: 50px;
   padding: 5px;
+}
+
+.links {
+  padding: 0px 5px;
 }

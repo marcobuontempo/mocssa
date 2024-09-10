@@ -1,9 +1,9 @@
-import ArtworkContainer from '../../components/ArtworkContainer'
+import ArtworkFrame from '../../components/ArtworkFrame'
 import styles from './styles.module.css'
 
 export default function index() {
   return (
-    <ArtworkContainer
+    <ArtworkFrame
       title='Terminal'
       attribution='Inspired by OSX Terminal and "Mr.Robot" TV series'
       creator='Marco Buontempo'
@@ -42,6 +42,6 @@ export default function index() {
         {'> breach in progress ..... %\n'}
 
       </div>
-    </ArtworkContainer>
+    </ArtworkFrame>
   )
 }
