@@ -1,0 +1,108 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+	position: absolute;
+	margin: auto;
+	
+  --background-colour: deepskyblue;
+  --lime-colour: rgba(0, 255, 0, 0.85);
+  --lemon-colour: rgba(255, 255, 0, 0.85);
+  --grapefruit-colour: rgba(235, 30, 235, 0.85);
+}
+
+/* GRAPEFRUIT */
+.artwork {
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+  background: 
+	/* SEMI-CIRCLE SHAPE */
+	linear-gradient(
+      to top,
+      transparent 47.5%,
+      var(--background-colour) 48.5% 100%
+    ),
+		/* OUTER SKIN */
+    radial-gradient(ellipse 40% 40% at 40% 52%, transparent 0 63%, var(--grapefruit-colour) 63.5% 67%, var(--background-colour) 67%),
+		/* CIRCULAR OUTER AND INNER PITH */
+    radial-gradient(ellipse 40% 40% at 40% 52%, white 0% 8%, transparent 9.5% 60%, white 60% 67%),
+		/* INNER PITH LINES */
+    conic-gradient(at 40% 52%,
+      var(--grapefruit-colour) 0% 34.3%,
+      white 35%,
+      var(--grapefruit-colour) 35.7% 44.3%,
+			white 45%,
+      var(--grapefruit-colour) 45.7% 54.3%,
+			white 55%,
+      var(--grapefruit-colour) 55.7% 64.3%,
+			white 65%,
+      var(--grapefruit-colour) 65.7% 75%
+    );
+}
+
+/* LIME */
+.artwork::before {
+	content: "";
+	width: 55%;
+	height: 55%;
+	bottom: 32.5%;
+	left: 22.5%;
+  border-radius: 50%;
+  background: 
+	/* SEMI-CIRCLE SHAPE */
+	linear-gradient(
+      to top,
+      transparent 50.5%,
+      var(--background-colour) 51.5% 100%
+    ),
+		/* OUTER SKIN */
+    radial-gradient(transparent 0 65%, var(--lime-colour) 68% 100%),
+		/* CIRCULAR OUTER AND INNER PITH */
+    radial-gradient(white 0% 8%, transparent 9.5% 61%, white 63% 67%),
+		/* INNER PITH LINES */
+    conic-gradient(
+      var(--lime-colour) 0% 34.3%,
+      white 35%,
+      var(--lime-colour) 35.7% 44.3%,
+			white 45%,
+      var(--lime-colour) 45.7% 54.3%,
+			white 55%,
+      var(--lime-colour) 55.7% 64.3%,
+			white 65%,
+      var(--lime-colour) 65.7% 75%
+    );
+}
+
+/* LEMON */
+.artwork::after {
+	content: "";
+	width: 55%;
+	height: 55%;
+	left: 32.5%;
+	bottom: 45%;
+  border-radius: 50%;
+  background: 
+	/* SEMI-CIRCLE SHAPE */
+	linear-gradient(
+      to top,
+      transparent 50.5%,
+      var(--background-colour) 51.5% 100%
+    ),
+		/* OUTER SKIN */
+    radial-gradient(transparent 0 65%, var(--lemon-colour) 68% 100%),
+		/* CIRCULAR OUTER AND INNER PITH */
+    radial-gradient(white 0% 8%, transparent 9.5% 61%, white 63% 67%),
+		/* INNER PITH LINES */
+    conic-gradient(
+      var(--lemon-colour) 0% 34.3%,
+      white 35%,
+      var(--lemon-colour) 35.7% 44.3%,
+			white 45%,
+      var(--lemon-colour) 45.7% 54.3%,
+			white 55%,
+      var(--lemon-colour) 55.7% 64.3%,
+			white 65%,
+      var(--lemon-colour) 65.7% 75%
+    );
+}

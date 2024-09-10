@@ -8,7 +8,7 @@ export default function index() {
       attribution='Inspired by generic grimace emoji'
       creator='Marco Buontempo'
       categories={['one div']}
-      ghSrc='/grimace'
+      ghSrc='/Grimace'
     >
       <div className={styles.artwork} />
     </ArtworkContainer>

@@ -1,0 +1,78 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: auto;
+}
+
+.artwork {
+  background-size: 5% 5%;
+  background-position: 50% 50%;
+  background-image: 
+  radial-gradient(ellipse 100% 100% at 100% 100%, black 5%, white 5% 10%, black 10% 20%, gold 20% 30%, black 30% 40%, white 40% 50%, transparent 50%),
+  radial-gradient(ellipse 100% 100% at 0% 100%, black 5%, white 5% 10%, black 10% 20%, gold 20% 30%, black 30% 40%, white 40% 50%, transparent 50%),
+  radial-gradient(ellipse 100% 100% at 50% 50%, black 5%, white 5% 10%, black 10% 20%, gold 20% 30%, black 30% 40%, white 40% 50%, transparent 50%),
+  radial-gradient(ellipse 100% 100% at 0% 0%, black 5%, white 5% 10%, black 10% 20%, gold 20% 30%, black 30% 40%, white 40% 50%, transparent 50%),
+  radial-gradient(ellipse 100% 100% at 100% 0%, black 5%, white 5% 10%, black 10% 20%, gold 20% 30%, black 30% 40%, white 40% 50%, transparent 50%)
+  ;
+  animation: p50 5s ease-in alternate infinite;
+}
+
+.artwork::before {
+  content: "";
+  background-size: 5% 5%;
+  background-position: 50% 50%;
+  background-image: 
+  radial-gradient(ellipse 100% 100% at 100% 100%, black 5%, white 5% 10%, black 10% 20%, red 20% 30%, black 30% 40%, white 40% 50%, transparent 50%),
+  radial-gradient(ellipse 100% 100% at 0% 100%, black 5%, white 5% 10%, black 10% 20%, red 20% 30%, black 30% 40%, white 40% 50%, transparent 50%),
+  radial-gradient(ellipse 100% 100% at 50% 50%, black 5%, white 5% 10%, black 10% 20%, red 20% 30%, black 30% 40%, white 40% 50%, transparent 50%),
+  radial-gradient(ellipse 100% 100% at 0% 0%, black 5%, white 5% 10%, black 10% 20%, red 20% 30%, black 30% 40%, white 40% 50%, transparent 50%),
+  radial-gradient(ellipse 100% 100% at 100% 0%, black 5%, white 5% 10%, black 10% 20%, red 20% 30%, black 30% 40%, white 40% 50%, transparent 50%)
+  ;
+  animation: p75 15s ease-in alternate infinite;
+  opacity: 0.5;
+}
+
+.artwork::after {
+  content: "";
+  background-size: 5% 5%;
+  background-position: 50% 50%;
+  background-image: 
+  radial-gradient(ellipse 100% 100% at 100% 100%, black 5%, white 5% 10%, black 10% 20%, blue 20% 30%, black 30% 40%, white 40% 50%, transparent 50%),
+  radial-gradient(ellipse 100% 100% at 0% 100%, black 5%, white 5% 10%, black 10% 20%, blue 20% 30%, black 30% 40%, white 40% 50%, transparent 50%),
+  radial-gradient(ellipse 100% 100% at 50% 50%, black 5%, white 5% 10%, black 10% 20%, blue 20% 30%, black 30% 40%, white 40% 50%, transparent 50%),
+  radial-gradient(ellipse 100% 100% at 0% 0%, black 5%, white 5% 10%, black 10% 20%, blue 20% 30%, black 30% 40%, white 40% 50%, transparent 50%),
+  radial-gradient(ellipse 100% 100% at 100% 0%, black 5%, white 5% 10%, black 10% 20%, blue 20% 30%, black 30% 40%, white 40% 50%, transparent 50%)
+  ;
+  animation: p100 10s ease-in alternate infinite;
+  opacity: 0.5;
+}
+
+@keyframes p50 {
+  from {
+    background-size: 5% 5%;
+  }
+  to {
+    background-size: 50% 50%;
+  }
+}
+
+@keyframes p75 {
+  from {
+    background-size: 5% 5%;
+  }
+  to {
+    background-size: 75% 75%;
+  }
+}
+
+@keyframes p100 {
+  from {
+    background-size: 5% 5%;
+  }
+  to {
+    background-size: 100% 100%;
+  }
+}

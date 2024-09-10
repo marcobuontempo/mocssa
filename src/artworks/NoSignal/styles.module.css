@@ -1,0 +1,57 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: auto;
+}
+
+.artwork {
+  border: 25px solid brown;
+  border-radius: 10px;
+  color: whitesmoke;
+  text-shadow:
+    0px 1px 4px rgba(255, 255, 255, 0.35),
+    0px -1px 4px rgba(255, 255, 255, 0.35),
+    1px 0px 4px rgba(255, 255, 255, 0.35),
+    -1px 0px 4px rgba(255, 255, 255, 0.35);
+  text-align: center;
+  font-size: 36px;
+  line-height: 290px;
+  font-family: sans-serif;
+  background:
+    radial-gradient(ellipse 500% 1000% at 50% 50%, transparent 0% 10%, brown 10%),
+    radial-gradient(ellipse 1000% 500% at 50% 50%, transparent 0% 10%, brown 10%),
+    radial-gradient(ellipse 1500% 200% at 50% 48%, black 5%, transparent 2%),
+    radial-gradient(ellipse 500% 1500% at 103% 50%, transparent 0% 10%, limegreen 8% 12.5%, aqua 12.5% 15.5%, yellow 15.5% 18.5%, ghostwhite 18.5% 21%),
+    radial-gradient(ellipse 500% 1500% at -3% 50%, transparent 0% 10%, limegreen 8% 12.5%, magenta 12.5% 15.5%, red 15.5% 18.5%, blue 18.5% 21%);
+}
+
+.artwork::before {
+  content: "";
+  left: 0;
+  right: 0;
+  bottom: 17.5%;
+  width: 100%;
+  height: 5%;
+  background:
+    radial-gradient(ellipse 500% 20000% at 50% -552.5%, transparent 0% 10%, brown 10%),
+    radial-gradient(ellipse 500% 30000% at 103% -552.5%, transparent 0% 10%, black 8% 12.5%, magenta 12.5% 15.5%, red 15.5% 18.5%, blue 18.5% 21%),
+    radial-gradient(ellipse 500% 30000% at -3% -552.5%, transparent 0% 10%, black 8% 12.5%, aqua 12.5% 15.5%, yellow 15.5% 18.5%, ghostwhite 18.5% 21%);
+}
+
+.artwork::after {
+  content: "";
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 17.5%;
+  background:
+    radial-gradient(ellipse 1000% 2857% at 50% -186.5%, transparent 0% 10%, brown 10%),
+    radial-gradient(ellipse 500% 5714% at 50% -186.5%, transparent 0% 10%, brown 10%),
+    linear-gradient(to right, transparent 0% 45%, silver 45% 50%, lightgrey 50% 55%, transparent 55%),
+    radial-gradient(ellipse 500% 5185% at 103% -117.5%, transparent 0% 11%, silver 11% 13.5%, darkgrey 13.5% 16%, grey 16% 18.5%, black 18.5% 21%),
+    radial-gradient(ellipse 500% 5185% at -3% -117.5%, transparent 0% 11%, lightgrey 11% 13.5%, gainsboro 13.5% 16%, whitesmoke 16% 18.5%, white 18.5% 21%);
+}

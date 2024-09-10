@@ -1,0 +1,61 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.artwork {
+  background: darkkhaki;
+}
+
+.artwork::before {
+  content: "";
+  width: 80%;
+  height: 80%;
+  border-radius: 20%;
+  background: linear-gradient(
+      90deg,
+      gainsboro 0% 85%,
+      rgba(0, 0, 0, 0.15) 85% 87%,
+      transparent
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.15),
+      transparent 25%,
+      rgba(0, 0, 0, 0.15) 25%,
+      transparent 50%,
+      rgba(0, 0, 0, 0.15) 50%,
+      transparent 75%,
+      rgba(0, 0, 0, 0.15) 75%,
+      transparent
+    ),
+    linear-gradient(
+      180deg,
+      lightgrey 25%,
+      lightskyblue 25% 50%,
+      darkorange 50% 75%,
+      limegreen 75%
+    );
+}
+
+.artwork::after {
+  content: "";
+  width: 50%;
+  height: 50%;
+  left: 20%;
+  right: auto;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse 100% 100% at 50% 50%,
+    transparent 45%,
+    darkgrey 45%
+  ),
+  radial-gradient(90% 100% at 50% 40%, darkgrey 17.5%, transparent 15%),
+  radial-gradient(110% 70% at 50% 90%, darkgrey 35%, transparent 35%);
+}

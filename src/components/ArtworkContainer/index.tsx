@@ -6,7 +6,7 @@ type Props = {
   title: string;
   attribution: string;
   creator: string;
-  categories: ('one div' | 'pixel art')[];
+  categories: ('one div' | 'pixel art' | 'animated' | 'interactive')[];
   ghSrc: string;
 }
 
@@ -21,7 +21,7 @@ export default function ArtworkContainer({
   return (
     <div className={styles.container}>
       <div className={styles.information}>
-        <h2>{title}</h2> <p className={styles.creator}>by {creator}</p>
+        <h2 className={styles.title}>{title}</h2> <p className={styles.creator}>by {creator}</p>
       </div>
       <div className={styles.artwork}>
         {artwork}

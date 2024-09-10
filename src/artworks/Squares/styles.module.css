@@ -1,0 +1,66 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  --c1: rgba(0, 0, 128, 0.8);
+  --c2: rgba(25, 25, 112, 0.8);
+  --c3: rgba(105, 90, 205, 0.8);
+  --c4: rgba(71, 61, 139, 0.8);
+}
+
+.artwork {
+  background: conic-gradient(
+    from 0deg,
+    var(--c1) 0deg 45deg,
+    var(--c2) 45deg 135deg,
+    var(--c1) 135deg 225deg,
+    var(--c2) 225deg 315deg,
+    var(--c1) 315deg 360deg
+  );
+}
+
+.artwork::before {
+  content: "";
+  width: 70%;
+  height: 70%;
+  background: conic-gradient(
+    from 0deg,
+    var(--c3) 0deg 45deg,
+    var(--c4) 45deg 135deg,
+    var(--c3) 135deg 225deg,
+    var(--c4) 225deg 315deg,
+    var(--c3) 315deg 360deg
+  );
+  transform: rotate(45deg);
+  animation: rotate-square 5000ms linear infinite reverse;
+}
+
+.artwork::after {
+  content: "";
+  width: 50%;
+  height: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--c1) 0deg 45deg,
+    var(--c2) 45deg 135deg,
+    var(--c1) 135deg 225deg,
+    var(--c2) 225deg 315deg,
+    var(--c1) 315deg 360deg
+  );
+  animation: rotate-square 3000ms linear infinite reverse;
+}
+
+@keyframes rotate-square {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

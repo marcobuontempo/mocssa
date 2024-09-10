@@ -1,0 +1,27 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.artwork {
+  background-image:
+    conic-gradient(from 0deg, white 0deg 90deg, transparent 90deg),
+    conic-gradient(from 180deg, black 0deg 90deg, transparent 90deg),
+    linear-gradient(
+      135deg,
+      white 12.5%,
+      black 12.5% 25%,
+      white 25% 37.5%,
+      black 37.5% 62.5%,
+      white 62.5% 75%,
+      black 75% 87.5%,
+      white 87.5%
+    );
+  background-size: 7.5% 7.5%;
+}

@@ -1,0 +1,37 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  --c1: tomato;
+  --c2: orange;
+  --c3: teal;
+  --bg: bisque;
+}
+
+.artwork {
+  background: 
+  radial-gradient(ellipse 100% 100% at 78% 51%, transparent 40%, var(--bg) 40%),
+  radial-gradient(ellipse 100% 100% at 22% 51%, transparent 40%, var(--bg) 40%),
+  var(--c2)
+  ;
+}
+
+.artwork::before {
+  content: "";
+  background: 
+  radial-gradient(ellipse 100% 100% at 50% 40%, transparent 40%, var(--bg) 40%),
+  radial-gradient(ellipse 100% 100% at -5% 85%, var(--c1) 50%, transparent 50%),
+  radial-gradient(ellipse 100% 100% at 105% 85%, var(--c3) 50%, transparent 50%)
+  ;
+}
+
+.artwork::after {
+  content: "";
+  background: 
+  linear-gradient(0deg, transparent 27%, var(--bg) 27% 30%, transparent 30% 33%, var(--bg) 33% 36%, transparent 36% 39%, var(--bg) 39% 42%, transparent 42%);
+}

@@ -1,0 +1,45 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.artwork {
+  background: rgb(169, 196, 247);
+}
+
+.artwork::after {
+  content: "";
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  background: radial-gradient(
+      ellipse 100% 100% at 50% 50%,
+      white 0% 8%,
+      black 8% 11%,
+      transparent 11% 45%,
+      black 45%
+    ),
+    linear-gradient(to bottom, red 0% 47%, black 47% 53%, transparent 53%);
+}
+
+.artwork::before {
+  content: "";
+  top: auto;
+  bottom: 7.5%;
+  width: 85%;
+  height: 85%;
+  border-radius: 50%;
+  background: radial-gradient(
+      ellipse 100% 100% at 50% 50%,
+      transparent 40%,
+      rgba(0, 0, 0, 0.1) 40% 43%,
+      transparent 43%
+    ),
+    radial-gradient(ellipse 100% 100% at 50% 50%, white 45%, transparent 45%);
+}

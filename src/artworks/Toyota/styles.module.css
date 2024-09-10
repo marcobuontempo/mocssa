@@ -1,0 +1,60 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: auto;
+
+  --c1: floralwhite;
+  --c2: midnightblue;
+  --c3: darkorange;
+  --c4: gold;
+}
+
+.artwork {
+  max-height: 400px;
+  background:
+    radial-gradient(ellipse 50% 50% at 50% 50%, var(--c1) 83%, transparent 83%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, black 83.5%, transparent 83.5%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, var(--c4) 86.5%, transparent 86.5%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, black 87%, transparent 87%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, var(--c3) 90%, transparent 90%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, black 90.5%, transparent 90.5%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, var(--c2) 93.5%, transparent 93.5%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, black 94%, transparent 94%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, var(--c1) 97.5%, transparent 98%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, black 98%, transparent 98%);
+}
+
+.artwork::before {
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 79.5%;
+  width: 79.5%;
+  background:
+    linear-gradient(to right, var(--c1) 22.5%, transparent 22.5% 38.5%, var(--c1) 38.5% 42%, transparent 42% 58%, var(--c1) 58% 61.5%, transparent 61.5% 77.5%, var(--c1) 77.5%),
+    linear-gradient(to bottom, transparent 37%, black 37% 37.4%, var(--c1) 37.4% 62.6%, black 62.6% 63%, transparent 63%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, transparent 99.4%, black 99.4%),
+    linear-gradient(to right, black 22.9%, var(--c2) 22.9% 38.1%, black 38.1% 42.4%, var(--c3) 42.4% 57.6%, black 57.6% 61.9%, var(--c4) 61.9% 77.1%, black 77.1%);
+  border-radius: 50%;
+}
+
+.artwork::after {
+  content: "TOYOTA";
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  font-size: 68px;
+  line-height: 350px;
+  transform: scaleY(0.9);
+  letter-spacing: -2px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}

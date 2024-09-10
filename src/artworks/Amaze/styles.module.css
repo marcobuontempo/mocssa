@@ -1,0 +1,70 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: auto;
+  --stripes: rgba(0, 0, 0, 0.8);
+  --dots: rgba(255, 255, 255, 0.8);
+}
+
+.artwork {
+  overflow: hidden;
+  background:
+    linear-gradient(to right, red 14.3%, orange 28.6%, yellow 42.9%, green 57.2%, blue 71.5%, indigo 85.8%, violet 100%);
+  animation: artwork-rotate 10s linear infinite alternate;
+}
+
+.artwork::before {
+  content: "";
+  background-size: 10% 10%;
+  background-repeat: repeat;
+  background-image:
+    radial-gradient(ellipse 100% 100% at 100% 0%, var(--stripes) 50%, transparent 50% 100%),
+    radial-gradient(ellipse 100% 100% at 100% 100%, var(--stripes) 50%, transparent 50% 100%),
+    radial-gradient(ellipse 100% 100% at 0% 50%, var(--stripes) 50%, transparent 50% 100%);
+  animation: artwork-shift 3s linear infinite;
+}
+
+.artwork::after {
+  content: "";
+  background-size: 10% 10%;
+  background-repeat: repeat;
+  background-image:
+    radial-gradient(ellipse 100% 100% at 100% 100%, var(--dots) 15%, transparent 15% 100%),
+    radial-gradient(ellipse 100% 100% at 0% 100%, var(--dots) 15%, transparent 15% 100%),
+    radial-gradient(ellipse 100% 100% at 100% 0%, var(--dots) 15%, transparent 15% 100%),
+    radial-gradient(ellipse 100% 100% at 0% 0%, var(--dots) 15%, transparent 15% 100%);
+  animation: artwork-side 1.5s linear infinite alternate;
+}
+
+
+@keyframes artwork-shift {
+  from {
+    background-position: 0% 0%;
+  }
+
+  to {
+    background-position: 0% 11%;
+  }
+}
+
+@keyframes artwork-side {
+  from {
+    background-position: -2.25% 0%;
+  }
+
+  to {
+    background-position: 2.25% 0%;
+  }
+}
+
+@keyframes artwork-rotate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(180deg);
+  }
+}

@@ -5,10 +5,10 @@ export default function index() {
   return (
     <ArtworkContainer
       title='Tetris'
-      attribution='Inspired by Tetris videogame'
+      attribution='Inspired by Tetris videogame, designed by Alexey Pajitnov'
       creator='Marco Buontempo'
-      categories={['one div']}
-      ghSrc='/tetris'
+      categories={['one div', 'animated']}
+      ghSrc='/Tetris'
     >
       <div className={styles.artwork}>TETRIS</div>
     </ArtworkContainer>

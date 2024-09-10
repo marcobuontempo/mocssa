@@ -1,0 +1,61 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: auto;
+  filter: sepia(0.25);
+}
+
+.artwork {
+  border: 5px solid black;
+  background:
+    /* SUN */
+    radial-gradient(ellipse 55% 55% at 41% 70%,
+      lightgoldenrodyellow 0% 25%,
+      gold 25% 35%,
+      darkorange 35% 45%,
+      firebrick 45% 55%,
+      darkred 55% 65%,
+      black 65% 68%,
+      transparent 68%),
+    /* SKY */
+    linear-gradient(to bottom,
+      cornsilk 0% 13%,
+      orange 13% 26%,
+      darkorange 26% 39%,
+      orangered 39% 52%,
+      firebrick 52% 65%,
+      transparent 65%);
+}
+
+/* MOUNTAIN */
+.artwork::before {
+  content: "";
+  top: 60%;
+  left: 61%;
+  width: 30%;
+  height: 35%;
+  transform: rotate(50deg);
+  background: linear-gradient(60deg,
+      transparent 0% 15%,
+      springgreen 20% 30%,
+      limegreen 30% 40%,
+      forestgreen 40% 50%,
+      darkgreen 50% 60%,
+      darkkhaki 60% 70%,
+      transparent 70%);
+  box-shadow: -7px -7px gainsboro, -14px -14px aliceblue, -19px -19px black;
+}
+
+/* WATER */
+.artwork::after {
+  content: "";
+  box-shadow: 5px 5px wheat inset, -5px -5px wheat inset, 10px 10px black inset, -10px -10px black inset;
+  background: linear-gradient(transparent 64%,
+      black 64% 65.5%,
+      paleturquoise 65.5% 76.5%,
+      darkturquoise 76.5% 88%,
+      darkcyan 88% 100%);
+}

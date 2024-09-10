@@ -8,7 +8,7 @@ export default function index() {
       attribution='Original Design'
       creator='Marco Buontempo'
       categories={['one div']}
-      ghSrc='/droplet'
+      ghSrc='/Droplet'
     >
       <div className={styles.artwork} />
     </ArtworkContainer>

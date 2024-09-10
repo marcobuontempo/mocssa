@@ -1,0 +1,41 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  --bg: plum;
+  --c1: darkorchid;
+}
+
+.artwork {
+  background: var(--bg);
+}
+
+.artwork::before {
+  content: "";
+  height: 40%;
+  width: 40%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse 100% 100% at 50% 50%, var(--bg) 37.5%, transparent 42.5%),
+    conic-gradient(
+      from 0deg at 50% 50%,
+      var(--c1),
+      transparent
+    );
+  transform: rotate(0deg);
+  animation: rotate-artwork 2500ms infinite linear;
+}
+
+@keyframes rotate-artwork {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,47 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.artwork {
+  background: rgb(169, 196, 247);
+}
+
+.artwork::before {
+  content: "";
+  width: 25%;
+  height: 25%;
+  left: 10%;
+  right: auto;
+  border-radius: 50%;
+  background: radial-gradient(
+      ellipse 100% 100% at 50% 50%,
+      dodgerblue 0% 19%,
+      white 19% 24%,
+      transparent 24% 100%
+    ),
+    linear-gradient(240deg, transparent 68%, green 0% 100%),
+    linear-gradient(0deg, transparent 74%, red 74% 100%),
+    linear-gradient(116deg, transparent 67%, gold 0% 100%),
+    linear-gradient(300deg, transparent 60%, red 0% 100%),
+    linear-gradient(60deg, transparent 60%, gold 0% 100%),
+    linear-gradient(180deg, transparent 60%, green 0% 100%);
+}
+
+.artwork::after {
+  content: "chrome";
+  font-family: monospace;
+  font-weight: 500;
+  color: rgb(70, 70, 70);
+  letter-spacing: 0.1em;
+  font-size: 3.4em;
+  right: 10%;
+  left: auto;
+  top: 42.5%;
+}

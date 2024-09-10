@@ -1,0 +1,127 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: auto;
+  --bg: rgb(20, 20, 20);
+}
+
+.artwork {
+  overflow: hidden;
+  background: linear-gradient(
+      90deg,
+      var(--bg) 10.5%,
+      transparent 10.5% 19.5%,
+      var(--bg) 19.5% 20.5%,
+      transparent 20.5% 29.5%,
+      var(--bg) 29.5% 30.5%,
+      transparent 30.5% 39.5%,
+      var(--bg) 39.5% 40.5%,
+      transparent 40.5% 49.5%,
+      var(--bg) 49.5% 50.5%,
+      transparent 50.5% 59.5%,
+      var(--bg) 59.5% 60.5%,
+      transparent 60.5% 69.5%,
+      var(--bg) 69.5% 70.5%,
+      transparent 70.5% 79.5%,
+      var(--bg) 79.5% 80.5%,
+      transparent 80.5% 89.5%,
+      var(--bg) 89.5% 100%
+    ),
+    linear-gradient(
+      180deg,
+      var(--bg) 0% 3.5%,
+      transparent 3.5% 7.5%,
+      var(--bg) 7.5% 8.5%,
+      transparent 8.5% 12.5%,
+      var(--bg) 12.5% 13.5%,
+      transparent 13.5% 17.5%,
+      var(--bg) 17.5% 18.5%,
+      transparent 18.5% 22.5%,
+      var(--bg) 22.5% 23.5%,
+      transparent 23.5% 27.5%,
+      var(--bg) 27.5% 28.5%,
+      transparent 28.5% 32.5%,
+      var(--bg) 32.5% 33.5%,
+      transparent 33.5% 37.5%,
+      var(--bg) 37.5% 38.5%,
+      transparent 38.5% 42.5%,
+      var(--bg) 42.5% 43.5%,
+      transparent 43.5% 47.5%,
+      var(--bg) 47.5% 48.5%,
+      transparent 48.5% 52.5%,
+      var(--bg) 52.5% 53.5%,
+      transparent 53.5% 57.5%,
+      var(--bg) 57.5% 58.5%,
+      transparent 58.5% 62.5%,
+      var(--bg) 62.5% 63.5%,
+      transparent 63.5% 67.5%,
+      var(--bg) 67.5% 68.5%,
+      transparent 68.5% 72.5%,
+      var(--bg) 72.5% 73.5%,
+      transparent 73.5% 77.5%,
+      var(--bg) 77.5% 78.5%,
+      transparent 78.5% 82.5%,
+      var(--bg) 82.5% 83.5%,
+      transparent 83.5% 87.5%,
+      var(--bg) 87.5% 88.5%,
+      transparent 88.5% 92.5%,
+      var(--bg) 92.5% 93.5%,
+      transparent 93.5% 97.5%,
+      var(--bg) 97.5% 100%
+    ),
+    linear-gradient(
+      180deg,
+      orangered,
+      yellow,
+      lime
+    );
+}
+
+.artwork::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: translateY(-17%);
+  background: linear-gradient(90deg, var(--bg) 40%, transparent 40% 70%, var(--bg) 70%), linear-gradient(180deg, var(--bg) 65%, transparent 65%);
+  animation: artwork-first 750ms steps(8, end) infinite alternate;
+}
+
+.artwork::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  transform: translateY(-7%);
+  background: linear-gradient(90deg, var(--bg) 30%, transparent 30% 60%, var(--bg) 60% 70%, transparent 70% 80%, var(--bg) 80%);
+  animation: artwork-second 375ms steps(6, end) infinite alternate-reverse;
+}
+
+@keyframes artwork-first {
+  0% {
+    transform: translateY(-17%);
+  }
+  75% {
+    transform: translateY(-57%);
+  }
+  100% {
+    transform: translateY(-57%);
+  }
+}
+
+@keyframes artwork-second {
+  0% {
+    transform: translateY(-7%);
+  }
+  75% {
+    transform: translateY(-37%);
+  }
+  100% {
+    transform: translateY(-37%);
+  }
+}

@@ -1,0 +1,64 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* SUN & SPACE */
+.artwork {
+  width: 100%;
+  height: 100%;
+  background:
+    radial-gradient(circle, yellow 0% 8%, transparent 16%),
+    /* STARS */
+    radial-gradient(circle at 5% 70%, white 0% 0.1%, transparent 0.3%),
+    radial-gradient(circle at 10% 25%, white 0% 0.1%, transparent 0.3%),
+    radial-gradient(circle at 10% 80%, white 0% 0.1%, transparent 0.3%),
+    radial-gradient(circle at 30% 10%, white 0% 0.1%, transparent 0.3%),
+    radial-gradient(circle at 35% 60%, white 0% 0.1%, transparent 0.3%),
+    radial-gradient(circle at 40% 30%, white 0% 0.1%, transparent 0.3%),
+    radial-gradient(circle at 50% 90%, white 0% 0.1%, transparent 0.3%),
+    radial-gradient(circle at 60% 10%, white 0% 0.1%, transparent 0.3%),
+    radial-gradient(circle at 70% 50%, white 0% 0.1%, transparent 0.3%),
+    radial-gradient(circle at 80% 80%, white 0% 0.1%, transparent 0.3%),
+    radial-gradient(circle at 85% 15%, white 0% 0.1%, transparent 0.3%),
+    radial-gradient(circle at 90% 10%, white 0% 0.1%, transparent 0.3%),
+    radial-gradient(circle at 90% 90%, white 0% 0.1%, transparent 0.3%),
+    radial-gradient(circle at 95% 20%, white 0% 0.1%, transparent 0.3%),
+    radial-gradient(circle at 50% 50%, transparent 0%, rgb(35, 35, 35) 15% 27.5%, rgb(25, 25, 25) 30% 45%, rgb(15, 15, 15) 47.5% 60%, black 62.5% 100%);
+  /* animation: artwork 60s linear infinite reverse; */
+}
+
+/* EARTH */
+.artwork::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 30%, darkblue 0% 3%, transparent 4.2%);
+  overflow: visible;
+  animation: artwork 12s linear infinite;
+}
+
+/* MOON */
+.artwork::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.5) 0% 1%, transparent 2.5%);
+  animation: artwork 6s linear infinite;
+}
+
+@keyframes artwork {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,214 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: auto;
+
+  /* COLOURS */
+  --bg: grey;
+  --dvd: red;
+
+  /* POSITIONS WHERE DVD ICON HITS EDGE */
+  --top-edge: -178px;
+  --bottom-edge: 140px;
+  --left-edge: -140px;
+  --right-edge: 136px;
+  /* EACH POSITION FOR DVD MOVEMENT */
+  --pos1: translate(calc(var(--left-edge) + 0px), calc(var(--top-edge) + 40px));
+  --pos2: translate(calc(var(--left-edge) + 50px), calc(var(--bottom-edge) + 0px));
+  --pos3: translate(calc(var(--right-edge) + 0px), calc(var(--top-edge) + 150px));
+  --pos4: translate(calc(var(--left-edge) + 100px), calc(var(--top-edge) + 0px));
+  --pos5: translate(calc(var(--left-edge) + 0px), calc(var(--top-edge) + 200px));
+  --pos6: translate(calc(var(--right-edge) - 70px), calc(var(--bottom-edge) + 0px));
+  --pos7: translate(calc(var(--right-edge) + 0px), calc(var(--bottom-edge) - 90px));
+  --pos8: translate(calc(var(--left-edge) + 210px), calc(var(--top-edge) + 0px));
+  --pos9: translate(calc(var(--left-edge) + 0px), calc(var(--bottom-edge) - 30px));
+  --pos10: translate(calc(var(--left-edge) + 30px), calc(var(--bottom-edge) + 0px));
+  --pos11: translate(calc(var(--right-edge) + 0px), calc(var(--top-edge) + 20px));
+  --pos12: translate(calc(var(--right-edge) - 10px), calc(var(--top-edge) + 0px));
+  --pos13: translate(calc(var(--left-edge) + 180px), calc(var(--bottom-edge) + 0px));
+  --pos14: translate(calc(var(--left-edge) + 25px), calc(var(--top-edge) + 0px));
+}
+
+/* SET ANIMATIONS */
+.artwork::before,
+.artwork::after {
+  transform: translate(var(--pos1));
+  animation: dvd-move 35s linear infinite, dvd-colour 20s linear infinite;
+}
+
+/* BACKGROUND */
+.artwork {
+  background: var(--bg);
+  overflow: hidden;
+}
+
+/* "V" & VIDEO ICON */
+.artwork::after {
+  content: " VIDEO";
+  white-space: pre;
+  width: 20%;
+  height: 20.3%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  color: var(--bg);
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Arial Black';
+  font-size: 8px;
+  letter-spacing: 3px;
+  line-height: 130px;
+  background:
+    /* BOTTOM "VIDEO" */
+    radial-gradient(ellipse 100% 14.5% at 50% 92.5%, var(--dvd) 50%, transparent 50%),
+    /* "V" EDGE MASKS */
+    radial-gradient(ellipse 100% 100% at 60.5% 81%, var(--bg) 4.9%, transparent 5.3%),
+    radial-gradient(ellipse 100% 100% at 58.8% 83%, var(--bg) 4.9%, transparent 5.3%),
+    radial-gradient(ellipse 100% 100% at 57% 85%, var(--bg) 4.9%, transparent 5.3%),
+    radial-gradient(ellipse 100% 100% at 55.1% 87%, var(--bg) 4.9%, transparent 5.3%),
+    radial-gradient(ellipse 100% 100% at 43.2% 80%, var(--bg) 4.9%, transparent 5.3%),
+    radial-gradient(ellipse 100% 100% at 44.3% 83%, var(--bg) 4.9%, transparent 5.3%),
+    radial-gradient(ellipse 100% 100% at 45.4% 86%, var(--bg) 4.9%, transparent 5.3%),
+    /* TOP BOTTOM MASKS */
+    linear-gradient(to bottom, var(--bg) 53%, transparent 53% 85%, var(--bg) 85%),
+    /* "V" */
+    linear-gradient(71deg, transparent 33% 41%, var(--dvd) 41% 48%, transparent 48%),
+    linear-gradient(-49deg, transparent 33.3%, var(--dvd) 33.3% 38.8%, transparent 38.8%);
+}
+
+/* "D"s */
+.artwork::before {
+  content: "";
+  width: 23%;
+  height: 20.3%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background:
+    /* LEFT "D" SLIT */
+    radial-gradient(ellipse 200% 20% at 17% 59.5%, var(--bg) 5.5%, transparent 5%),
+    /* RIGHT "D" SLIT */
+    radial-gradient(ellipse 200% 20% at 74% 59.5%, var(--bg) 5.5%, transparent 5%),
+    /* TOP & BOTTOM MASK */
+    linear-gradient(to bottom, var(--bg) 53%, transparent 53% 79%, var(--bg) 60%),
+    /* VERTICAL LINES */
+    linear-gradient(104deg, var(--bg) 21.6%, var(--dvd) 21.6% 29%, transparent 29% 46.4%, var(--bg) 46.4% 68.5%, var(--dvd) 68.5% 76%, transparent 76%),
+    /* RIGHT "D" MASK */
+    radial-gradient(ellipse 113% 83% at 79.9% 67.6%, transparent 19%, var(--bg) 19% 25%, transparent 25%),
+    /* TOP LINE */
+    linear-gradient(to bottom, transparent 53%, var(--dvd) 53% 58.5%, transparent 58.5%),
+    /* LEFT INNER "D" */
+    radial-gradient(ellipse 130% 95% at 23% 66%, var(--bg) 8%, transparent 8%),
+    /* LEFT OUTER "D" */
+    radial-gradient(ellipse 110% 90% at 24.5% 63.3%, var(--dvd) 16.1%, transparent 16.1%),
+    radial-gradient(ellipse 120% 80% at 20.5% 66%, var(--dvd) 16.4%, transparent 16.4%),
+    /* RIGHT INNER "D" */
+    radial-gradient(ellipse 130% 95% at 80% 66%, var(--bg) 8%, transparent 8%),
+    /* RIGHT OUTER "D" */
+    radial-gradient(ellipse 110% 85% at 82% 64.5%, var(--dvd) 16%, transparent 16%),
+    radial-gradient(ellipse 120% 80% at 78% 66%, var(--dvd) 16.4%, transparent 16.4%),
+    var(--bg);
+}
+
+/* ROTATES COLOURS */
+@keyframes dvd-colour {
+  0% {
+    --dvd: red;
+  }
+
+  10% {
+    --dvd: orange;
+  }
+
+  20% {
+    --dvd: white;
+  }
+
+  35% {
+    --dvd: blue;
+  }
+
+  50% {
+    --dvd: green;
+  }
+
+  60% {
+    --dvd: purple;
+  }
+
+  80% {
+    --dvd: yellow;
+  }
+
+  90% {
+    --dvd: blue;
+  }
+}
+
+/* MOVES DVD ICON */
+@keyframes dvd-move {
+  0% {
+    transform: var(--pos1);
+  }
+
+  10% {
+    transform: var(--pos2);
+  }
+
+  20% {
+    transform: var(--pos3);
+  }
+
+  30% {
+    transform: var(--pos4);
+  }
+
+  40% {
+    transform: var(--pos5);
+  }
+
+  50% {
+    transform: var(--pos6);
+  }
+
+  55% {
+    transform: var(--pos7);
+  }
+
+  62.5% {
+    transform: var(--pos8);
+  }
+
+  70% {
+    transform: var(--pos9);
+  }
+
+  72% {
+    transform: var(--pos10);
+  }
+
+  79% {
+    transform: var(--pos11);
+  }
+
+  80% {
+    transform: var(--pos12);
+  }
+
+  87.5% {
+    transform: var(--pos13);
+  }
+
+  97.5% {
+    transform: var(--pos14);
+  }
+
+  100% {
+    transform: var(--pos1);
+  }
+}

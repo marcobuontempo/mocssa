@@ -1,0 +1,216 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: auto;
+  --piece: rgb(215, 205, 205);
+}
+
+/* BODY */
+.artwork {
+  background:
+    /* SHADOWS */ conic-gradient(
+      from -20deg at 58.5% 55%,
+      transparent 0%,
+      rgba(0, 0, 0, 0.3) 10% 20%,
+      transparent 30%
+    ),
+    radial-gradient(
+      ellipse 180% 190% at -18% 45%,
+      rgba(0, 0, 0, 0.1) 30%,
+      transparent 35% 100%
+    ),
+    radial-gradient(
+      ellipse 180% 190% at 118% 45%,
+      rgba(0, 0, 0, 0.5) 30%,
+      transparent 35% 100%
+    ),
+    linear-gradient(to right, black 0%, transparent 2% 40%, black),
+    /* REFLECTION SPOTS */
+      radial-gradient(
+        ellipse 4.5% 1.2% at 43.2% 39.2%,
+        white 0%,
+        transparent 100%
+      ),
+    radial-gradient(ellipse 3.5% 1.7% at 43.5% 42%, white 0%, transparent 100%),
+    radial-gradient(ellipse 3.2% 1.2% at 44% 46%, white 0%, transparent 100%),
+    radial-gradient(
+      ellipse 2.2% 0.5% at 41.3% 69.3%,
+      rgba(255, 255, 255, 0.7) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 2.5% 0.9% at 40.3% 71.8%,
+      white 0%,
+      transparent 100%
+    ),
+    radial-gradient(ellipse 3.5% 1% at 39% 75.4%, white 0%, transparent 100%),
+    radial-gradient(ellipse 6% 1.5% at 37.3% 79%, white 0%, transparent 80%),
+    radial-gradient(ellipse 9% 3.5% at 37.5% 82%, white 0%, transparent 80%),
+    /* BASE (& BORDER MASKS) */
+      linear-gradient(to right, black 31%, transparent 31% 69%, black 69% 100%),
+    linear-gradient(to bottom, black 38%, transparent 38% 88%, black 75% 100%),
+    radial-gradient(
+      ellipse 61% 101% at 50% 44.6%,
+      transparent 49.5%,
+      black 50%,
+      black 50% 100%
+    ),
+    radial-gradient(
+      ellipse 200% 90% at 50% 36%,
+      transparent 50%,
+      var(--piece) 50% 54.3%,
+      black 55%,
+      black 55% 100%
+    ),
+    /* BUMP SHADOWS */
+      radial-gradient(
+        ellipse 1500% 500% at 50% 0%,
+        transparent 8.1% 8.6%,
+        rgba(0, 0, 0, 0.08) 8.8% 8.9%,
+        transparent 8.9% 9.2%,
+        rgba(0, 0, 0, 0.05) 9.4% 9.5%,
+        transparent 9.5% 13.8%,
+        rgba(0, 0, 0, 0.05) 14% 14.1%,
+        transparent 14.1% 14.5%,
+        rgba(0, 0, 0, 0.05) 14.6% 14.7%,
+        transparent 14.7% 15.2%,
+        rgba(0, 0, 0, 0.05) 15.3% 15.4%,
+        transparent 15.4% 15.7%,
+        rgba(0, 0, 0, 0.05) 15.9% 16%,
+        transparent 16% 100%
+      ),
+    /* BUMPS */
+      radial-gradient(
+        ellipse 10% 5.5% at 50% 41%,
+        var(--piece) 0% 98%,
+        transparent 100%
+      ),
+    radial-gradient(
+      ellipse 9.5% 2.8% at 50% 46%,
+      var(--piece) 0% 98%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 12.4% 4.2% at 50% 69.5%,
+      var(--piece) 0% 98%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 14% 4.5% at 50% 72.5%,
+      var(--piece) 0% 98%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 16% 6.5% at 50% 76.5%,
+      var(--piece) 0% 98%,
+      transparent 100%
+    ),
+    radial-gradient(
+      ellipse 19.1% 6% at 50% 80%,
+      var(--piece) 0% 98%,
+      transparent 100%
+    ),
+    /* CURVED CENTRE */
+      radial-gradient(
+        ellipse 30% 80% at 27.5% 41%,
+        black 49%,
+        transparent 50% 100%
+      ),
+    radial-gradient(
+      ellipse 30% 80% at 72.5% 41%,
+      black 49%,
+      transparent 50% 100%
+    ),
+    /* REFLECTION (VERTICAL) */
+      linear-gradient(
+        to bottom,
+        var(--piece) 0% 53%,
+        transparent 56% 65%,
+        var(--piece) 66%
+      ),
+    conic-gradient(
+      at 44% 49%,
+      transparent 0% 50.5%,
+      rgba(255, 255, 255, 0.9) 52% 52.5%,
+      transparent 54% 100%
+    ),
+    /* FILL REMAINING BACKGROUND */ var(--piece);
+}
+
+/* CROWN */
+.artwork::after {
+  content: "";
+  width: 21.9%;
+  height: 13.6%;
+  top: 26.8%;
+  right: 0;
+  left: 0;
+  border-radius: 4%;
+  background:
+    /* SMALL REFLECTIONS */ radial-gradient(
+      ellipse 4% 65% at 4% 33%,
+      rgba(255, 255, 255, 0.4) 0% 5%,
+      transparent 100%
+    ),
+    radial-gradient(ellipse 25% 15% at 20% 77%, white 0% 10%, transparent 100%),
+    /* SMALL SHADOWS */
+      radial-gradient(
+        ellipse 8.5% 2% at 20% 60%,
+        rgb(115, 115, 115) 0%,
+        transparent 100%
+      ),
+    radial-gradient(
+      ellipse 13% 2% at 85% 60%,
+      rgb(115, 115, 115) 0% 20%,
+      transparent 100%
+    ),
+    /* ROUNDING EDGES */
+      radial-gradient(
+        ellipse 13% 30% at 23% -25%,
+        black 0% 90%,
+        transparent 100%
+      ),
+    radial-gradient(ellipse 13% 30% at 77% -25%, black 0% 90%, transparent 100%),
+    radial-gradient(ellipse 13% 30% at 18% -25%, black 0% 90%, transparent 100%),
+    radial-gradient(ellipse 18% 30% at 85% -24%, black 0% 90%, transparent 100%),
+    /* SHADOWS */
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.15) 0%,
+        transparent 10% 90%,
+        rgba(0, 0, 0, 0.15) 100%
+      ),
+    linear-gradient(to right, transparent 0% 40%, rgba(0, 0, 0, 0.5)),
+    /* MAIN CROWN SHAPE */
+      linear-gradient(to bottom, transparent 0% 60%, var(--piece) 60%),
+    linear-gradient(
+      to right,
+      var(--piece) 0% 11%,
+      rgb(61, 61, 61) 11.5%,
+      rgb(100, 95, 95) 16% 18%,
+      transparent 19% 24%,
+      rgba(255, 255, 255, 0.2) 24%,
+      var(--piece) 28% 72%,
+      rgba(255, 255, 255, 0.2) 75%,
+      transparent 75% 79%,
+      rgba(255, 255, 255, 0.2) 80%,
+      rgb(75, 75, 75) 86%,
+      black 94%,
+      var(--piece) 96% 100%
+    );
+}
+
+/* GROUND REFLECTION */
+.artwork::before {
+  content: "";
+  width: 44%;
+  height: 9%;
+  bottom: 3%;
+  left: 21%;
+  transform: skew(-38deg);
+  filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.25);
+}

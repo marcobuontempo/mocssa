@@ -1,0 +1,55 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  --artwork-colour: rgb(210, 180, 0);
+  --artwork-shade: white;
+  --background: #f0db4f;
+}
+
+.artwork {
+  background: var(--background);
+}
+
+.artwork::before {
+  content: "";
+  width: 90%;
+  height: 90%;
+  background: 
+  linear-gradient(20deg, var(--artwork-shade) 15%, transparent 15%),
+  linear-gradient(340deg, var(--artwork-shade) 15%, transparent 15%),
+  linear-gradient(85deg, var(--artwork-shade) 15%, var(--artwork-colour) 15% 25%, transparent 25%),
+  linear-gradient(275deg, var(--artwork-shade) 15%, var(--artwork-colour) 15% 25%, transparent 25%),
+  linear-gradient(180deg, var(--artwork-colour) 15%, transparent 15%),
+  linear-gradient(20deg, transparent 15%, var(--artwork-colour) 15% 25%, transparent 25%),
+  linear-gradient(340deg, transparent 15%, var(--artwork-colour) 15% 25%, transparent 25%),
+  linear-gradient(90deg, var(--artwork-colour) 0% 25%, transparent 15% 45%, var(--artwork-colour) 45% 55%, transparent 55%),
+  linear-gradient(20deg, transparent 25%, var(--artwork-shade) 25% 32.5%, transparent 32.5%),
+  linear-gradient(90deg, var(--artwork-colour) 0% 37.5%, var(--artwork-shade) 37.5% 45%, transparent 45%),
+  linear-gradient(340deg, transparent 25%, var(--artwork-shade) 25% 32.5%, transparent 32.5% 40%, transparent 40%),
+  linear-gradient(350deg, transparent 45%, var(--artwork-shade) 45% 52.5%, transparent 52.5%),
+  radial-gradient(ellipse 100% 80% at 50% 60%, var(--artwork-colour) 17.5%, transparent 15%),
+  linear-gradient(90deg, transparent 55%, white 55% 62.5%, transparent 62.5%),
+  linear-gradient(180deg, transparent 15%, var(--artwork-shade) 15% 25%, var(--artwork-colour) 25% 50%, transparent 50%),
+  linear-gradient(275deg, var(--artwork-shade) 32.5%, var(--artwork-colour) 32.5%);
+}
+
+.artwork::after {
+  content: "";
+  width: 90%;
+  height: 90%;
+  background:
+  linear-gradient(20deg, var(--background) 15%, transparent 15%),
+  linear-gradient(340deg, var(--background) 15%, transparent 15%),
+  linear-gradient(85deg, var(--background) 15%, var(--artwork-colour) 15% 20%, transparent 20%),
+  linear-gradient(275deg, var(--background) 15%, var(--artwork-colour) 15% 20%, transparent 20%),
+  linear-gradient(180deg, var(--artwork-colour) 10%, transparent 10%),
+  linear-gradient(340deg, transparent 15%, var(--artwork-colour) 15% 20%, transparent 20%),
+  linear-gradient(90deg, transparent 50%, rgba(255, 255, 255, 0.3) 50%)
+  ;
+}

@@ -1,0 +1,199 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  --bg: darkturquoise;
+  --c1: darkblue;
+  --c2: royalblue;
+  --c3: silver;
+  --c4: darkgrey;
+  --c5: red;
+  --c6: darkred;
+}
+
+.artwork {
+  color: black;
+  font-family: monospace;
+  white-space: pre;
+  line-height: 97%;
+  padding: 43% 39%;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, var(--bg) 30%, transparent 30% 60%, var(--bg) 60%),
+    linear-gradient(90deg, var(--bg) 10%, var(--c3) 10% 90%, transparent 90%),
+    var(--bg);
+  animation: remove-popup-2 3500ms linear infinite;
+}
+
+.artwork::before {
+  content: "Error";
+  visibility: visible;
+  color: white;
+  line-height: normal;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 0px 4px;
+  top: 30%;
+  bottom: auto;
+  width: 77%;
+  height: 30%;
+
+  background-image:
+    /* EXIT BUTTON */
+    linear-gradient(45deg, transparent 45%, var(--c4) 45% 55%, transparent 55%),
+    linear-gradient(135deg, transparent 45%, var(--c4) 45% 55%, transparent 55%),
+    linear-gradient(180deg, black 4%, white 4% 10%, var(--c3) 10% 90%, black 90%),
+    /* WINDOW TOOLBAR */
+    linear-gradient(90deg, var(--c1), var(--c2)),
+    /* OK BUTTON */
+    linear-gradient(180deg, black 4%, white 4% 10%, transparent 10% 90%, black 90%),
+    linear-gradient(90deg, black 2%, transparent 2% 96%, black 96%),
+    /* ERROR ICON */
+    radial-gradient(circle at 15% 45%, transparent 0% 5%, var(--c5) 5% 6.5%, var(--c6) 6.5% 7%, transparent 7%),
+    linear-gradient(45deg, transparent 0% 45%, white 45% 55%, transparent 55%),
+    linear-gradient(135deg, transparent 0% 45%, white 45% 55%, transparent 55%),
+    radial-gradient(circle at 15% 45%, var(--c5) 0% 7%, transparent 7%),
+    radial-gradient(circle at 16% 46%, var(--c4) 0% 7%, transparent 7%),
+    linear-gradient(transparent, transparent)
+    ;
+
+  background-size: 
+    6% 9%,
+    6% 9%,
+    6.5% 17%,
+    100% 20%,
+    19% 20%,
+    20% 19%,
+    100% 100%,
+    19% 19%,
+    19% 19%,
+    100% 100%,
+    100% 100%,
+    100% 100%
+    ;
+
+  background-position: 
+    top 6px right 3px,
+    top 6px right 3px,
+    top 2px right 2px,
+    top 0 left 0,
+    bottom 20% left 50%,
+    bottom 20% left 50%,
+    top 0 left 0,
+    top 43% left 7%,
+    top 43% left 7%,
+    top 0 left 0,
+    top 0 left 0,
+    top 0 left 0
+    ;
+
+  background-repeat: no-repeat;
+
+  box-shadow: 
+    2px 2px black,
+    -2px -2px white;
+
+  animation: remove-popup-1 3500ms linear infinite;  
+}
+
+.artwork::after {
+  content: "";
+
+  top: auto;
+  left: auto;
+  right: -50%;
+  bottom: -50%;
+
+  width: 7%;
+  height: 7%;
+
+  background-image: 
+  conic-gradient(from 0deg at 0% 0%, transparent 136deg, black 136deg),
+  conic-gradient(from 0deg at 0% 100%, black 43deg, transparent 43deg),
+  linear-gradient(60deg, transparent 0% 40%, black 40% 60%, transparent 60%)
+  ;
+
+  background-size: 
+    65% 65%,
+    40% 40%,
+    40% 50%
+  ;
+
+  background-position: 
+    top 0 left 0,
+    top 90% left 0,
+    bottom 0 left 20%
+  ;
+
+  background-repeat: no-repeat;
+
+  animation: move-artwork 3500ms linear infinite;
+}
+
+@keyframes move-artwork {
+  0% {
+    right: -50%;
+    bottom: -50%;
+  }
+
+  70% {
+    right: 40%;
+    bottom: 42%;
+  }
+  
+  100% {
+    right: 40%;
+    bottom: 42%;
+  }
+}
+
+@keyframes remove-popup-1 {
+  0% {
+    visibility: visible;
+  }
+
+  70% {
+    visibility: visible;
+  }
+
+  71% {
+    visibility: hidden;
+  }
+  
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes remove-popup-2 {
+  0% {
+    color: black;
+    background:
+    linear-gradient(180deg, var(--bg) 30%, transparent 30% 60%, var(--bg) 60%),
+    linear-gradient(90deg, var(--bg) 10%, var(--c3) 10% 90%, transparent 90%),
+    var(--bg);
+  }
+
+  70% {
+    color: black;
+    background:
+    linear-gradient(180deg, var(--bg) 30%, transparent 30% 60%, var(--bg) 60%),
+    linear-gradient(90deg, var(--bg) 10%, var(--c3) 10% 90%, transparent 90%),
+    var(--bg);
+  }
+
+  71% {
+    color: var(--bg);
+    background: var(--bg);
+  }
+  
+  100% {
+    color: var(--bg);
+    background: var(--bg);
+  }
+}

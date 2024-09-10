@@ -1,0 +1,199 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: auto;
+  --pixel-size: 16px;
+  --artwork-colour: red;
+  --glimmer: snow;
+}
+
+.artwork {
+  background: lavender;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  appearance: none;
+}
+
+.artwork:checked::before {
+  --artwork-colour: blue;
+}
+
+.artwork::before {
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  background: var(--artwork-colour);
+  box-shadow:
+    /* ROW 1 */
+    calc(-4 * var(--pixel-size)) calc(-6 * var(--pixel-size)) black,
+    calc(-3 * var(--pixel-size)) calc(-6 * var(--pixel-size)) black,
+    calc(-2 * var(--pixel-size)) calc(-6 * var(--pixel-size)) black,
+    calc(2 * var(--pixel-size)) calc(-6 * var(--pixel-size)) black,
+    calc(3 * var(--pixel-size)) calc(-6 * var(--pixel-size)) black,
+    calc(4 * var(--pixel-size)) calc(-6 * var(--pixel-size)) black,
+    /* ROW 2 */
+    calc(-5 * var(--pixel-size)) calc(-5 * var(--pixel-size)) black,
+    calc(-4 * var(--pixel-size)) calc(-5 * var(--pixel-size)) var(--artwork-colour),
+    calc(-3 * var(--pixel-size)) calc(-5 * var(--pixel-size)) var(--artwork-colour),
+    calc(-2 * var(--pixel-size)) calc(-5 * var(--pixel-size)) var(--artwork-colour),
+    calc(-1 * var(--pixel-size)) calc(-5 * var(--pixel-size)) black,
+    calc(1 * var(--pixel-size)) calc(-5 * var(--pixel-size)) black,
+    calc(2 * var(--pixel-size)) calc(-5 * var(--pixel-size)) var(--artwork-colour),
+    calc(3 * var(--pixel-size)) calc(-5 * var(--pixel-size)) var(--artwork-colour),
+    calc(4 * var(--pixel-size)) calc(-5 * var(--pixel-size)) var(--artwork-colour),
+    calc(5 * var(--pixel-size)) calc(-5 * var(--pixel-size)) black,
+    /* ROW 3 */
+    calc(-6 * var(--pixel-size)) calc(-4 * var(--pixel-size)) black,
+    calc(-5 * var(--pixel-size)) calc(-4 * var(--pixel-size)) var(--artwork-colour),
+    calc(-4 * var(--pixel-size)) calc(-4 * var(--pixel-size)) var(--artwork-colour),
+    calc(-3 * var(--pixel-size)) calc(-4 * var(--pixel-size)) var(--glimmer),
+    calc(-2 * var(--pixel-size)) calc(-4 * var(--pixel-size)) var(--artwork-colour),
+    calc(-1 * var(--pixel-size)) calc(-4 * var(--pixel-size)) var(--artwork-colour),
+    calc(0 * var(--pixel-size)) calc(-4 * var(--pixel-size)) black,
+    calc(1 * var(--pixel-size)) calc(-4 * var(--pixel-size)) var(--artwork-colour),
+    calc(2 * var(--pixel-size)) calc(-4 * var(--pixel-size)) var(--artwork-colour),
+    calc(3 * var(--pixel-size)) calc(-4 * var(--pixel-size)) var(--artwork-colour),
+    calc(4 * var(--pixel-size)) calc(-4 * var(--pixel-size)) var(--artwork-colour),
+    calc(5 * var(--pixel-size)) calc(-4 * var(--pixel-size)) var(--artwork-colour),
+    calc(6 * var(--pixel-size)) calc(-4 * var(--pixel-size)) black,
+    /* ROW 5 */
+    calc(-7 * var(--pixel-size)) calc(-3 * var(--pixel-size)) black,
+    calc(-6 * var(--pixel-size)) calc(-3 * var(--pixel-size)) var(--artwork-colour),
+    calc(-5 * var(--pixel-size)) calc(-3 * var(--pixel-size)) var(--artwork-colour),
+    calc(-4 * var(--pixel-size)) calc(-3 * var(--pixel-size)) var(--glimmer),
+    calc(-3 * var(--pixel-size)) calc(-3 * var(--pixel-size)) var(--artwork-colour),
+    calc(-2 * var(--pixel-size)) calc(-3 * var(--pixel-size)) var(--artwork-colour),
+    calc(-1 * var(--pixel-size)) calc(-3 * var(--pixel-size)) var(--artwork-colour),
+    calc(0 * var(--pixel-size)) calc(-3 * var(--pixel-size)) var(--artwork-colour),
+    calc(1 * var(--pixel-size)) calc(-3 * var(--pixel-size)) var(--artwork-colour),
+    calc(2 * var(--pixel-size)) calc(-3 * var(--pixel-size)) var(--artwork-colour),
+    calc(3 * var(--pixel-size)) calc(-3 * var(--pixel-size)) var(--artwork-colour),
+    calc(4 * var(--pixel-size)) calc(-3 * var(--pixel-size)) var(--artwork-colour),
+    calc(5 * var(--pixel-size)) calc(-3 * var(--pixel-size)) var(--artwork-colour),
+    calc(6 * var(--pixel-size)) calc(-3 * var(--pixel-size)) var(--artwork-colour),
+    calc(7 * var(--pixel-size)) calc(-3 * var(--pixel-size)) black,
+    /* ROW 6 */
+    calc(-7 * var(--pixel-size)) calc(-2 * var(--pixel-size)) black,
+    calc(-6 * var(--pixel-size)) calc(-2 * var(--pixel-size)) var(--artwork-colour),
+    calc(-5 * var(--pixel-size)) calc(-2 * var(--pixel-size)) var(--glimmer),
+    calc(-4 * var(--pixel-size)) calc(-2 * var(--pixel-size)) var(--artwork-colour),
+    calc(-3 * var(--pixel-size)) calc(-2 * var(--pixel-size)) var(--artwork-colour),
+    calc(-2 * var(--pixel-size)) calc(-2 * var(--pixel-size)) var(--artwork-colour),
+    calc(-1 * var(--pixel-size)) calc(-2 * var(--pixel-size)) var(--artwork-colour),
+    calc(0 * var(--pixel-size)) calc(-2 * var(--pixel-size)) var(--artwork-colour),
+    calc(1 * var(--pixel-size)) calc(-2 * var(--pixel-size)) var(--artwork-colour),
+    calc(2 * var(--pixel-size)) calc(-2 * var(--pixel-size)) var(--artwork-colour),
+    calc(3 * var(--pixel-size)) calc(-2 * var(--pixel-size)) var(--artwork-colour),
+    calc(4 * var(--pixel-size)) calc(-2 * var(--pixel-size)) var(--artwork-colour),
+    calc(5 * var(--pixel-size)) calc(-2 * var(--pixel-size)) var(--artwork-colour),
+    calc(6 * var(--pixel-size)) calc(-2 * var(--pixel-size)) var(--artwork-colour),
+    calc(7 * var(--pixel-size)) calc(-2 * var(--pixel-size)) black,
+    /* ROW 7 */
+    calc(-7 * var(--pixel-size)) calc(-1 * var(--pixel-size)) black,
+    calc(-6 * var(--pixel-size)) calc(-1 * var(--pixel-size)) var(--artwork-colour),
+    calc(-5 * var(--pixel-size)) calc(-1 * var(--pixel-size)) var(--artwork-colour),
+    calc(-4 * var(--pixel-size)) calc(-1 * var(--pixel-size)) var(--artwork-colour),
+    calc(-3 * var(--pixel-size)) calc(-1 * var(--pixel-size)) var(--artwork-colour),
+    calc(-2 * var(--pixel-size)) calc(-1 * var(--pixel-size)) var(--artwork-colour),
+    calc(-1 * var(--pixel-size)) calc(-1 * var(--pixel-size)) var(--artwork-colour),
+    calc(0 * var(--pixel-size)) calc(-1 * var(--pixel-size)) var(--artwork-colour),
+    calc(1 * var(--pixel-size)) calc(-1 * var(--pixel-size)) var(--artwork-colour),
+    calc(2 * var(--pixel-size)) calc(-1 * var(--pixel-size)) var(--artwork-colour),
+    calc(3 * var(--pixel-size)) calc(-1 * var(--pixel-size)) var(--artwork-colour),
+    calc(4 * var(--pixel-size)) calc(-1 * var(--pixel-size)) var(--artwork-colour),
+    calc(5 * var(--pixel-size)) calc(-1 * var(--pixel-size)) var(--artwork-colour),
+    calc(6 * var(--pixel-size)) calc(-1 * var(--pixel-size)) var(--artwork-colour),
+    calc(7 * var(--pixel-size)) calc(-1 * var(--pixel-size)) black,
+    /* ROW 8 */
+    calc(-7 * var(--pixel-size)) calc(0 * var(--pixel-size)) black,
+    calc(-6 * var(--pixel-size)) calc(0 * var(--pixel-size)) var(--artwork-colour),
+    calc(-5 * var(--pixel-size)) calc(0 * var(--pixel-size)) var(--artwork-colour),
+    calc(-4 * var(--pixel-size)) calc(0 * var(--pixel-size)) var(--artwork-colour),
+    calc(-3 * var(--pixel-size)) calc(0 * var(--pixel-size)) var(--artwork-colour),
+    calc(-2 * var(--pixel-size)) calc(0 * var(--pixel-size)) var(--artwork-colour),
+    calc(-1 * var(--pixel-size)) calc(0 * var(--pixel-size)) var(--artwork-colour),
+    calc(1 * var(--pixel-size)) calc(0 * var(--pixel-size)) var(--artwork-colour),
+    calc(2 * var(--pixel-size)) calc(0 * var(--pixel-size)) var(--artwork-colour),
+    calc(3 * var(--pixel-size)) calc(0 * var(--pixel-size)) var(--artwork-colour),
+    calc(4 * var(--pixel-size)) calc(0 * var(--pixel-size)) var(--artwork-colour),
+    calc(5 * var(--pixel-size)) calc(0 * var(--pixel-size)) var(--artwork-colour),
+    calc(6 * var(--pixel-size)) calc(0 * var(--pixel-size)) var(--artwork-colour),
+    calc(7 * var(--pixel-size)) calc(0 * var(--pixel-size)) black,
+    /* ROW 9 */
+    calc(-6 * var(--pixel-size)) calc(1 * var(--pixel-size)) black,
+    calc(-5 * var(--pixel-size)) calc(1 * var(--pixel-size)) var(--artwork-colour),
+    calc(-4 * var(--pixel-size)) calc(1 * var(--pixel-size)) var(--artwork-colour),
+    calc(-3 * var(--pixel-size)) calc(1 * var(--pixel-size)) var(--artwork-colour),
+    calc(-2 * var(--pixel-size)) calc(1 * var(--pixel-size)) var(--artwork-colour),
+    calc(-1 * var(--pixel-size)) calc(1 * var(--pixel-size)) var(--artwork-colour),
+    calc(0 * var(--pixel-size)) calc(1 * var(--pixel-size)) var(--artwork-colour),
+    calc(1 * var(--pixel-size)) calc(1 * var(--pixel-size)) var(--artwork-colour),
+    calc(2 * var(--pixel-size)) calc(1 * var(--pixel-size)) var(--artwork-colour),
+    calc(3 * var(--pixel-size)) calc(1 * var(--pixel-size)) var(--artwork-colour),
+    calc(4 * var(--pixel-size)) calc(1 * var(--pixel-size)) var(--artwork-colour),
+    calc(5 * var(--pixel-size)) calc(1 * var(--pixel-size)) var(--artwork-colour),
+    calc(6 * var(--pixel-size)) calc(1 * var(--pixel-size)) black,
+    /* ROW 10 */
+    calc(-5 * var(--pixel-size)) calc(2 * var(--pixel-size)) black,
+    calc(-4 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--artwork-colour),
+    calc(-3 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--artwork-colour),
+    calc(-2 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--artwork-colour),
+    calc(-1 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--artwork-colour),
+    calc(0 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--artwork-colour),
+    calc(1 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--artwork-colour),
+    calc(2 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--artwork-colour),
+    calc(3 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--artwork-colour),
+    calc(4 * var(--pixel-size)) calc(2 * var(--pixel-size)) var(--artwork-colour),
+    calc(5 * var(--pixel-size)) calc(2 * var(--pixel-size)) black,
+    /* ROW 11 */
+    calc(-4 * var(--pixel-size)) calc(3 * var(--pixel-size)) black,
+    calc(-3 * var(--pixel-size)) calc(3 * var(--pixel-size)) var(--artwork-colour),
+    calc(-2 * var(--pixel-size)) calc(3 * var(--pixel-size)) var(--artwork-colour),
+    calc(-1 * var(--pixel-size)) calc(3 * var(--pixel-size)) var(--artwork-colour),
+    calc(0 * var(--pixel-size)) calc(3 * var(--pixel-size)) var(--artwork-colour),
+    calc(1 * var(--pixel-size)) calc(3 * var(--pixel-size)) var(--artwork-colour),
+    calc(2 * var(--pixel-size)) calc(3 * var(--pixel-size)) var(--artwork-colour),
+    calc(3 * var(--pixel-size)) calc(3 * var(--pixel-size)) var(--artwork-colour),
+    calc(4 * var(--pixel-size)) calc(3 * var(--pixel-size)) black,
+    /* ROW 12 */
+    calc(-3 * var(--pixel-size)) calc(4 * var(--pixel-size)) black,
+    calc(-2 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--artwork-colour),
+    calc(-1 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--artwork-colour),
+    calc(0 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--artwork-colour),
+    calc(1 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--artwork-colour),
+    calc(2 * var(--pixel-size)) calc(4 * var(--pixel-size)) var(--artwork-colour),
+    calc(3 * var(--pixel-size)) calc(4 * var(--pixel-size)) black,
+    /* ROW 13 */
+    calc(-2 * var(--pixel-size)) calc(5 * var(--pixel-size)) black,
+    calc(-1 * var(--pixel-size)) calc(5 * var(--pixel-size)) var(--artwork-colour),
+    calc(0 * var(--pixel-size)) calc(5 * var(--pixel-size)) var(--artwork-colour),
+    calc(1 * var(--pixel-size)) calc(5 * var(--pixel-size)) var(--artwork-colour),
+    calc(2 * var(--pixel-size)) calc(5 * var(--pixel-size)) black,
+    /* ROW 14 */
+    calc(-1 * var(--pixel-size)) calc(6 * var(--pixel-size)) black,
+    calc(0 * var(--pixel-size)) calc(6 * var(--pixel-size)) var(--artwork-colour),
+    calc(1 * var(--pixel-size)) calc(6 * var(--pixel-size)) black,
+    /* ROW 14 */
+    calc(0 * var(--pixel-size)) calc(7 * var(--pixel-size)) black;
+  
+  animation: artwork-effect 2.5s ease-out infinite alternate;
+}
+
+@keyframes artwork-effect {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0.8);
+    filter: hue-rotate(-60deg);
+  }
+}
