@@ -6,7 +6,11 @@ function App() {
   return (
     <>
       <header>
-        <img className='mocssa-title' src='/logos/mocssa-logo.png' alt='Museum of CSS Art' />
+        <h1 className='mocssa-title'>
+          Museum of CSS Art
+          <img className='mocssa-logo' src='/svg/landmark.svg' alt='museum logo' />
+        </h1>
+
       </header>
 
       <main>

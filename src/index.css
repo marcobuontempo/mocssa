@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Fascinate+Inline&display=swap");
+
 #root {
   background-size: 12px 12px;
   background-image: radial-gradient(
@@ -10,6 +12,24 @@
 }
 
 .mocssa-title {
-  width: 100%;
-  padding: 20px 10%;
+  font-family: "Fascinate Inline", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  font-size: min(6.5em, 20dvw);
+  padding: 10px;
+  background-image: linear-gradient(45deg, turquoise, magenta);
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  cursor: default;
+}
+
+.mocssa-logo {
+  height: 0.8em;
+  padding: 0px 10px;
+  filter: invert(28%) sepia(46%) saturate(925%) hue-rotate(343deg) brightness(98%) contrast(96%) opacity(0.75);
 }
