@@ -10,7 +10,7 @@ export default function index() {
       categories={['one div', 'interactive', 'animated']}
       ghSrc='/Heart'
     >
-      <input type='checkbox' className={styles.artwork} />
+      <input type='checkbox' className={styles.artwork} aria-label='Heart toggle' />
     </ArtworkFrame>
   )
 }

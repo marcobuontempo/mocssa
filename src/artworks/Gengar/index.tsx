@@ -10,7 +10,7 @@ export default function index() {
       categories={['one div', 'interactive']}
       ghSrc='/Gengar'
     >
-      <input type='checkbox' className={styles.artwork} />
+      <input type='checkbox' className={styles.artwork} aria-label='Gengar toggle' />
     </ArtworkFrame>
   )
 }
