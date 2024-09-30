@@ -24,6 +24,7 @@
   top: 0px;
   right: 10px;
   height: 3.5em;
+  width: 3.5em;
   cursor: pointer;
   filter: invert(1);
 }

@@ -34,6 +34,7 @@
 
 .popout {
   height: 12px;
+  width: 12px;
 }
 
 .title {
@@ -42,4 +43,5 @@
 
 .creator {
   font-style: italic;
+  white-space: pre;
 }

@@ -42,7 +42,7 @@ export default function ArtworkModal({
 
   return (
     <div className={styles.modal} style={{ display: isOpen ? 'flex' : '' }}>
-      <img className={styles.exit} src='/svg/xmark.svg' alt='Close Modal' onClick={() => setIsOpen(false)} />
+      <img className={styles.exit} src='/svg/xmark.svg' alt='Close Modal' height={512} width={384} onClick={() => setIsOpen(false)} />
       <div className={styles.header}>
         <h2 className={styles.title}>{title}</h2>
         <h3 className={styles.creator}>by {creator}</h3>

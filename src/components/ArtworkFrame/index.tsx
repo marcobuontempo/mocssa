@@ -44,7 +44,8 @@ export default function ArtworkFrame({
           {artwork}
         </ArtworkContainer>
         <div className={styles.information} onClick={() => setModalIsOpen(true)}>
-          <h2 className={styles.title}>{title}</h2> <p className={styles.creator}>by {creator} <img className={styles.popout} src='/svg/popout.svg' alt='Open Details' /></p>
+          <h2 className={styles.title}>{title}</h2> <p className={styles.creator}>by {creator} </p>
+          <img className={styles.popout} src='/svg/popout.svg' alt='Open Details' height={512} width={512} />
         </div>
       </div>
     )

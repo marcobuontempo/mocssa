@@ -8,7 +8,7 @@ function App() {
       <header>
         <h1 className='mocssa-title'>
           Museum of CSS Art
-          <img className='mocssa-logo' src='/svg/landmark.svg' alt='museum logo' />
+          <img className='mocssa-logo' src='/svg/landmark.svg' alt='museum logo' height={512} width={512} />
         </h1>
 
       </header>
