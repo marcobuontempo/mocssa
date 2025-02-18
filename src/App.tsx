@@ -6,11 +6,13 @@ function App() {
   return (
     <>
       <header>
-        <h1 className='mocssa-title'>
-          Museum of CSS Art
-          <img className='mocssa-logo' src='/svg/landmark.svg' alt='museum logo' height={512} width={512} />
-        </h1>
-
+        <div className='mocssa-title'>
+          <h1>
+            Museum of CSS Art
+          </h1>
+          <img className='mocssa-logo' src='/svg/landmark.svg' alt='museum logo' height={68} width={68} />
+          <p className='mocssa-note'>Note: use the latest version of Chrome for the best experience!</p>
+        </div>
       </header>
 
       <main>

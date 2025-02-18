@@ -26,6 +26,14 @@
   cursor: default;
 }
 
+.mocssa-note {
+  font-family: monospace;
+  font-size: 0.8rem;
+  text-align: center;
+  font-style: italic;
+  padding-bottom: 1rem;
+}
+
 .mocssa-logo {
   height: 0.8em;
   padding: 0px 10px;
