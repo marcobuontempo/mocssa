@@ -1,0 +1,54 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.artwork {
+  background: #e4f0fc;
+}
+
+.artwork::before {
+  content: "";
+  height: 70%;
+  width: 70%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 12%,
+    rgba(164, 220, 252, 1) 12%,
+    rgba(164, 220, 252, 1) 25%,
+    rgba(255, 255, 255, 1) 25%,
+    rgba(255, 255, 255, 1) 40%,
+    rgba(4, 4, 124, 1) 40%,
+    rgba(6, 6, 158, 1) 55%,
+    rgba(4, 4, 124, 1) 70%
+  );
+  border-radius: 49% 51% 50% 50% / 52% 52% 48% 48%;
+  transform: rotate(20deg);
+  overflow: hidden;
+}
+
+.artwork::after {
+  content: "";
+  left: -200%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(228, 240, 252, 0.3),
+    transparent
+  );
+  transform: rotate(30deg);
+  transition: all 650ms;
+}
+
+.artwork:hover::after {
+  left: 100%;
+}

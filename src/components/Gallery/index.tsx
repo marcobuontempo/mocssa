@@ -12,6 +12,7 @@ import CryptoPunk from '../../artworks/CryptoPunk'
 import CSS from '../../artworks/CSS'
 import Cursor from '../../artworks/Cursor'
 import Droplet from '../../artworks/Droplet'
+import EvilEye from '../../artworks/EvilEye'
 import Gengar from '../../artworks/Gengar'
 import Glass from '../../artworks/Glass'
 import GreatWave from '../../artworks/GreatWave'
@@ -79,6 +80,7 @@ export default function Gallery() {
       <NoSignal />
       <Chrome />
       <Tetris />
+      <EvilEye />
     </div>
   )
 }
