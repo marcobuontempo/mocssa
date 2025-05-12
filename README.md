@@ -89,6 +89,11 @@ A collection of resources that may be useful in creating your CSS artworks:
 
 This project is open-sourced and accepting contributions. Please refer to [CONTRIBUTING](CONTRIBUTING.md) file for details
 
+### *Thanks to all contributors!*
+<a href="https://github.com/marcobuontempo/mocssa/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=marcobuontempo/mocssa" />
+</a>
+
 ## License
 
 Refer to [LICENSE](LICENSE) file for details
