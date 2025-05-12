@@ -1,3 +1,8 @@
+![GitHub Repo stars](https://img.shields.io/github/stars/marcobuontempo/mocssa?style=flat-square&logo=github)
+![GitHub top language](https://img.shields.io/github/languages/top/marcobuontempo/mocssa?style=flat-square&logo=css)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg?style=flat-square&logo=creativecommons)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
+
 # Museum of CSS Art _(MoCSSA)_
 
 Welcome to MoCSSA, the Museum of CSS Art, a curated open-source gallery showcasing creative, artistic, and innovative uses of CSS. This project aims to provide a platform for web designers, developers, artists, (and basically anyone else) to contribute their CSS artwork while serving as a resource for others to learn and draw inspiration from.
