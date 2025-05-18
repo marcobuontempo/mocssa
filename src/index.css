@@ -1,41 +1,53 @@
 #root {
-  background-size: 12px 12px;
-  background-image: radial-gradient(
-    ellipse 10% 10% at 50% 50%,
-    silver 20%,
-    cornsilk 75%
-  );
-  background-repeat: repeat;
+  /* Palette */
+  --background-colour: #f0efe9;
+  --text-colour: #222124;
+  --accent-colour: #c0a46f;
+
   font-family: monospace;
+  color: var(--text-colour);
+  background: var(--background-colour);
 }
 
-.mocssa-title {
-  font-family: "Fascinate Inline", system-ui;
-  font-weight: 400;
-  font-style: normal;
+.mocssa-header {
+  text: var(--text-colour);
   text-align: center;
-  font-size: min(6.5em, 20dvw);
-  padding: 10px;
-  background-image: linear-gradient(45deg, turquoise, magenta);
-  background-size: 100%;
-  background-repeat: repeat;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
-  cursor: default;
 }
 
-.mocssa-note {
-  font-family: monospace;
-  font-size: 0.8rem;
-  text-align: center;
-  font-style: italic;
-  padding-bottom: 1rem;
+.mocssa-header .title {
+  font-family: "Playfair", serif;
+  font-size: 2rem;
+  padding: 2rem;
+  text-transform: uppercase;
 }
 
-.mocssa-logo {
-  height: 0.8em;
-  padding: 0px 10px;
-  filter: invert(28%) sepia(46%) saturate(925%) hue-rotate(343deg) brightness(98%) contrast(96%) opacity(0.75);
+.mocssa-header .hr {
+  margin: 0 2rem;
+  border-style: solid;
+  border-top-width: 1px;
+  border-color: var(--accent-colour);
+}
+
+.mocssa-header .subcontainer {
+  padding: 2rem;
+}
+
+.mocssa-header .subheading {
+  font-family: "Playfair", serif;
+  font-size: 2.25rem;
+  text-transform: uppercase;
+}
+
+.mocssa-header .info {
+  padding: 1.5rem 2rem;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+}
+
+.mocssa-header .filter-button {
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  color: var(--accent-colour);
+  font-size: 1rem;
 }
