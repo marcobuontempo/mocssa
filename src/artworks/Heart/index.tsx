@@ -7,7 +7,7 @@ export default function index() {
       title='Heart'
       attribution='Original Design'
       creator='Marco Buontempo'
-      categories={['one div', 'interactive', 'animated']}
+      categories={['one div', 'pixel art', 'interactive', 'animated']}
       ghSrc='/Heart'
     >
       <input type='checkbox' className={styles.artwork} aria-label='Heart toggle' />

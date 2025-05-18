@@ -7,7 +7,7 @@ export default function index() {
       title='Gengar'
       attribution='Inspired by Gengar sprite pixel art (origin unknown)'
       creator='Marco Buontempo'
-      categories={['one div', 'interactive']}
+      categories={['one div', 'pixel art', 'interactive']}
       ghSrc='/Gengar'
     >
       <input type='checkbox' className={styles.artwork} aria-label='Gengar toggle' />
