@@ -1,5 +1,5 @@
 #root {
-  /* Palette */
+  /* Light Palette */
   --background-colour: #f0efe9;
   --text-colour: #222124;
   --accent-colour: #c0a46f;
@@ -7,11 +7,27 @@
   font-family: monospace;
   color: var(--text-colour);
   background: var(--background-colour);
+
+  transition: background-color 600ms;
+}
+
+.dark #root {
+  /* Dark Palette */
+  --background-colour: #222124;
+  --text-colour: #f0efe9;
+  --accent-colour: #c0a46f;
 }
 
 .mocssa-header {
   text: var(--text-colour);
   text-align: center;
+}
+
+.mocssa-header .title-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
 }
 
 .mocssa-header .title {
@@ -30,29 +46,25 @@
 }
 
 .mocssa-header .title .fade {
-  animation: animate-title 1000ms ease-in-out 1000ms forwards;
   animation-fill-mode: both;
+  font-size: 0.8em;
+  transition: font-size 1000ms ease-in-out;
+}
+
+.mocssa-header .title.shrink .fade {
+  font-size: 0em;
 }
 
 .mocssa-header .title:hover .fade {
-  animation: animate-title2 1000ms ease-in-out 0ms forwards;
+  font-size: 0.8em;
 }
 
-@keyframes animate-title {
-  from {
-    font-size: 0.8em;
-  }
-  to {
-    font-size: 0em;
-  }
-}
-@keyframes animate-title2 {
-  from {
-    font-size: 0em;
-  }
-  to {
-    font-size: 0.8em;
-  }
+.mocssa-header .theme-toggle {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+  height: 2rem;
+  width: 2rem;
 }
 
 .mocssa-header .hr {

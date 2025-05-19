@@ -6,12 +6,38 @@ import { isTouchDevice } from "./utils/isTouchDevice";
 
 function App() {
   const [showCursor, setShowCursor] = useState(false);
+  const [shrunk, setShrunk] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    // Load initial theme from localStorage or system preference
+    const saved = localStorage.getItem("theme");
+    if (saved) return saved === "dark";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
 
+  // Disable animated cursor for touch devices
   useEffect(() => {
     if (!isTouchDevice()) {
       setShowCursor(true);
     }
   }, []);
+
+  // Animate title
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShrunk(true);
+    }, 2000); // delay before shrinking
+    return () => clearTimeout(timeout);
+  }, []);
+
+  // Apply dark mode class to <body>
+  useEffect(() => {
+    document.body.classList.toggle("dark", darkMode);
+    localStorage.setItem("theme", darkMode ? "dark" : "light");
+  }, [darkMode]);
+
+  const toggleTheme = () => {
+    setDarkMode((prev) => !prev);
+  };
 
   return (
     <>
@@ -24,24 +50,29 @@ function App() {
         />
       )}
       <header className="mocssa-header">
-        <h1 className="title">
-          <div>
-            <span className="acronym">M</span>
-            <span className="fade">useum&nbsp;</span>
-          </div>
-          <div>
-            <span className="acronym">o</span>
-            <span className="fade">f&nbsp;</span>
-          </div>
-          <div>
-            <span className="acronym">CSS</span>
-            <span className="fade">&nbsp;</span>
-          </div>
-          <div>
-            <span className="acronym">A</span>
-            <span className="fade">rt</span>
-          </div>
-        </h1>
+        <div className="title-container">
+          <h1 className={`title ${shrunk ? "shrink" : ""}`}>
+            <div>
+              <span className="acronym">M</span>
+              <span className="fade">useum&nbsp;</span>
+            </div>
+            <div>
+              <span className="acronym">o</span>
+              <span className="fade">f&nbsp;</span>
+            </div>
+            <div>
+              <span className="acronym">CSS</span>
+              <span className="fade">&nbsp;</span>
+            </div>
+            <div>
+              <span className="acronym">A</span>
+              <span className="fade">rt</span>
+            </div>
+          </h1>
+        </div>
+        <button className="theme-toggle" onClick={toggleTheme}>
+          {darkMode ? "☀️" : "🌙"}
+        </button>
         <div className="hr"></div>
         <div className="subcontainer">
           <h2 className="subheading">CSS Artworks</h2>

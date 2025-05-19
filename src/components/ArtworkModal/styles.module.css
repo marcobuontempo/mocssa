@@ -8,8 +8,8 @@
   align-items: center;
   width: 100dvw;
   height: 100dvh;
-  background: var(--text-colour);
-  color: var(--background-colour);
+  background: var(--background-colour);
+  color: var(--text-colour);
   z-index: 99;
   padding: 10px;
 }
@@ -21,8 +21,8 @@
 .exit {
   display: block;
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0.5rem;
+  right: 0.5rem;
   height: 3rem;
   width: 3rem;
   padding: 0;
@@ -35,7 +35,7 @@
   transform: scale(1.1);
 }
 
-.exit img {
+:global(.dark) .exit img {
   filter: invert(1);
 }
 
