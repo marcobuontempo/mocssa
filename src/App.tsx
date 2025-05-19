@@ -24,7 +24,24 @@ function App() {
         />
       )}
       <header className="mocssa-header">
-        <h1 className="title">MoCSSA</h1>
+        <h1 className="title">
+          <div>
+            <span className="acronym">M</span>
+            <span className="fade">useum&nbsp;</span>
+          </div>
+          <div>
+            <span className="acronym">o</span>
+            <span className="fade">f&nbsp;</span>
+          </div>
+          <div>
+            <span className="acronym">CSS</span>
+            <span className="fade">&nbsp;</span>
+          </div>
+          <div>
+            <span className="acronym">A</span>
+            <span className="fade">rt</span>
+          </div>
+        </h1>
         <div className="hr"></div>
         <div className="subcontainer">
           <h2 className="subheading">CSS Artworks</h2>

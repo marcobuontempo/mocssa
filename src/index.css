@@ -18,7 +18,41 @@
   font-family: "Playfair", serif;
   font-size: 2rem;
   padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.mocssa-header .title .acronym {
   text-transform: uppercase;
+  font-weight: bold;
+}
+
+.mocssa-header .title .fade {
+  animation: animate-title 1000ms ease-in-out 1000ms forwards;
+  animation-fill-mode: both;
+}
+
+.mocssa-header .title:hover .fade {
+  animation: animate-title2 1000ms ease-in-out 0ms forwards;
+}
+
+@keyframes animate-title {
+  from {
+    font-size: 0.8em;
+  }
+  to {
+    font-size: 0em;
+  }
+}
+@keyframes animate-title2 {
+  from {
+    font-size: 0em;
+  }
+  to {
+    font-size: 0.8em;
+  }
 }
 
 .mocssa-header .hr {
