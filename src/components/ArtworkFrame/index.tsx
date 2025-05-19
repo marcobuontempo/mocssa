@@ -1,4 +1,4 @@
-import { ReactNode, useState } from 'react'
+import { ReactNode, useEffect, useRef, useState } from 'react'
 import styles from './styles.module.css'
 import ArtworkContainer from '../ArtworkContainer'
 import ArtworkModal from '../ArtworkModal'
@@ -21,7 +21,22 @@ export default function ArtworkFrame({
   categories,
   ghSrc,
 }: Props) {
+  const originalWidth = 350;
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState(1);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  useEffect(() => {
+    function updateScale() {
+      const availableWidth = window.innerWidth;
+      const newScale = Math.min(1, availableWidth / originalWidth);
+      setScale(newScale);
+    }
+
+    updateScale();
+    window.addEventListener('resize', updateScale);
+    return () => window.removeEventListener('resize', updateScale);
+  }, []);
 
   if (modalIsOpen) {
     return (
@@ -39,7 +54,16 @@ export default function ArtworkFrame({
   }
   else {
     return (
-      <div className={styles.frame}>
+      <div 
+      className={styles.frame} 
+      ref={containerRef}
+      style={{
+        width: `${originalWidth}px`,
+        height: `${originalWidth}px`,
+        minWidth: `${originalWidth}px`,
+        minHeight: `${originalWidth}px`,
+        transform: `scale(${scale})`,
+      }}>
         <ArtworkContainer>
           {artwork}
         </ArtworkContainer>

@@ -1,8 +1,5 @@
 .frame {
   position: relative;
-  width: 350px;
-  height: 350px;
-  min-width: 350px;
 }
 
 .frame:hover > .information {
