@@ -8,24 +8,34 @@
   align-items: center;
   width: 100dvw;
   height: 100dvh;
-  background: rgba(0, 0, 0, 0.99);
-  z-index: 100000;
+  background: var(--text-colour);
+  color: var(--background-colour);
+  z-index: 99;
   padding: 10px;
 }
 
 .header, .information {
   text-align: center;
-  color: white;
 }
 
 .exit {
   display: block;
   position: absolute;
-  top: 0px;
+  top: 10px;
   right: 10px;
-  height: 3.5em;
-  width: 3.5em;
-  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  padding: 0;
+  border: none;
+  background: none;
+  transition: transform 300ms ease-in-out;
+}
+
+.exit:hover {
+  transform: scale(1.1);
+}
+
+.exit img {
   filter: invert(1);
 }
 
@@ -54,9 +64,12 @@
   padding: 10px;
 }
 
+.attribution {
+  font-style: italic;
+}
+
 .category_title {
   font-weight: bold;
-  text-decoration: underline;
 }
 
 .categories {
@@ -66,7 +79,12 @@
 }
 
 .github {
-  background: white;
+  background: var(--accent-colour);
+  color: var(--background-colour);
   font-weight: bold;
   padding: 5px;
+}
+
+.github:hover {
+  color: var(--text-colour);
 }

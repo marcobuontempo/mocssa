@@ -50,4 +50,9 @@
   text-transform: uppercase;
   color: var(--accent-colour);
   font-size: 1rem;
+  transition: font-weight 300ms ease-in-out;
+}
+
+.mocssa-header .filter-button:hover {
+  font-weight: bold;
 }
