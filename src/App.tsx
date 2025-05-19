@@ -1,21 +1,28 @@
+import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
 import AnimatedCursor from "react-animated-cursor";
+import { isTouchDevice } from "./utils/isTouchDevice";
 
 function App() {
+  const [showCursor, setShowCursor] = useState(false);
+
+  useEffect(() => {
+    if (!isTouchDevice()) {
+      setShowCursor(true);
+    }
+  }, []);
+
   return (
     <>
-      <AnimatedCursor
-        color="140, 120, 81"
-        outerSize={32}
-        outerScale={2}
-        
-        clickables={[
-          'a',
-          'button',
-          'input[type="checkbox"]',
-        ]}
-      />
+      {showCursor && (
+        <AnimatedCursor
+          color="140, 120, 81"
+          outerSize={32}
+          outerScale={2}
+          clickables={["a", "button", 'input[type="checkbox"]']}
+        />
+      )}
       <header className="mocssa-header">
         <h1 className="title">MoCSSA</h1>
         <div className="hr"></div>
