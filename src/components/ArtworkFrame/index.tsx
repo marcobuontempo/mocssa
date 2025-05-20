@@ -1,8 +1,8 @@
-import { ReactNode, useEffect, useRef, useState } from 'react'
-import styles from './styles.module.css'
-import ArtworkContainer from '../ArtworkContainer'
-import ArtworkModal from '../ArtworkModal'
-import { ArtworkCategories } from '../../types/artworkCategoryTypes';
+import { ReactNode, useEffect, useRef, useState } from "react";
+import styles from "./styles.module.css";
+import ArtworkContainer from "../ArtworkContainer";
+import ArtworkModal from "../ArtworkModal";
+import { ArtworkCategories } from "../../types/artworkCategoryTypes";
 
 type Props = {
   children: ReactNode;
@@ -11,7 +11,7 @@ type Props = {
   creator: string;
   categories: ArtworkCategories;
   ghSrc: string;
-}
+};
 
 export default function ArtworkFrame({
   children: artwork,
@@ -25,7 +25,9 @@ export default function ArtworkFrame({
   const containerRef = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(1);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [isRendered, setIsRendered] = useState(false);
 
+  // Scale artworks down for screens smaller than artwork size
   useEffect(() => {
     function updateScale() {
       const availableWidth = window.innerWidth;
@@ -34,8 +36,20 @@ export default function ArtworkFrame({
     }
 
     updateScale();
-    window.addEventListener('resize', updateScale);
-    return () => window.removeEventListener('resize', updateScale);
+    window.addEventListener("resize", updateScale);
+    return () => window.removeEventListener("resize", updateScale);
+  }, []);
+
+  // "Lazy-load" - render and animate only when within 1000px of view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsRendered((entry.isIntersecting || entry.intersectionRatio > 0));
+      },
+      { rootMargin: "1000px" } // load when 1000px away
+    );
+
+    if (containerRef.current) observer.observe(containerRef.current);
   }, []);
 
   if (modalIsOpen) {
@@ -50,29 +64,40 @@ export default function ArtworkFrame({
         isOpen={modalIsOpen}
         setIsOpen={setModalIsOpen}
       />
-    )
-  }
-  else {
+    );
+  } else {
     return (
-      <div 
-      className={styles.frame} 
-      ref={containerRef}
-      style={{
-        width: `${originalWidth}px`,
-        height: `${originalWidth}px`,
-        minWidth: `${originalWidth}px`,
-        minHeight: `${originalWidth}px`,
-        transform: `scale(${scale})`,
-      }}>
-        <ArtworkContainer>
-          {artwork}
-        </ArtworkContainer>
-        <button className={styles.information} onClick={() => setModalIsOpen(true)}>
-          <h2 className={styles.title}>{title}</h2> <p className={styles.creator}>by {creator} </p>
-          <img className={styles.popout} src='/svg/popout.svg' alt='Open Details' height={512} width={512} />
-        </button>
+      <div
+        className={`${styles.frame} ${!isRendered ? styles.paused : ""}`}
+        ref={containerRef}
+        style={{
+          width: `${originalWidth}px`,
+          height: `${originalWidth}px`,
+          minWidth: `${originalWidth}px`,
+          minHeight: `${originalWidth}px`,
+          transform: `scale(${scale})`,
+        }}
+      >
+        {isRendered && (
+          <>
+            <ArtworkContainer>{artwork}</ArtworkContainer>
+            <button
+              className={styles.information}
+              onClick={() => setModalIsOpen(true)}
+            >
+              <h3 className={styles.title}>{title}</h3>{" "}
+              <p className={styles.creator}>by {creator} </p>
+              <img
+                className={styles.popout}
+                src="/svg/popout.svg"
+                alt="Open Details Symbol"
+                height={12}
+                width={12}
+              />
+            </button>
+          </>
+        )}
       </div>
-    )
+    );
   }
-
 }
