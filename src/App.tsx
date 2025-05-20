@@ -43,9 +43,17 @@ function App() {
     <>
       {showCursor && (
         <AnimatedCursor
-          color="140, 120, 81"
-          outerSize={32}
+          innerSize={8}
+          outerSize={35}
+          innerScale={1}
           outerScale={2}
+          outerAlpha={0}
+          innerStyle={{
+            backgroundColor: "var(--accent-colour)",
+          }}
+          outerStyle={{
+            border: "3px solid var(--accent-colour)",
+          }}
           clickables={["a", "button", 'input[type="checkbox"]']}
         />
       )}

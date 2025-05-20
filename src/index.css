@@ -65,6 +65,16 @@
   right: 0.2rem;
   height: 2rem;
   width: 2rem;
+  border-radius: 5px;
+  background: var(--text-colour);
+  transition: background-color 600ms ease-in-out;
+}
+
+.dark .mocssa-header .theme-toggle:hover {
+  filter: brightness(0.8);
+}
+.mocssa-header .theme-toggle:hover {
+  filter: brightness(1.5);
 }
 
 .mocssa-header .hr {
