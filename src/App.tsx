@@ -3,7 +3,7 @@ import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
 import AnimatedCursor from "react-animated-cursor";
 import { isTouchDevice } from "./utils/isTouchDevice";
-import FilterDisplay from "./components/FilterDisplay";
+import FilterForm from "./components/FilterForm";
 
 function App() {
   const [showCursor, setShowCursor] = useState(false);
@@ -56,8 +56,10 @@ function App() {
           outerAlpha={0}
           innerStyle={{
             backgroundColor: "var(--accent-colour)",
+            mixBlendMode: "exclusion",
           }}
           outerStyle={{
+            backgroundColor: "rgba(255,255,255,0.33)",
             border: "3px solid var(--accent-colour)",
           }}
           clickables={["a", "button", 'input[type="checkbox"]']}
@@ -97,7 +99,7 @@ function App() {
           <button className="filter-button" onClick={toggleFilterDisplay}>
             Filter Options →
           </button>
-          {isFilterVisible && <FilterDisplay />}
+          {isFilterVisible && <FilterForm />}
         </div>
       </header>
 
