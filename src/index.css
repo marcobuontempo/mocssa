@@ -19,7 +19,7 @@
 }
 
 .mocssa-header {
-  text: var(--text-colour);
+  color: var(--text-colour);
   text-align: center;
 }
 

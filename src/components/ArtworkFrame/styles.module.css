@@ -2,11 +2,6 @@
   position: relative;
 }
 
-.paused *, .paused *::before, .paused *::after {
-  animation-play-state: paused !important;
-  transition: none !important;
-}
-
 .frame:hover > .information {
   visibility: visible;
 }

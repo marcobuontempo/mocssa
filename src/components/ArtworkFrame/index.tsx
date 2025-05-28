@@ -40,17 +40,17 @@ export default function ArtworkFrame({
     return () => window.removeEventListener("resize", updateScale);
   }, []);
 
-  // "Lazy-load" - render and animate only when within 1000px of view
+  // "Lazy-load" - render and animate only when within 1400px of view
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsRendered((entry.isIntersecting || entry.intersectionRatio > 0));
       },
-      { rootMargin: "1000px" } // load when 1000px away
+      { rootMargin: "1400px" } // load when 1400px away
     );
 
     if (containerRef.current) observer.observe(containerRef.current);
-  }, []);
+  }, [modalIsOpen]);
 
   if (modalIsOpen) {
     return (
@@ -68,7 +68,7 @@ export default function ArtworkFrame({
   } else {
     return (
       <div
-        className={`${styles.frame} ${!isRendered ? styles.paused : ""}`}
+        className={styles.frame}
         ref={containerRef}
         style={{
           width: `${originalWidth}px`,

@@ -57,7 +57,7 @@ export default function ArtworkModal({
         <div>
           <p className={styles.category_title}>categories:</p>
           <ul className={styles.categories}>
-            {categories.map(category => <li>{category}</li>)}
+            {categories.map(category => <li key={category}>{category}</li>)}
           </ul>
         </div>
         <a className={styles.github} href={`https://github.com/marcobuontempo/mocssa/tree/main/src/artworks${ghSrc}`} target='_blank' rel='noreferrer'>GitHub Source Code</a>
