@@ -50,7 +50,14 @@ export default function Header({ darkMode, setDarkMode }: Props) {
         </h1>
       </div>
       <button className={styles.themetoggle} onClick={toggleTheme}>
-        {darkMode ? "☀️" : "🌙"}
+        <img
+          className={styles.themeicon}
+          src={`/svg/${darkMode ? "sun" : "moon"}.svg`}
+          alt="Theme Toggle Button"
+          height={12}
+          width={12}
+        />
+        
       </button>
       <div className={styles.hr}></div>
       <div className={styles.subcontainer}>

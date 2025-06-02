@@ -59,6 +59,17 @@
   filter: brightness(0.8);
 }
 
+.themeicon {
+  height: 16px;
+  width: 16px;
+  filter: brightness(0) saturate(100%) invert(79%) sepia(72%) saturate(1797%) hue-rotate(2deg) brightness(101%) contrast(113%);
+}
+
+:global(.dark) .themeicon {
+  filter: brightness(0) saturate(100%) invert(53%) sepia(90%) saturate(1351%) hue-rotate(359deg) brightness(100%) contrast(108%);
+}
+
+
 .hr {
   margin: 0 2rem;
   border-style: solid;

@@ -85,7 +85,7 @@ export default function ArtworkModal() {
         >
           <span>GitHub Source Code</span>
           <img
-            className={styles.popout}
+            className={styles.linkicon}
             src="/svg/link.svg"
             alt="Open GitHub Source Icon"
             height={12}

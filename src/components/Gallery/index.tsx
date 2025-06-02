@@ -108,11 +108,10 @@ export default function Gallery() {
 
   return (
     <div className={styles.gallery}>
-      {artworks
-        ? artworks.map((mod: ArtworkModule) => (
-            <mod.default key={mod.metadata.title} />
-          ))
-        : "Loading Artworks..."}
+      {artworks &&
+        artworks.map((mod: ArtworkModule) => (
+          <mod.default key={mod.metadata.title} />
+        ))}
     </div>
   );
 }
