@@ -12,7 +12,7 @@ export default function FilterForm() {
     const params = new URLSearchParams();
 
     for (const [name, value] of formData.entries()) {
-      if (name === "sort" && value === "default") continue;
+      if (name === "sort" && value === "featured") continue;
       if (value) params.append(name, value.toString());
     }
 
@@ -67,8 +67,8 @@ export default function FilterForm() {
         <label className={styles.label} htmlFor="artwork-sort-order">
           Sort By
         </label>
-        <select id="artwork-sort-order" name="sort" defaultValue="default">
-          <option value="default">Default</option>
+        <select id="artwork-sort-order" name="sort" defaultValue="featured">
+          <option value="featured">Featured</option>
           <option value="date-ascending">Date Ascending</option>
           <option value="date-descending">Date Descending</option>
           <option value="title-ascending">Title Ascending</option>

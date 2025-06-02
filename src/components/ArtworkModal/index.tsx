@@ -1,4 +1,4 @@
-import { MouseEvent, useEffect, useState } from "react";
+import { MouseEvent, ReactElement, useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { ArtworkMetadata } from "../../types/artworkMetadataType";
@@ -8,7 +8,7 @@ export default function ArtworkModal() {
   const location = useLocation();
   const navigate = useNavigate();
   const { artworkSourceURL } = useParams();
-  const [artwork, setArtwork] = useState<JSX.Element | null>(null);
+  const [artwork, setArtwork] = useState<ReactElement | null>(null);
   const [metadata, setMetadata] = useState<ArtworkMetadata | null>(null);
 
   // Dynamically import the necessary artwork component
@@ -83,7 +83,14 @@ export default function ArtworkModal() {
           target="_blank"
           rel="noreferrer"
         >
-          GitHub Source Code
+          <span>GitHub Source Code</span>
+          <img
+            className={styles.popout}
+            src="/svg/link.svg"
+            alt="Open GitHub Source Icon"
+            height={12}
+            width={12}
+          />
         </a>
       </div>
     </div>

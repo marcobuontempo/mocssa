@@ -108,3 +108,7 @@
 .github:hover {
   color: var(--text-colour);
 }
+
+.github span {
+  padding-right: 1ch;
+}
