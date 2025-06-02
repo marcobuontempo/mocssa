@@ -1,35 +1,64 @@
-import { useEffect, useState } from "react";
+import { MouseEvent, useEffect, useState } from "react";
 import styles from "./styles.module.css";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { ArtworkMetadata } from "../../types/artworkMetadataType";
+import ArtworkFrame from "../ArtworkFrame";
 
 export default function ArtworkModal() {
-  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
   const navigate = useNavigate();
+  const { artworkSourceURL } = useParams();
+  const [artwork, setArtwork] = useState<JSX.Element | null>(null);
+  const [metadata, setMetadata] = useState<ArtworkMetadata | null>(null);
 
-  const closeModal = () => {
-    navigate(-1);
-    setIsOpen(false);
-  }
+  useEffect(() => {
+    if (!artworkSourceURL) return;
 
-  if (!isOpen) return null;
+    import(`../../artworks/${artworkSourceURL}/index.tsx`)
+      .then((module) => {
+        setArtwork(() => module.artwork);
+        setMetadata(() => module.metadata);
+      })
+      .catch(() => {
+        setArtwork(null);
+        setMetadata(null);
+        navigate("/");
+      });
+  }, [artworkSourceURL]);
 
+  const handleCloseModal = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    const backgroundLocation = location.state?.backgroundLocation as
+      | Location
+      | undefined;
+
+    if (backgroundLocation) {
+      navigate(-1); // go back to where we came from
+    } else {
+      navigate("/"); // fallback if user came directly to /artwork/:artworkSourceURL
+    }
+  };
+
+  if (!artwork || !metadata) return null;
   return (
-    <div className={styles.modal} style={{ display: isOpen ? "flex" : "" }}>
-      MODAL
-      <button className={styles.exit} onClick={() => closeModal()}>
+    <div className={styles.modal}>
+      <button className={styles.exit} onClick={handleCloseModal}>
         <img src="/svg/xmark.svg" alt="Close Modal" height={48} width={48} />
       </button>
-      {/* <div className={styles.header}>
-        <h2 className={styles.title}>{title}</h2>
-        <h3 className={styles.creator}>by {creator}</h3>
+      <div className={styles.header}>
+        <h2 className={styles.title}>{metadata.title}</h2>
+        <h3 className={styles.creator}>by {metadata.creator}</h3>
       </div>
-      <ArtworkContainer>{artwork}</ArtworkContainer>
+
+      <ArtworkFrame>{artwork}</ArtworkFrame>
+
       <div className={styles.information}>
-        <p className={styles.attribution}>{attribution}</p>
+        <p className={styles.attribution}>{metadata.attribution}</p>
         <div>
           <p className={styles.category_title}>categories:</p>
           <ul className={styles.categories}>
-            {categories.map((category) => (
+            {metadata.categories.map((category) => (
               <li
                 key={category}
                 className={styles[`${category.split(" ").join("")}`]}
@@ -41,13 +70,13 @@ export default function ArtworkModal() {
         </div>
         <a
           className={styles.github}
-          href={`https://github.com/marcobuontempo/mocssa/tree/main/src/artworks/${sourceURL}`}
+          href={`https://github.com/marcobuontempo/mocssa/tree/main/src/artworks/${artworkSourceURL}`}
           target="_blank"
           rel="noreferrer"
         >
           GitHub Source Code
         </a>
-      </div> */}
+      </div>
     </div>
   );
 }

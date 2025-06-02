@@ -1,22 +1,30 @@
-import ArtworkFrame from '../../components/ArtworkFrame'
-import styles from './styles.module.css'
+import ArtworkFrame from "../../components/ArtworkFrame";
+import { ArtworkMetadata } from "../../types/artworkMetadataType";
+import metadataRaw from "./metadata.json";
+import styles from "./styles.module.css";
 
-const currentFolder = new URL('.', import.meta.url).pathname;
+const currentFolder = new URL(".", import.meta.url).pathname;
 const paths = currentFolder.split("/");
 const sourceURL = paths[paths.length - 2];
+
+export const metadata: ArtworkMetadata = metadataRaw as ArtworkMetadata;
+
+export const artwork = (
+  <>
+    <div className={styles.artwork}>
+      {"Fatal Error!\n\n    OK"}
+    </div>
+  </>
+);
 
 export default function Cursor() {
   return (
     <ArtworkFrame
-      title='Cursor'
-      attribution='Inspired by Windows98'
-      creator='Marco Buontempo'
-      categories={['one div', 'animated']}
+      title={metadata.title}
+      creator={metadata.creator}
       sourceURL={sourceURL}
     >
-      <div className={styles.artwork}>
-        {"Fatal Error!\n\n    OK"}
-      </div>
+      {artwork}
     </ArtworkFrame>
   )
 }

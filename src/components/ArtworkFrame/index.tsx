@@ -1,24 +1,19 @@
 import { ReactNode, useEffect, useRef, useState } from "react";
 import styles from "./styles.module.css";
 import ArtworkContainer from "../ArtworkContainer";
-import { ArtworkCategories } from "../../types/artworkCategoryTypes";
 import { Link, useLocation } from "react-router-dom";
 
 type Props = {
   children: ReactNode;
-  title: string;
-  attribution: string;
-  creator: string;
-  categories: ArtworkCategories;
-  sourceURL: string;
+  title?: string;
+  creator?: string;
+  sourceURL?: string;
 };
 
 export default function ArtworkFrame({
   children: artwork,
   title,
-  attribution,
   creator,
-  categories,
   sourceURL,
 }: Props) {
   const originalWidth = 350;
@@ -67,21 +62,23 @@ export default function ArtworkFrame({
       {isRendered && (
         <>
           <ArtworkContainer>{artwork}</ArtworkContainer>
-          <Link
-            to={`/artwork/${sourceURL}`}
-            className={styles.information}
-            state={{ backgroundLocation: location }}
-          >
-            <h3 className={styles.title}>{title}</h3>{" "}
-            <p className={styles.creator}>by {creator}</p>
-            <img
-              className={styles.popout}
-              src="/svg/popout.svg"
-              alt="Open Artwork Details Icon"
-              height={12}
-              width={12}
-            />
-          </Link>
+          {(title && creator && sourceURL) && (
+            <Link
+              to={`/artwork/${sourceURL}`}
+              className={styles.information}
+              state={{ backgroundLocation: location }}
+            >
+              <h3 className={styles.title}>{title}</h3>{" "}
+              <p className={styles.creator}>by {creator}</p>
+              <img
+                className={styles.popout}
+                src="/svg/popout.svg"
+                alt="Open Artwork Details Icon"
+                height={12}
+                width={12}
+              />
+            </Link>
+          )}
         </>
       )}
     </div>
