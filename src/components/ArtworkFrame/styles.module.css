@@ -42,4 +42,5 @@
 .creator {
   font-style: italic;
   white-space: pre;
+  padding-right: 1ch;
 }

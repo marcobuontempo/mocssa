@@ -1,6 +1,10 @@
 import ArtworkFrame from '../../components/ArtworkFrame'
 import styles from './styles.module.css'
 
+const currentFolder = new URL('.', import.meta.url).pathname;
+const paths = currentFolder.split("/");
+const sourceURL = paths[paths.length - 2];
+
 export default function index() {
   return (
     <ArtworkFrame
@@ -8,7 +12,7 @@ export default function index() {
       attribution='Inspired by The Great Wave off Kanagawa, designed by Katsushika Hokusai'
       creator='Marco Buontempo'
       categories={['one div', 'pixel art', 'animated']}
-      ghSrc='/GreatWave'
+      sourceURL={sourceURL}
     >
       <div className={styles.artwork} />
     </ArtworkFrame>

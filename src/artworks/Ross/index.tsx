@@ -1,6 +1,10 @@
 import ArtworkFrame from '../../components/ArtworkFrame'
 import styles from './styles.module.css'
 
+const currentFolder = new URL('.', import.meta.url).pathname;
+const paths = currentFolder.split("/");
+const sourceURL = paths[paths.length - 2];
+
 export default function index() {
   return (
     <ArtworkFrame
@@ -8,7 +12,7 @@ export default function index() {
       attribution='Inspired by generic grey alien'
       creator='Marco Buontempo'
       categories={['one div']}
-      ghSrc='/Ross'
+      sourceURL={sourceURL}
     >
       <div className={styles.artwork} />
     </ArtworkFrame>

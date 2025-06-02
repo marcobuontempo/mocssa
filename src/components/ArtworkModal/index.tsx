@@ -9,7 +9,7 @@ type Props = {
   attribution: string;
   creator: string;
   categories: ArtworkCategories;
-  ghSrc: string;
+  sourceURL: string;
   isOpen: boolean;
   setIsOpen: Dispatch<boolean>;
 }
@@ -20,7 +20,7 @@ export default function ArtworkModal({
   attribution,
   creator,
   categories,
-  ghSrc,
+  sourceURL,
   isOpen,
   setIsOpen,
 }: Props) {
@@ -60,7 +60,7 @@ export default function ArtworkModal({
             {categories.map(category => <li key={category}>{category}</li>)}
           </ul>
         </div>
-        <a className={styles.github} href={`https://github.com/marcobuontempo/mocssa/tree/main/src/artworks${ghSrc}`} target='_blank' rel='noreferrer'>GitHub Source Code</a>
+        <a className={styles.github} href={`https://github.com/marcobuontempo/mocssa/tree/main/src/artworks/${sourceURL}`} target='_blank' rel='noreferrer'>GitHub Source Code</a>
       </div>
     </div>
   )

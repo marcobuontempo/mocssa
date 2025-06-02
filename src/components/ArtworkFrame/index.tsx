@@ -10,7 +10,7 @@ type Props = {
   attribution: string;
   creator: string;
   categories: ArtworkCategories;
-  ghSrc: string;
+  sourceURL: string;
 };
 
 export default function ArtworkFrame({
@@ -19,7 +19,7 @@ export default function ArtworkFrame({
   attribution,
   creator,
   categories,
-  ghSrc,
+  sourceURL,
 }: Props) {
   const originalWidth = 350;
   const containerRef = useRef<HTMLDivElement>(null);
@@ -48,7 +48,7 @@ export default function ArtworkFrame({
       },
       { rootMargin: "1400px" } // load when 1400px away
     );
-
+    
     if (containerRef.current) observer.observe(containerRef.current);
   }, [modalIsOpen]);
 
@@ -60,7 +60,7 @@ export default function ArtworkFrame({
         attribution={attribution}
         creator={creator}
         categories={categories}
-        ghSrc={ghSrc}
+        sourceURL={sourceURL}
         isOpen={modalIsOpen}
         setIsOpen={setModalIsOpen}
       />
@@ -86,11 +86,11 @@ export default function ArtworkFrame({
               onClick={() => setModalIsOpen(true)}
             >
               <h3 className={styles.title}>{title}</h3>{" "}
-              <p className={styles.creator}>by {creator} </p>
+              <p className={styles.creator}>by {creator}</p>
               <img
                 className={styles.popout}
                 src="/svg/popout.svg"
-                alt="Open Details Symbol"
+                alt="Open Artwork Details Icon"
                 height={12}
                 width={12}
               />

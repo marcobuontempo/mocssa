@@ -82,6 +82,10 @@ const toPascalCase = str =>
   const tsxContent = `import ArtworkFrame from '../../components/ArtworkFrame'
     import styles from './styles.module.css'
 
+    const currentFolder = new URL('.', import.meta.url).pathname;
+    const paths = currentFolder.split("/");
+    const sourceURL = paths[paths.length - 2];
+
     export default function index() {
       return (
         <ArtworkFrame
@@ -89,7 +93,7 @@ const toPascalCase = str =>
           attribution='${attribution}'
           creator='${creatorName}'
           categories={[${categories.map(w => `'${w}'`).join(', ')}]}
-          ghSrc='/${componentName}'
+          sourceURL={sourceURL}
         >
           <div className={styles.artwork} />
         </ArtworkFrame>
