@@ -5,7 +5,7 @@ const currentFolder = new URL('.', import.meta.url).pathname;
 const paths = currentFolder.split("/");
 const sourceURL = paths[paths.length - 2];
 
-export default function index() {
+export default function StickyBanana() {
   return (
     <ArtworkFrame
       title='Sticky Banana'

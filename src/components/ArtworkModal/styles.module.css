@@ -47,7 +47,6 @@
   font-weight: bold;
   padding-bottom: 5px;
   font-size: 50px;
-  word-wrap: wrap;
 }
 
 .creator {
@@ -76,6 +75,27 @@
   display: flex;
   gap: 15px;
   justify-content: space-around;
+}
+
+.categories li {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.categories .animated {
+  text-decoration-color: yellow;
+}
+
+.categories .interactive {
+  text-decoration-color: green;
+}
+
+.categories .onediv {
+  text-decoration-color: blue;
+}
+
+.categories .pixelart {
+  text-decoration-color: pink;
 }
 
 .github {

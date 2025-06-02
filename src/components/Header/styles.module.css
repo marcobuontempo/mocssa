@@ -1,0 +1,97 @@
+.header {
+  color: var(--text-colour);
+  text-align: center;
+}
+
+.titlecontainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.title {
+  font-family: "Playfair", serif;
+  font-size: 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+}
+
+
+.acronym {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.fade {
+  animation-fill-mode: both;
+  font-size: 0.8em;
+  transition: font-size 1000ms ease-in-out;
+}
+
+.shrink .fade {
+  font-size: 0em;
+}
+
+.title:hover .fade {
+  font-size: 0.8em;
+}
+
+.themetoggle {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 5px;
+  background: var(--text-colour);
+  transition: background-color 600ms ease-in-out;
+}
+
+.themetoggle:hover {
+  filter: brightness(1.5);
+}
+
+:global(.dark) .themetoggle:hover {
+  filter: brightness(0.8);
+}
+
+.hr {
+  margin: 0 2rem;
+  border-style: solid;
+  border-top-width: 1px;
+  border-color: var(--accent-colour);
+}
+
+.subcontainer {
+  padding: 2rem;
+}
+
+.subheading {
+  font-family: "Playfair", serif;
+  font-size: 2.25rem;
+  text-transform: uppercase;
+}
+
+.info {
+  padding: 1.5rem 2rem;
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+}
+
+
+.filterbutton {
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  color: var(--accent-colour);
+  font-size: 1rem;
+  transition: font-weight 300ms ease-in-out;
+}
+
+.filterbutton:hover {
+  font-weight: bold;
+}

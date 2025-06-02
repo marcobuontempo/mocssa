@@ -1,8 +1,8 @@
 import { ReactNode, useEffect, useRef, useState } from "react";
 import styles from "./styles.module.css";
 import ArtworkContainer from "../ArtworkContainer";
-import ArtworkModal from "../ArtworkModal";
 import { ArtworkCategories } from "../../types/artworkCategoryTypes";
+import { Link, useLocation } from "react-router-dom";
 
 type Props = {
   children: ReactNode;
@@ -23,8 +23,8 @@ export default function ArtworkFrame({
 }: Props) {
   const originalWidth = 350;
   const containerRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
   const [scale, setScale] = useState(1);
-  const [modalIsOpen, setModalIsOpen] = useState(false);
   const [isRendered, setIsRendered] = useState(false);
 
   // Scale artworks down for screens smaller than artwork size
@@ -44,60 +44,46 @@ export default function ArtworkFrame({
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsRendered((entry.isIntersecting || entry.intersectionRatio > 0));
+        setIsRendered(entry.isIntersecting || entry.intersectionRatio > 0);
       },
       { rootMargin: "1400px" } // load when 1400px away
     );
-    
-    if (containerRef.current) observer.observe(containerRef.current);
-  }, [modalIsOpen]);
 
-  if (modalIsOpen) {
-    return (
-      <ArtworkModal
-        artwork={artwork}
-        title={title}
-        attribution={attribution}
-        creator={creator}
-        categories={categories}
-        sourceURL={sourceURL}
-        isOpen={modalIsOpen}
-        setIsOpen={setModalIsOpen}
-      />
-    );
-  } else {
-    return (
-      <div
-        className={styles.frame}
-        ref={containerRef}
-        style={{
-          width: `${originalWidth}px`,
-          height: `${originalWidth}px`,
-          minWidth: `${originalWidth}px`,
-          minHeight: `${originalWidth}px`,
-          transform: `scale(${scale})`,
-        }}
-      >
-        {isRendered && (
-          <>
-            <ArtworkContainer>{artwork}</ArtworkContainer>
-            <button
-              className={styles.information}
-              onClick={() => setModalIsOpen(true)}
-            >
-              <h3 className={styles.title}>{title}</h3>{" "}
-              <p className={styles.creator}>by {creator}</p>
-              <img
-                className={styles.popout}
-                src="/svg/popout.svg"
-                alt="Open Artwork Details Icon"
-                height={12}
-                width={12}
-              />
-            </button>
-          </>
-        )}
-      </div>
-    );
-  }
+    if (containerRef.current) observer.observe(containerRef.current);
+  }, []);
+
+  return (
+    <div
+      className={styles.frame}
+      ref={containerRef}
+      style={{
+        width: `${originalWidth}px`,
+        height: `${originalWidth}px`,
+        minWidth: `${originalWidth}px`,
+        minHeight: `${originalWidth}px`,
+        transform: `scale(${scale})`,
+      }}
+    >
+      {isRendered && (
+        <>
+          <ArtworkContainer>{artwork}</ArtworkContainer>
+          <Link
+            to={`/artwork/${sourceURL}`}
+            className={styles.information}
+            state={{ backgroundLocation: location }}
+          >
+            <h3 className={styles.title}>{title}</h3>{" "}
+            <p className={styles.creator}>by {creator}</p>
+            <img
+              className={styles.popout}
+              src="/svg/popout.svg"
+              alt="Open Artwork Details Icon"
+              height={12}
+              width={12}
+            />
+          </Link>
+        </>
+      )}
+    </div>
+  );
 }

@@ -3,12 +3,11 @@ import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
 import AnimatedCursor from "react-animated-cursor";
 import { isTouchDevice } from "./utils/isTouchDevice";
-import FilterForm from "./components/FilterForm";
+import ArtworkModal from "./components/ArtworkModal";
+import Header from "./components/Header";
 
 function App() {
   const [showCursor, setShowCursor] = useState(false);
-  const [shrunkTitle, setShrunkTitle] = useState(false);
-  const [isFilterVisible, setIsFilterVisible] = useState(false);
   const [darkMode, setDarkMode] = useState(() => {
     // Load initial theme from localStorage or system preference
     const saved = localStorage.getItem("theme");
@@ -23,27 +22,11 @@ function App() {
     }
   }, []);
 
-  // Animate title
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setShrunkTitle(true);
-    }, 2000); // delay before shrinking
-    return () => clearTimeout(timeout);
-  }, []);
-
   // Apply dark mode class to <body>
   useEffect(() => {
     document.body.classList.toggle("dark", darkMode);
     localStorage.setItem("theme", darkMode ? "dark" : "light");
   }, [darkMode]);
-
-  const toggleTheme = () => {
-    setDarkMode((prev) => !prev);
-  };
-
-  const toggleFilterDisplay = () => {
-    setIsFilterVisible((prev) => !prev);
-  };
 
   return (
     <>
@@ -65,46 +48,12 @@ function App() {
           clickables={["a", "button", 'input[type="checkbox"]']}
         />
       )}
-      <header className="mocssa-header">
-        <div className="title-container">
-          <h1 className={`title ${shrunkTitle ? "shrink" : ""}`}>
-            <div>
-              <span className="acronym">M</span>
-              <span className="fade">useum&nbsp;</span>
-            </div>
-            <div>
-              <span className="acronym">o</span>
-              <span className="fade">f&nbsp;</span>
-            </div>
-            <div>
-              <span className="acronym">CSS</span>
-              <span className="fade">&nbsp;</span>
-            </div>
-            <div>
-              <span className="acronym">A</span>
-              <span className="fade">rt</span>
-            </div>
-          </h1>
-        </div>
-        <button className="theme-toggle" onClick={toggleTheme}>
-          {darkMode ? "☀️" : "🌙"}
-        </button>
-        <div className="hr"></div>
-        <div className="subcontainer">
-          <h2 className="subheading">CSS Artworks</h2>
-          <p className="info">
-            A collection of artwork creations made with only HTML and CSS.
-            Exploring CSS as a medium for artistic expression.
-          </p>
-          <button className="filter-button" onClick={toggleFilterDisplay}>
-            Filter Options →
-          </button>
-          {isFilterVisible && <FilterForm />}
-        </div>
-      </header>
+
+      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
 
       <main>
         <Gallery />
+        <ArtworkModal />
       </main>
 
       <Footer />

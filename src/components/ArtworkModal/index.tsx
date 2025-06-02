@@ -1,67 +1,53 @@
-import { Dispatch, ReactNode, useEffect } from 'react';
-import styles from './styles.module.css'
-import ArtworkContainer from '../ArtworkContainer'
-import { ArtworkCategories } from '../../types/artworkCategoryTypes';
+import { useEffect, useState } from "react";
+import styles from "./styles.module.css";
+import { useLocation, useNavigate } from "react-router-dom";
 
-type Props = {
-  artwork: ReactNode;
-  title: string;
-  attribution: string;
-  creator: string;
-  categories: ArtworkCategories;
-  sourceURL: string;
-  isOpen: boolean;
-  setIsOpen: Dispatch<boolean>;
-}
+export default function ArtworkModal() {
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
-export default function ArtworkModal({
-  artwork,
-  title,
-  attribution,
-  creator,
-  categories,
-  sourceURL,
-  isOpen,
-  setIsOpen,
-}: Props) {
-
-  // Prevent scrolling on main page when the modal is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [isOpen]);
+  const closeModal = () => {
+    navigate(-1);
+    setIsOpen(false);
+  }
 
   if (!isOpen) return null;
 
   return (
-    <div className={styles.modal} style={{ display: isOpen ? 'flex' : '' }}>
-      <button className={styles.exit} onClick={() => setIsOpen(false)}>
-        <img src='/svg/xmark.svg' alt='Close Modal' height={48} width={48} />
+    <div className={styles.modal} style={{ display: isOpen ? "flex" : "" }}>
+      MODAL
+      <button className={styles.exit} onClick={() => closeModal()}>
+        <img src="/svg/xmark.svg" alt="Close Modal" height={48} width={48} />
       </button>
-      <div className={styles.header}>
+      {/* <div className={styles.header}>
         <h2 className={styles.title}>{title}</h2>
         <h3 className={styles.creator}>by {creator}</h3>
       </div>
-      <ArtworkContainer>
-        {artwork}
-      </ArtworkContainer>
+      <ArtworkContainer>{artwork}</ArtworkContainer>
       <div className={styles.information}>
         <p className={styles.attribution}>{attribution}</p>
         <div>
           <p className={styles.category_title}>categories:</p>
           <ul className={styles.categories}>
-            {categories.map(category => <li key={category}>{category}</li>)}
+            {categories.map((category) => (
+              <li
+                key={category}
+                className={styles[`${category.split(" ").join("")}`]}
+              >
+                {category}
+              </li>
+            ))}
           </ul>
         </div>
-        <a className={styles.github} href={`https://github.com/marcobuontempo/mocssa/tree/main/src/artworks/${sourceURL}`} target='_blank' rel='noreferrer'>GitHub Source Code</a>
-      </div>
+        <a
+          className={styles.github}
+          href={`https://github.com/marcobuontempo/mocssa/tree/main/src/artworks/${sourceURL}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub Source Code
+        </a>
+      </div> */}
     </div>
-  )
+  );
 }
