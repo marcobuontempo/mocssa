@@ -6,7 +6,6 @@ import "./index.css";
 import "./reset.css";
 import ArtworkModal from "./components/ArtworkModal/index.tsx";
 import CustomCursor from "./components/CustomCursor/index.tsx";
-import Gallery from "./components/Gallery/index.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -14,7 +13,6 @@ createRoot(document.getElementById("root")!).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route index element={<Gallery />} />
           <Route path="artwork/:artworkSourceURL" element={<ArtworkModal />} />
         </Route>
       </Routes>

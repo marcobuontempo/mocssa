@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { Outlet } from "react-router-dom";
+import Gallery from "./components/Gallery";
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -28,6 +29,7 @@ function App() {
     <>
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <main>
+        <Gallery />
         <Outlet />
       </main>
       <Footer />

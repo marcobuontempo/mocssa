@@ -11,6 +11,7 @@ export default function ArtworkModal() {
   const [artwork, setArtwork] = useState<JSX.Element | null>(null);
   const [metadata, setMetadata] = useState<ArtworkMetadata | null>(null);
 
+  // Dynamically import the necessary artwork component
   useEffect(() => {
     if (!artworkSourceURL) return;
 
@@ -25,6 +26,14 @@ export default function ArtworkModal() {
         navigate("/");
       });
   }, [artworkSourceURL]);
+
+  // Prevent scroll when modal is showing
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
 
   const handleCloseModal = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
