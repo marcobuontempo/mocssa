@@ -5,7 +5,10 @@
   padding: 2rem 1rem;
   margin-top: 2rem;
   background: var(--accent-colour);
-  color: var(--text-colour);
+}
+
+.copyright {
+  color: white;
 }
 
 .links {

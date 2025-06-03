@@ -14,15 +14,17 @@
   /* Light Palette */
   --background-colour: #f0efe9;
   --text-colour: #222124;
-  --accent-colour: #c0a46f;
   
+  /* Default Variables */
+  --accent-colour: #c0a46f;
+
+  /* Default Styles */
   display: flex;
   flex-direction: column;
   min-height: 100dvh;
   font-family: monospace;
   color: var(--text-colour);
   background: var(--background-colour);
-  
   transition: background-color 600ms;
 }
 
@@ -30,7 +32,6 @@
   /* Dark Palette */
   --background-colour: #222124;
   --text-colour: #f0efe9;
-  --accent-colour: #c0a46f;
 }
 
 #root > main {
