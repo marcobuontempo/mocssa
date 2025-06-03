@@ -32,14 +32,20 @@ Thank you for considering contributing to MoCSSA! Follow the steps below to add 
 
 > **Note: for your reference, this script completes the following actions:**
 >  1. creates a folder: `/src/artworks/{ArtworkName}/`
->  2. creates a component: `/src/artworks/{ArtworkName}/index.tsx` (you can edit this file if necessary)
->  3. creates a css file: `/src/artworks/{ArtworkName}/styles.module.css` (this is where you code your CSS art)
->  4. imports and adds the artwork to the `Gallery` component (located at `/src/components/Gallery/index.tsx`)
+>  1. creates a component: `/src/artworks/{ArtworkName}/index.tsx` 
+>     - you can edit this file if necessary. for example, if you need to add html elements, add them into the `const artwork = ...` section
+>  1. creates a css file: `/src/artworks/{ArtworkName}/styles.module.css`
+>     - this is where you can add your CSS rules for the artwork
+>  1. creates a metadata file: `/src/artworks/${ArtworkName}/metadata.json`
+>     - defines the artwork's data, such as title, creator, attribution, & categories. you can update this information if necessary
 
 ## 5. Create Your CSS Design
 
-- Edit your folder's `styles.module.css` file with your custom CSS. The default class is `artwork`. Use pseudo-classes like `artwork::before` or `artwork::after` as needed.
-- Reference any existing artworks in `mocssa/src/artworks` if required!
+- Edit your folder's `styles.module.css` file using your custom CSS. The default defined class is `artwork`. Use pseudo-classes like `artwork::before` or `artwork::after` as needed.
+- If additional HTML `<div>`'s are needed for your art piece, you can simply include these in the `const artwork = ...` section within `index.tsx`.
+- This project uses [CSS Modules](https://github.com/css-modules/css-modules) to prevent conflicting CSS rules between artworks. So keep this in mind when defining custom styles (i.e. `className={styles.myCustomClassName}`).
+- Double-check your `metadata.json` file is correct before submitting your design. If your artwork isn't applicable to any of the pre-existing categories (one div, animated, etc.), simply provide an empty array (i.e. `"categories": []`).
+- If you get stuck on styles and functionality, just reference the code of any existing artworks in `mocssa/src/artworks` if required!
   > **Note:** as per the README, all artworks are 350px \* 350px (as defined by their parent container)
 
 ## 6. Commit Your Changes
@@ -62,3 +68,5 @@ Thank you for considering contributing to MoCSSA! Follow the steps below to add 
 
 - Go to the original repository on GitHub, navigate to the Pull Requests tab, and click New Pull Request
 - Choose your branch and submit the pull request for review
+
+😊

@@ -67,7 +67,9 @@ export default function ArtworkModal() {
         <div>
           <p className={styles.category_title}>categories:</p>
           <ul className={styles.categories}>
-            {metadata.categories.map((category) => (
+            {(!metadata.categories || metadata.categories.length === 0)
+            ? <li>none</li>
+            : metadata.categories.map((category) => (
               <li
                 key={category}
                 className={styles[`${category.split(" ").join("")}`]}

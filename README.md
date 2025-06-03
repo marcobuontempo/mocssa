@@ -35,7 +35,7 @@ Each artwork in MoCSSA follows this structure:
 - **Title** - the title of the piece
 - **Attribution** - Credit to any original artwork that inspired the piece, or otherwise 'Original Design'
 - **Creator** - The name or handle of the CSS Artwork's creator
-- **Categories** - The type of the artwork. These include:
+- **Categories** - The special type of the artwork, if any, including:
   - _One Div: created using only a single html element_
   - _Pixel Art: follows a pixel art design_
   - _Animated: utilises CSS animations_
@@ -91,8 +91,14 @@ A collection of resources that may be useful in creating your CSS artworks:
 - [Secrets of drawing with CSS and a single DIV](https://javascript.plainenglish.io/secrets-of-drawing-with-css-and-a-single-div-ce9930ec9050)
 
 ## Contributing
+This project is open-sourced and accepting contributions. Please refer to the [CONTRIBUTING](CONTRIBUTING.md) file for detailed instructions
 
-This project is open-sourced and accepting contributions. Please refer to [CONTRIBUTING](CONTRIBUTING.md) file for details
+***Or, TLDR***
+1. Clone project locally, & create a new branch to work in
+1. `npm install`
+1. `npm run create-artwork`, & follow the instructions in your terminal
+1. Edit `/src/artworks/{ArtworkName}/styles.module.css` to create your artwork
+1. Commit, push, & submit pull request
 
 ### *Thanks to all contributors!*
 <a href="https://github.com/marcobuontempo/mocssa/graphs/contributors">
