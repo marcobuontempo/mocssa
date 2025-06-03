@@ -86,10 +86,6 @@ import { ArtworkMetadata } from "../../types/artworkMetadataType";
 import metadataRaw from "./metadata.json";
 import styles from "./styles.module.css";
 
-const currentFolder = new URL(".", import.meta.url).pathname;
-const paths = currentFolder.split("/");
-const sourceURL = paths[paths.length - 2];
-
 export const metadata: ArtworkMetadata = metadataRaw as ArtworkMetadata;
 
 export const artwork = (
@@ -103,7 +99,7 @@ export default function ${componentName}() {
     <ArtworkFrame
       title={metadata.title}
       creator={metadata.creator}
-      sourceURL={sourceURL}
+      sourceURL={"${componentName}"}
     >
       {artwork}
     </ArtworkFrame>
@@ -115,13 +111,13 @@ export default function ${componentName}() {
     `.artwork, 
 .artwork::before, 
 .artwork::after {
-/* STYLE YOUR ARTWORK HERE */
-position: absolute;
-margin: auto;
-left: 0;
-top: 0;
-right: 0;
-bottom: 0;
+  /* STYLE YOUR ARTWORK HERE */
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 
   `);

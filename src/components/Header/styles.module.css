@@ -20,6 +20,9 @@
   align-items: baseline;
 }
 
+.titlecontainer *, .subheading, .info {
+  user-select: none;
+}
 
 .acronym {
   text-transform: uppercase;
