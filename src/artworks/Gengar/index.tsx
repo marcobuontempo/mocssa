@@ -1,16 +1,28 @@
-import ArtworkFrame from '../../components/ArtworkFrame'
-import styles from './styles.module.css'
+import ArtworkFrame from "../../components/ArtworkFrame";
+import { ArtworkMetadata } from "../../types/artworkMetadataType";
+import metadataRaw from "./metadata.json";
+import styles from "./styles.module.css";
 
-export default function index() {
+const currentFolder = new URL(".", import.meta.url).pathname;
+const paths = currentFolder.split("/");
+const sourceURL = paths[paths.length - 2];
+
+export const metadata: ArtworkMetadata = metadataRaw as ArtworkMetadata;
+
+export const artwork = (
+  <>
+    <input type='checkbox' className={styles.artwork} aria-label='Gengar toggle' />
+  </>
+);
+
+export default function Gengar() {
   return (
     <ArtworkFrame
-      title='Gengar'
-      attribution='Inspired by Gengar sprite pixel art (origin unknown)'
-      creator='Marco Buontempo'
-      categories={['one div', 'interactive']}
-      ghSrc='/Gengar'
+      title={metadata.title}
+      creator={metadata.creator}
+      sourceURL={sourceURL}
     >
-      <input type='checkbox' className={styles.artwork} aria-label='Gengar toggle' />
+      {artwork}
     </ArtworkFrame>
   )
 }

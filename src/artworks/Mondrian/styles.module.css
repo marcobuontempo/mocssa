@@ -26,10 +26,10 @@
   background-size: 
     100% 100%,
     64% 100%,
-    35% 100%,
+    37% 100%,
     35% 47%,
     47% 100%,
-    34% 100%,
+    33% 100%,
     64% 100%,
     50% 100%
     ;
@@ -37,12 +37,12 @@
   background-position: 
     top 0 left 0,
     top 0 left 0,
-    top 0 right 0,
+    top 0 right -1%,
     top 0 right 0,
     top 0 left 0,
     top 0 left 47%,
     top 0 right 35%,
-    top 0 right 0
+    top 0 right -1%
     ;
 
   background-repeat: no-repeat;

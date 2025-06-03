@@ -8,12 +8,11 @@
   --banana: gold;
   --tape: rgb(122, 122, 122);
   --tape-string: rgb(154, 154, 154);
-  --bg: cornsilk;
+  --bg: var(--background-colour);
 }
 
 /* BANANA & BACKGROUND */
 .artwork {
-  border-radius: 50%;
   background:
     /* BLEMISHES */
     radial-gradient(ellipse 40% 50% at 42.5% 34%, rgba(165, 95, 42, 0.315) 1%, transparent 6%),

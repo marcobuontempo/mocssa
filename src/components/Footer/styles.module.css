@@ -2,11 +2,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid black;
-  height: 50px;
-  padding: 5px;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  background: var(--accent-colour);
+}
+
+.copyright {
+  color: white;
 }
 
 .links {
-  padding: 0px 5px;
+  padding: 0px 0.5rem;
+  color: var(--background-colour);
+}
+
+.links:hover {
+  color: var(--text-colour);
 }

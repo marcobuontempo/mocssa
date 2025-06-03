@@ -1,86 +1,117 @@
-import styles from './styles.module.css'
+import { useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import styles from "./styles.module.css";
+import { curatedOrder } from "./curatedOrder";
+import { ArtworkModule } from "../../types/artworkModuleType";
+import { ArtworkCategory } from "../../types/artworkCategoriesType";
 
-// Artworks
-import Adidas from '../../artworks/Adidas'
-import Almost from '../../artworks/Almost'
-import Amaze from '../../artworks/Amaze'
-import Chrome from '../../artworks/Chrome'
-import Circles from '../../artworks/Circles'
-import Citrus from '../../artworks/Citrus'
-import Contacts from '../../artworks/Contacts'
-import CryptoPunk from '../../artworks/CryptoPunk'
-import CSS from '../../artworks/CSS'
-import Cursor from '../../artworks/Cursor'
-import Droplet from '../../artworks/Droplet'
-import EvilEye from '../../artworks/EvilEye'
-import Gengar from '../../artworks/Gengar'
-import Glass from '../../artworks/Glass'
-import GreatWave from '../../artworks/GreatWave'
-import Grimace from '../../artworks/Grimace'
-import Heart from '../../artworks/Heart'
-import Houndstooth from '../../artworks/Houndstooth'
-import HTML from '../../artworks/HTML'
-import JS from '../../artworks/JS'
-import Maccas from '../../artworks/Maccas'
-import Mondrian from '../../artworks/Mondrian'
-import MWII from '../../artworks/MWII'
-import NoSignal from '../../artworks/NoSignal'
-import Orbit from '../../artworks/Orbit'
-import ParadiseAgain from '../../artworks/ParadiseAgain'
-import Pending from '../../artworks/Pending'
-import Pokeball from '../../artworks/Pokeball'
-import Pong from '../../artworks/Pong'
-import Rook from '../../artworks/Rook'
-import Ross from '../../artworks/Ross'
-import Scenic from '../../artworks/Scenic'
-import Squares from '../../artworks/Squares'
-import StickyBanana from '../../artworks/StickyBanana'
-import Terminal from '../../artworks/Terminal'
-import Tetris from '../../artworks/Tetris'
-import Toyota from '../../artworks/Toyota'
-import Visualiser from '../../artworks/Visualiser'
+// Statically import all Artworks during build time
+const defaultModules = Object.entries(
+  import.meta.glob("../../artworks/*/index.tsx", { eager: true })
+).map(([_path, mod]) => mod) as ArtworkModule[];
+
+// Sort in curated order
+function applyCuratedOrder(modules: ArtworkModule[], curatedTitles: string[]) {
+  const remaining = [...modules]; // copy so we don’t mutate the original
+  const curated = [];
+
+  // Iterate from last to first so earlier items stay at the top
+  for (let i = curatedTitles.length - 1; i >= 0; i--) {
+    const title = curatedTitles[i];
+    const index = remaining.findIndex((mod) => mod.metadata.title === title);
+
+    if (index !== -1) {
+      curated.unshift(remaining.splice(index, 1)[0]); // move to front
+    }
+  }
+
+  return [...curated, ...remaining]; // curated items on top
+}
+
+// Modules list to use. It is now already pre-sorted in curated order
+const modules = applyCuratedOrder(defaultModules, curatedOrder);
 
 export default function Gallery() {
+  const [searchParams] = useSearchParams();
+  const [artworks, setArtworks] = useState<any>(null);
+
+  // Filter the artworks with matching conditions
+  const filterGallery = (artworkModules: ArtworkModule[]) => {
+    const titleParam = searchParams.get("title")?.toLocaleLowerCase();
+    const creatorParam = searchParams.get("creator")?.toLocaleLowerCase();
+    const categoryParams = searchParams.getAll("category");
+
+    const filtered = artworkModules.filter((mod) => {
+      // IF 'title' partially matches
+      if (
+        titleParam &&
+        !mod.metadata.title?.toLocaleLowerCase().includes(titleParam)
+      )
+        return false;
+
+      // IF 'creator' partially matches
+      if (
+        creatorParam &&
+        !mod.metadata.creator?.toLocaleLowerCase().includes(creatorParam)
+      )
+        return false;
+
+      // IF each 'category' matches
+      if (
+        !categoryParams.every((param) =>
+          mod.metadata.categories.includes(param as ArtworkCategory)
+        )
+      )
+        return false;
+
+      return true;
+    });
+
+    return filtered;
+  };
+
+  const sortGallery = (artworkModules: ArtworkModule[]) => {
+    const sortOrder = searchParams.get("sort");
+
+    switch (sortOrder) {
+      case "title-ascending":
+        return artworkModules.sort((a, b) =>
+          a.metadata.title.localeCompare(b.metadata.title)
+        );
+      case "title-descending":
+        return artworkModules.sort((a, b) =>
+          b.metadata.title.localeCompare(a.metadata.title)
+        );
+      case "date-ascending":
+        return artworkModules.sort(
+          (a, b) =>
+            new Date(a.metadata.date).getTime() -
+            new Date(b.metadata.date).getTime()
+        );
+      case "date-descending":
+        return artworkModules.sort(
+          (a, b) =>
+            new Date(b.metadata.date).getTime() -
+            new Date(a.metadata.date).getTime()
+        );
+      default:
+        // "featured", or no sort search param, do NOT need sorting as they come pre-sorted by default
+        return artworkModules;
+    }
+  };
+
+  useEffect(() => {
+    const filtered = filterGallery(modules);
+    const sorted = sortGallery(filtered);
+    setArtworks(sorted);
+  }, [searchParams]);
+
   return (
     <div className={styles.gallery}>
-      <Rook />
-      <Almost />
-      <StickyBanana />
-      <Pong />
-      <Citrus />
-      <Droplet />
-      <GreatWave />
-      <Cursor />
-      <HTML />
-      <JS />
-      <CSS />
-      <Visualiser />
-      <Squares />
-      <Heart />
-      <Terminal />
-      <Grimace />
-      <Houndstooth />
-      <Maccas />
-      <Mondrian />
-      <CryptoPunk />
-      <Adidas />
-      <Amaze />
-      <Toyota />
-      <Pokeball />
-      <Ross />
-      <MWII />
-      <Scenic />
-      <ParadiseAgain />
-      <Orbit />
-      <Glass />
-      <Pending />
-      <Gengar />
-      <Circles />
-      <Contacts />
-      <NoSignal />
-      <Chrome />
-      <Tetris />
-      <EvilEye />
+      {artworks &&
+        artworks.map((mod: ArtworkModule) => (
+          <mod.default key={mod.metadata.title} />
+        ))}
     </div>
-  )
+  );
 }

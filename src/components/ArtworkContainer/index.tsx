@@ -5,7 +5,7 @@ type Props = {
   children: ReactNode;
 }
 
-export default function index({
+export default function ArtworkContainer({
   children
 }: Props) {
   return (

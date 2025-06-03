@@ -18,7 +18,6 @@
 .artwork {
   background: var(--bg);
   appearance: none;
-  cursor: pointer;
 }
 
 .artwork:checked,

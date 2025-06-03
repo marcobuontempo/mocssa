@@ -1,41 +1,39 @@
+.no-theme-transition *, 
+.no-theme-transition *::before, 
+.no-theme-transition *::after {
+  transition: none !important;
+}
+
+.no-touch *,
+.no-touch *::before,
+.no-touch *::after {
+  cursor: none !important;
+}
+
 #root {
-  background-size: 12px 12px;
-  background-image: radial-gradient(
-    ellipse 10% 10% at 50% 50%,
-    silver 20%,
-    cornsilk 75%
-  );
-  background-repeat: repeat;
+  /* Light Palette */
+  --background-colour: #f0efe9;
+  --text-colour: #222124;
+  
+  /* Default Variables */
+  --accent-colour: #c0a46f;
+
+  /* Default Styles */
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
   font-family: monospace;
+  color: var(--text-colour);
+  background: var(--background-colour);
+  transition: background-color 600ms;
 }
 
-.mocssa-title {
-  font-family: "Fascinate Inline", system-ui;
-  font-weight: 400;
-  font-style: normal;
-  text-align: center;
-  font-size: min(6.5em, 20dvw);
-  padding: 10px;
-  background-image: linear-gradient(45deg, turquoise, magenta);
-  background-size: 100%;
-  background-repeat: repeat;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
-  cursor: default;
+.dark #root {
+  /* Dark Palette */
+  --background-colour: #222124;
+  --text-colour: #f0efe9;
 }
 
-.mocssa-note {
-  font-family: monospace;
-  font-size: 0.8rem;
-  text-align: center;
-  font-style: italic;
-  padding-bottom: 1rem;
-}
-
-.mocssa-logo {
-  height: 0.8em;
-  padding: 0px 10px;
-  filter: invert(28%) sepia(46%) saturate(925%) hue-rotate(343deg) brightness(98%) contrast(96%) opacity(0.75);
+#root > main {
+  flex: 1;
 }

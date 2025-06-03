@@ -1,8 +1,5 @@
 .frame {
   position: relative;
-  width: 350px;
-  height: 350px;
-  min-width: 350px;
 }
 
 .frame:hover > .information {
@@ -19,9 +16,12 @@
   margin: 1px 3px;
   word-wrap: wrap;
   text-align: right;
-  z-index: 10;
+  z-index: 50;
+  color: black;
   background: rgba(255, 255, 255, 0.95);
-  cursor: pointer;
+  border: none;
+  font-family: monospace;
+  text-decoration: none;
 }
 
 .information:hover {
@@ -44,4 +44,5 @@
 .creator {
   font-style: italic;
   white-space: pre;
+  padding-right: 1ch;
 }

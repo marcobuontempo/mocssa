@@ -1,54 +1,79 @@
-import { ReactNode, useState } from 'react'
-import styles from './styles.module.css'
-import ArtworkContainer from '../ArtworkContainer'
-import ArtworkModal from '../ArtworkModal'
-import { ArtworkCategories } from '../../types/artworkCategoryTypes';
+import { ReactNode, useEffect, useState } from "react";
+import styles from "./styles.module.css";
+import ArtworkContainer from "../ArtworkContainer";
+import { Link, useLocation } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
 
 type Props = {
   children: ReactNode;
-  title: string;
-  attribution: string;
-  creator: string;
-  categories: ArtworkCategories;
-  ghSrc: string;
-}
+  title?: string;
+  creator?: string;
+  sourceURL?: string;
+};
 
 export default function ArtworkFrame({
   children: artwork,
   title,
-  attribution,
   creator,
-  categories,
-  ghSrc,
+  sourceURL,
 }: Props) {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const originalWidth = 350;
+  const location = useLocation();
+  const [scale, setScale] = useState(1);
 
-  if (modalIsOpen) {
-    return (
-      <ArtworkModal
-        artwork={artwork}
-        title={title}
-        attribution={attribution}
-        creator={creator}
-        categories={categories}
-        ghSrc={ghSrc}
-        isOpen={modalIsOpen}
-        setIsOpen={setModalIsOpen}
-      />
-    )
-  }
-  else {
-    return (
-      <div className={styles.frame}>
-        <ArtworkContainer>
-          {artwork}
-        </ArtworkContainer>
-        <div className={styles.information} onClick={() => setModalIsOpen(true)}>
-          <h2 className={styles.title}>{title}</h2> <p className={styles.creator}>by {creator} </p>
-          <img className={styles.popout} src='/svg/popout.svg' alt='Open Details' height={512} width={512} />
-        </div>
-      </div>
-    )
-  }
+  // Intersection observer hook
+  const { ref, inView } = useInView({
+    rootMargin: "1400px",
+    triggerOnce: false,
+  });
 
+  // Scale artworks down for screens smaller than artwork size
+  useEffect(() => {
+    function updateScale() {
+      const availableWidth = window.innerWidth;
+      const newScale = Math.min(1, availableWidth / originalWidth);
+      setScale(newScale);
+    }
+
+    updateScale();
+    window.addEventListener("resize", updateScale);
+    return () => window.removeEventListener("resize", updateScale);
+  }, []);
+
+  return (
+    <div
+      className={styles.frame}
+      ref={ref}
+      style={{
+        width: `${originalWidth}px`,
+        height: `${originalWidth}px`,
+        minWidth: `${originalWidth}px`,
+        minHeight: `${originalWidth}px`,
+        transform: `scale(${scale})`,
+      }}
+    >
+      {inView && (
+        <>
+          <ArtworkContainer>{artwork}</ArtworkContainer>
+          {title && creator && sourceURL && (
+            <Link
+              to={`/artwork/${sourceURL}/${location.search}`}
+              className={styles.information}
+              state={{ backgroundLocation: location }}
+            >
+              <h3 className={styles.title}>{title}</h3>{" "}
+              <p className={styles.creator}>by {creator}</p>
+              <img
+                className={styles.popout}
+                src="/svg/popout.svg"
+                alt="Open Artwork Details Icon"
+                height={12}
+                width={12}
+              />
+            </Link>
+          )}
+        </>
+      )}
+    </div>
+  );
 }

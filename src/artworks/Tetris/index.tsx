@@ -1,16 +1,28 @@
-import ArtworkFrame from '../../components/ArtworkFrame'
-import styles from './styles.module.css'
+import ArtworkFrame from "../../components/ArtworkFrame";
+import { ArtworkMetadata } from "../../types/artworkMetadataType";
+import metadataRaw from "./metadata.json";
+import styles from "./styles.module.css";
 
-export default function index() {
+const currentFolder = new URL(".", import.meta.url).pathname;
+const paths = currentFolder.split("/");
+const sourceURL = paths[paths.length - 2];
+
+export const metadata: ArtworkMetadata = metadataRaw as ArtworkMetadata;
+
+export const artwork = (
+  <>
+    <div className={styles.artwork}>TETRIS</div>
+  </>
+);
+
+export default function Tetris() {
   return (
     <ArtworkFrame
-      title='Tetris'
-      attribution='Inspired by Tetris videogame, designed by Alexey Pajitnov'
-      creator='Marco Buontempo'
-      categories={['one div', 'animated']}
-      ghSrc='/Tetris'
+      title={metadata.title}
+      creator={metadata.creator}
+      sourceURL={sourceURL}
     >
-      <div className={styles.artwork}>TETRIS</div>
+      {artwork}
     </ArtworkFrame>
   )
 }

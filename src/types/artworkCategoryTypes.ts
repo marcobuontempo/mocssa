@@ -1,1 +1,0 @@
-export type ArtworkCategories = ('one div' | 'pixel art' | 'animated' | 'interactive')[];

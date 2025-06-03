@@ -45,6 +45,7 @@
 
 .artwork::after {
   content: "TOYOTA";
+  color: black;
   text-align: center;
   top: 0;
   bottom: 0;

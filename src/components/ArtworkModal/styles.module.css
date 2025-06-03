@@ -8,24 +8,34 @@
   align-items: center;
   width: 100dvw;
   height: 100dvh;
-  background: rgba(0, 0, 0, 0.99);
-  z-index: 100000;
+  background: var(--background-colour);
+  color: var(--text-colour);
+  z-index: 99;
   padding: 10px;
 }
 
 .header, .information {
   text-align: center;
-  color: white;
 }
 
 .exit {
   display: block;
   position: absolute;
-  top: 0px;
-  right: 10px;
-  height: 3.5em;
-  width: 3.5em;
-  cursor: pointer;
+  top: 0.5rem;
+  right: 0.5rem;
+  height: 3rem;
+  width: 3rem;
+  padding: 0;
+  border: none;
+  background: none;
+  transition: transform 300ms ease-in-out;
+}
+
+.exit:hover {
+  transform: scale(1.1);
+}
+
+:global(.dark) .exit img {
   filter: invert(1);
 }
 
@@ -37,7 +47,6 @@
   font-weight: bold;
   padding-bottom: 5px;
   font-size: 50px;
-  word-wrap: wrap;
 }
 
 .creator {
@@ -54,9 +63,12 @@
   padding: 10px;
 }
 
+.attribution {
+  font-style: italic;
+}
+
 .category_title {
   font-weight: bold;
-  text-decoration: underline;
 }
 
 .categories {
@@ -65,8 +77,43 @@
   justify-content: space-around;
 }
 
+.categories li {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.categories .animated {
+  text-decoration-color: yellow;
+}
+
+.categories .interactive {
+  text-decoration-color: green;
+}
+
+.categories .onediv {
+  text-decoration-color: blue;
+}
+
+.categories .pixelart {
+  text-decoration-color: pink;
+}
+
 .github {
-  background: white;
+  background: var(--accent-colour);
+  color: var(--background-colour);
   font-weight: bold;
   padding: 5px;
+}
+
+.github:hover {
+  color: var(--text-colour);
+}
+
+.github span {
+  padding-right: 1ch;
+}
+
+.linkicon {
+  height: 12px;
+  width: 12px;
 }
