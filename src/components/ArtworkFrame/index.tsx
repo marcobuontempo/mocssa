@@ -1,7 +1,8 @@
-import { ReactNode, useEffect, useRef, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import styles from "./styles.module.css";
 import ArtworkContainer from "../ArtworkContainer";
 import { Link, useLocation } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
 
 type Props = {
   children: ReactNode;
@@ -17,10 +18,14 @@ export default function ArtworkFrame({
   sourceURL,
 }: Props) {
   const originalWidth = 350;
-  const containerRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
   const [scale, setScale] = useState(1);
-  const [isRendered, setIsRendered] = useState(false);
+
+  // Intersection observer hook
+  const { ref, inView } = useInView({
+    rootMargin: "1400px",
+    triggerOnce: false,
+  });
 
   // Scale artworks down for screens smaller than artwork size
   useEffect(() => {
@@ -35,22 +40,10 @@ export default function ArtworkFrame({
     return () => window.removeEventListener("resize", updateScale);
   }, []);
 
-  // "Lazy-load" - render and animate only when within 1400px of view
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsRendered(entry.isIntersecting || entry.intersectionRatio > 0);
-      },
-      { rootMargin: "1400px" } // load when 1400px away
-    );
-
-    if (containerRef.current) observer.observe(containerRef.current);
-  }, []);
-
   return (
     <div
       className={styles.frame}
-      ref={containerRef}
+      ref={ref}
       style={{
         width: `${originalWidth}px`,
         height: `${originalWidth}px`,
@@ -59,10 +52,10 @@ export default function ArtworkFrame({
         transform: `scale(${scale})`,
       }}
     >
-      {isRendered && (
+      {inView && (
         <>
           <ArtworkContainer>{artwork}</ArtworkContainer>
-          {(title && creator && sourceURL) && (
+          {title && creator && sourceURL && (
             <Link
               to={`/artwork/${sourceURL}/${location.search}`}
               className={styles.information}

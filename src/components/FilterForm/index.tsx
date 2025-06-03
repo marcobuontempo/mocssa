@@ -29,7 +29,6 @@ export default function FilterForm() {
     setCreator("");
     setSort("");
     setCategories([]);
-    setSearchParams({});
   };
 
   const toggleCategory = (cat: string) => {
@@ -130,10 +129,10 @@ export default function FilterForm() {
           onChange={(e) => setSort(e.target.value)}
         >
           <option value="featured">Featured</option>
-          <option value="date-ascending">Date Ascending</option>
-          <option value="date-descending">Date Descending</option>
-          <option value="title-ascending">Title Ascending</option>
-          <option value="title-descending">Title Descending</option>
+          <option value="date-ascending">Date (Ascending)</option>
+          <option value="date-descending">Date (Descending)</option>
+          <option value="title-ascending">Title (Ascending)</option>
+          <option value="title-descending">Title (Descending)</option>
         </select>
       </fieldset>
 
