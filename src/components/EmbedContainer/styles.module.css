@@ -1,0 +1,36 @@
+.embedcontainer {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  overflow: hidden;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  z-index: 999;
+}
+
+.title {
+  color: black;
+  background: rgba(255,255,255,0.8);
+  top: 0;
+  left: 0;
+  flex: 1;
+}
+
+.embedlink {
+  bottom: 0;
+  left: 0;
+  color: white;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: flex-end;
+}
+
+.title, .embedlink {
+  padding: 0.2rem;
+}

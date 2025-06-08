@@ -56,7 +56,7 @@ export default function ArtworkModal() {
   const shareMessage = encodeURIComponent(
     `Check out this CSS code-only artwork! "${metadata.title}" by ${metadata.creator} - Museum of CSS Art`
   );
-  const iframeCode = `<iframe src="${currentUrl}" width="350" height="350" frameborder="0" title="CSS Artwork: ${metadata.title}" ></iframe>`;
+  const iframeCode = `<iframe src="${currentUrl.replace("artwork", "embed")}" width="350" height="350" frameborder="0" title="CSS Artwork: ${metadata.title}" ></iframe>`;
 
   return (
     <div className={styles.modal}>

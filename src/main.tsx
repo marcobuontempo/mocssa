@@ -5,16 +5,16 @@ import App from "./App.tsx";
 import "./index.css";
 import "./reset.css";
 import ArtworkModal from "./components/ArtworkModal/index.tsx";
-import CustomCursor from "./components/CustomCursor/index.tsx";
+import EmbedContainer from "./components/EmbedContainer/index.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <CustomCursor />
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="artwork/:artworkSourceURL" element={<ArtworkModal />} />
         </Route>
+        <Route path="/embed/:artworkSourceURL" element={<EmbedContainer />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>

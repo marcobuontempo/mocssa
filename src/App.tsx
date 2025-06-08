@@ -3,6 +3,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { Outlet } from "react-router-dom";
 import Gallery from "./components/Gallery";
+import CustomCursor from "./components/CustomCursor";
 
 function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -14,7 +15,7 @@ function App() {
 
   useEffect(() => {
     const root = document.documentElement;
-    
+
     // Apply dark mode class to <html>
     root.classList.toggle("dark", darkMode);
     localStorage.setItem("theme", darkMode ? "dark" : "light");
@@ -27,6 +28,7 @@ function App() {
 
   return (
     <>
+      <CustomCursor />
       <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <main>
         <Gallery />
