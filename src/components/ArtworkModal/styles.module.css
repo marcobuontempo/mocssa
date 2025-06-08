@@ -4,7 +4,7 @@
   left: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   width: 100dvw;
   height: 100dvh;
@@ -12,6 +12,8 @@
   color: var(--text-colour);
   z-index: 99;
   padding: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .header, .information {
@@ -116,4 +118,46 @@
 .linkicon {
   height: 12px;
   width: 12px;
+}
+
+.iframeinput {
+  border: 2px solid var(--text-colour);
+  border-right: none;
+}
+
+.iframecopy {
+  background: var(--text-colour);
+  border-style: outset;
+}
+
+.iframecopy img {
+  height: 12px;
+  width: 12px;
+  filter: invert(1);
+}
+
+:global(.dark) .iframecopy {
+  border: 2px solid white;
+  background: var(--text-colour);
+}
+
+:global(.dark) .iframecopy img {
+  filter: none;
+}
+
+.iframecopy:active {
+  filter: invert(0.2);
+}
+
+.sharelink {
+  height: 24px;
+  width: 24px;
+}
+
+.sharelink:hover img, .iframecopy:hover img {
+  transform: scale(1.1);
+}
+
+:global(.dark) .sharelink {
+  filter: brightness(0) saturate(100%) invert(92%) sepia(2%) saturate(1856%) hue-rotate(323deg) brightness(110%) contrast(88%);
 }

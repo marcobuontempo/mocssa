@@ -10,6 +10,10 @@
   cursor: none !important;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 #root {
   /* Light Palette */
   --background-colour: #f0efe9;
@@ -19,6 +23,7 @@
   --accent-colour: #c0a46f;
 
   /* Default Styles */
+  position: relative;
   display: flex;
   flex-direction: column;
   min-height: 100dvh;

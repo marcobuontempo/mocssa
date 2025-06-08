@@ -25,7 +25,6 @@
 }
 
 .acronym {
-  text-transform: uppercase;
   font-weight: bold;
 }
 
@@ -45,8 +44,8 @@
 
 .themetoggle {
   position: absolute;
-  top: 0.2rem;
-  right: 0.2rem;
+  top: 0.4rem;
+  right: 0.4rem;
   height: 2rem;
   width: 2rem;
   display: flex;

@@ -6,13 +6,21 @@ Thank you for considering contributing to MoCSSA! Follow the steps below to add 
 
 - Go through the [README](README.md) for details about this repo, including objectives, external resources, and guidelines to follow
 
-## 2. Fork the Repository
+## 2. Fork the Repository and Run Locally
 
 - Fork the repository by clicking the Fork button at the top right of the [repo page](https://github.com/marcobuontempo/mocssa)
 - Clone the forked repository to your local machine:
   ```bash
   git clone https://github.com/your-username/mocssa.git
   cd mocssa
+  ```
+- Install packages
+  ```bash
+  npm install
+  ```
+- Run local development environment. You should now be able to view the live development version locally at `http://localhost:5173/` (or wherever your terminal specifies)
+  ```bash
+  npm run dev
   ```
 
 ## 3. Create a Branch
