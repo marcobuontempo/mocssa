@@ -129,10 +129,10 @@ export default function FilterForm() {
           onChange={(e) => setSort(e.target.value)}
         >
           <option value="featured">Featured</option>
-          <option value="date-ascending">Date (Ascending)</option>
-          <option value="date-descending">Date (Descending)</option>
-          <option value="title-ascending">Title (Ascending)</option>
-          <option value="title-descending">Title (Descending)</option>
+          <option value="date-ascending">Date (Oldest-Newest)</option>
+          <option value="date-descending">Date (Newest-Oldest)</option>
+          <option value="title-ascending">Title (A-Z)</option>
+          <option value="title-descending">Title (Z-A)</option>
         </select>
       </fieldset>
 

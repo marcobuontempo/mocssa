@@ -20,11 +20,15 @@
   border-radius: 50%;
   background: radial-gradient(
       ellipse 100% 100% at 50% 50%,
-      white 0% 8%,
+      white 0% 4.8%,
+      black 4.8% 6%,
+      white 6% 8%,
       black 8% 11%,
       transparent 11% 45%,
       black 45%
     ),
+    radial-gradient(ellipse 100% 110% at 72% 19%, rgba(255,255,255,0.45) 3%, transparent 20%),
+    radial-gradient(ellipse 450% 500% at 50% 28%, transparent 12%, rgb(240, 240, 240) 12%),
     linear-gradient(to bottom, red 0% 47%, black 47% 53%, transparent 53%);
 }
 
@@ -35,11 +39,5 @@
   width: 85%;
   height: 85%;
   border-radius: 50%;
-  background: radial-gradient(
-      ellipse 100% 100% at 50% 50%,
-      transparent 40%,
-      rgba(0, 0, 0, 0.1) 40% 43%,
-      transparent 43%
-    ),
-    radial-gradient(ellipse 100% 100% at 50% 50%, white 45%, transparent 45%);
+  background: radial-gradient(ellipse 100% 100% at 50% 50%, white 45%, transparent 45%);
 }

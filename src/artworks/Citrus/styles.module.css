@@ -7,10 +7,10 @@
   --background-colour: deepskyblue;
   --lime-colour: rgba(0, 255, 0, 0.85);
   --lemon-colour: rgba(255, 255, 0, 0.85);
-  --grapefruit-colour: rgba(235, 30, 235, 0.85);
+  --orange-colour: rgba(255, 165, 0, 0.84);
 }
 
-/* GRAPEFRUIT */
+/* ORANGE SLICE */
 .artwork {
 	width: 100%;
 	height: 100%;
@@ -20,28 +20,28 @@
 	/* SEMI-CIRCLE SHAPE */
 	linear-gradient(
       to top,
-      transparent 47.5%,
+      transparent 47.8%,
       var(--background-colour) 48.5% 100%
     ),
 		/* OUTER SKIN */
-    radial-gradient(ellipse 40% 40% at 40% 52%, transparent 0 63%, var(--grapefruit-colour) 63.5% 67%, var(--background-colour) 67%),
+    radial-gradient(ellipse 40% 40% at 40% 52%, transparent 0 61.8%, var(--orange-colour) 63.5% 67%, var(--background-colour) 67%),
 		/* CIRCULAR OUTER AND INNER PITH */
-    radial-gradient(ellipse 40% 40% at 40% 52%, white 0% 8%, transparent 9.5% 60%, white 60% 67%),
+    radial-gradient(ellipse 40% 40% at 40% 52%, white 0% 8%, transparent 9.5% 58%, white 60.1% 67%, transparent 68%),
 		/* INNER PITH LINES */
     conic-gradient(at 40% 52%,
-      var(--grapefruit-colour) 0% 34.3%,
+      var(--orange-colour) 0% 34.3%,
       white 35%,
-      var(--grapefruit-colour) 35.7% 44.3%,
+      var(--orange-colour) 35.7% 44.3%,
 			white 45%,
-      var(--grapefruit-colour) 45.7% 54.3%,
+      var(--orange-colour) 45.7% 54.3%,
 			white 55%,
-      var(--grapefruit-colour) 55.7% 64.3%,
+      var(--orange-colour) 55.7% 64.3%,
 			white 65%,
-      var(--grapefruit-colour) 65.7% 75%
+      var(--orange-colour) 65.7% 75%
     );
 }
 
-/* LIME */
+/* LIME SLICE */
 .artwork::before {
 	content: "";
 	width: 55%;
@@ -74,7 +74,7 @@
     );
 }
 
-/* LEMON */
+/* LEMON SLICE */
 .artwork::after {
 	content: "";
 	width: 55%;

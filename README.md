@@ -83,9 +83,10 @@ Your gallery should now be running on http://localhost:5173/ (check your termina
 
 ## External Resources
 A collection of resources that may be useful in creating your CSS artworks:
+- [A Single Div - By Lynn Fisher](https://github.com/lynnandtonic/a-single-div)
+- [CSS Generators - By Temani Afif](https://css-generators.com/)
 - [The Shapes of CSS](https://css-tricks.com/the-shapes-of-css/)
 - [Coding Artist - CSS Art Youtube Playlist](https://www.youtube.com/playlist?list=PLNCevxogE3fjFTYBst-r1gvlCMsUSzjEU)
-- [A Single Div](https://github.com/lynnandtonic/a-single-div)
 - [Getting Started With CSS Art](https://dev.to/adriennemiller/getting-started-with-css-art-43b8)
 - [The How and Why of Stunning CSS Art (with Examples)](https://tripleten.com/blog/posts/the-how-and-why-of-stunning-css-art-with-examples)
 - [Secrets of drawing with CSS and a single DIV](https://javascript.plainenglish.io/secrets-of-drawing-with-css-and-a-single-div-ce9930ec9050)
