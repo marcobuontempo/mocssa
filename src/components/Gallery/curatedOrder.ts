@@ -1,6 +1,7 @@
 export const curatedOrder = [
   "Rook",
   "Almost",
+  "Apple",
   "Sticky Banana",
   "Pong",
   "Citrus",
