@@ -1,0 +1,112 @@
+.artwork,
+.artwork::before,
+.artwork::after,
+.filter,
+.filter::before,
+.filter::after {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  --bg: black;
+  --fill: white;
+}
+
+/* Apple - stem */
+.artwork::before {
+  content: "";
+  top: 8.6%;
+  left: 48.9%;
+  bottom: auto;
+  right: auto;
+  width: 18.5%;
+  height: 18.5%;
+  border-radius: 100% 0;
+  background: var(--fill);
+  transform: rotate(-4deg);
+  z-index: 2;
+}
+
+/* Apple - main */
+.artwork::after {
+  content: "";
+  top: 27.5%;
+  left: 14.7%;
+  bottom: auto;
+  right: auto;
+  width: 72.5%;
+  height: 63.3%;
+  background:
+    radial-gradient(ellipse 41.4% 54.8% at 100.9% 38.4%, var(--bg) 50%, transparent 50%),
+    radial-gradient(ellipse 108% 141% at 45.8% 40%, transparent 50%, var(--bg) 50%),
+    radial-gradient(ellipse 109.5% 141% at 54.9% 40%, transparent 50%, var(--bg) 50%),
+    radial-gradient(ellipse 31.4% 40% at 69% 80.1%, var(--fill) 50%, transparent 50%),
+    radial-gradient(ellipse 31.4% 40% at 31% 80.1%, var(--fill) 50%, transparent 50%),
+    radial-gradient(ellipse 10% 10% at 25% 100%, var(--bg) 50%, transparent 50%),
+    radial-gradient(ellipse 10% 10% at 75% 100%, var(--bg) 50%, transparent 50%),
+    radial-gradient(ellipse 58% 75% at 29% 38%, var(--fill) 50%, transparent 50%),
+    radial-gradient(ellipse 62% 80% at 70% 40.2%, var(--fill) 50%, transparent 50%),
+    linear-gradient(to bottom, var(--bg) 0% 3.2%, transparent 3.2% 98.5%, var(--bg) 98.5%),
+    radial-gradient(ellipse 40% 50% at 49% -19%, var(--bg) 50%, var(--fill) 50% 70%, transparent 70%),
+    radial-gradient(ellipse 50.5% 50% at 50.1% 120%, var(--bg) 50%, transparent 50%),
+    linear-gradient(to bottom, var(--bg) 0% 40%, var(--fill) 40%);
+  mix-blend-mode: screen;
+  z-index: 2;
+}
+
+/* Background colours */
+.artwork {
+  background: linear-gradient(
+    to bottom,
+    lawngreen 0%, lawngreen 16.66%,
+    gold 16.66%, gold 33.33%,
+    darkorange 33.33%, darkorange 50%,
+    orangered 50%, orangered 66.66%,
+    darkviolet 66.66%, darkviolet 83.33%,
+    dodgerblue 83.33%, dodgerblue 100%,
+    lawngreen 100%, lawngreen 116.66%,
+    gold 116.66%, gold 133.33%,
+    darkorange 133.33%, darkorange 150%,
+    orangered 150%, orangered 166.66%,
+    darkviolet 166.66%, darkviolet 183.33%,
+    dodgerblue 183.33%, dodgerblue 200%
+  );
+  background-size: 100% 200%;
+  animation: background-shift 60s linear infinite;
+}
+
+@keyframes background-shift {
+  from {
+    background-position: 50% 0%;
+  }
+  to {
+    background-position: 50% 200%;
+  }
+}
+
+/* Soften the edges of the Apple logo using a tiny bit of blur */
+.filter::before {
+  content: "";
+  width: 95%;
+  height: 95%;
+  border-radius: 100%;
+  backdrop-filter: blur(0.5px);
+  z-index: 3;
+}
+
+/* Overlay with "liquid glass" effect */
+.filter::after {
+  content: "";
+  width: 90%;
+  height: 90%;
+  border-radius: 20.5%;
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  border-right: 3px solid rgba(0, 0, 0, 0.09);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(4px);
+  filter: saturate(125%) brightness(1.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1), 0 0 8px rgba(0, 0, 0, 0.25) inset;
+}
