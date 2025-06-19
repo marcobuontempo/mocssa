@@ -1,0 +1,128 @@
+.artwork,
+.triangle, .triangle::before, .triangle::after,
+.circle, .circle::after,
+.cross, .cross::after,
+.square, .square::after {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  --button: rgb(30,30,30);
+  --triangle: lightseagreen;
+  --circle: tomato;
+  --cross: royalblue;
+  --square: plum;
+}
+
+.artwork {
+  background: 
+    linear-gradient(30deg, rgba(0,0,0,0.2), rgba(255,255,255,0.2)),
+    radial-gradient(ellipse 100% 100% at 50% 50%, rgba(0,0,0,0.45) 45%, rgba(0,0,0,0.6) 45% 46%, transparent 47%),
+    darkgrey;
+}
+
+.triangle, .circle, .cross, .square {
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  border: 3px ridge black;
+  background: 
+    radial-gradient(ellipse 270% 80% at 92% 6%, rgba(255,255,255,0.7) 0%, transparent 15%),
+    var(--button);
+  appearance: none;
+  box-shadow:
+    -4px 4px 8px rgba(0, 0, 0, 0.3),
+    0 0 6px rgba(0, 0, 0, 0.1);  
+  transition: box-shadow, border 400ms ease;
+}
+
+.triangle:checked,
+.circle:checked,
+.cross:checked,
+.square:checked {
+  border: 3px groove black;
+  transform: scale(0.96);
+}
+
+.triangle:checked {
+  box-shadow: 0 0 12px 4px var(--triangle);
+}
+.circle:checked {
+  box-shadow: 0 0 12px 4px var(--circle);
+}
+.cross:checked{
+  box-shadow: 0 0 12px 4px var(--cross);
+} 
+.square:checked {
+  box-shadow: 0 0 12px 4px var(--square);
+}
+
+.triangle::after,
+.circle::after,
+.cross::after,
+.square::after {
+  content: "";
+  width: 60%;
+  height: 60%;
+}
+
+.triangle {
+  top: 10%;
+  bottom: auto;
+}
+.triangle::before {
+  content: "";
+  height: 0;
+  width: 0;
+  border-left: 37px solid transparent;
+  border-right: 37px solid transparent;
+  border-bottom: 64px solid var(--triangle);
+  transform: translateY(-10%);
+}
+.triangle::after {
+  height: 0;
+  width: 0;
+  border-left: 22px solid transparent;
+  border-right: 22px solid transparent;
+  border-bottom: 38.1px solid var(--button);
+  transform: translateY(-6%);
+}
+
+.circle {
+  right: 10%;
+  left: auto;
+}
+.circle::after {
+  width: 75%;
+  height: 75%;
+  background:
+    radial-gradient(ellipse 100% 100% at 50% 50%, transparent 0% 37%, var(--circle) 37% 48%, transparent 48%);
+}
+
+.cross {
+  top: auto;
+  bottom: 10%;
+}
+.cross::after {
+  background:
+    linear-gradient(45deg, var(--button) 6%, transparent 6% 94%, var(--button) 94%),
+    linear-gradient(135deg, var(--button) 6%, transparent 6% 94%, var(--button) 94%),
+    linear-gradient(45deg, transparent 44%, var(--cross) 44% 56%, transparent 56%),
+    linear-gradient(135deg, transparent 44%, var(--cross) 44% 56%, transparent 56%);
+}
+
+.square {
+  left: 10%;
+  right: auto;
+}
+.square::after {
+  background:
+    linear-gradient(90deg, var(--square) 14%, transparent 14%),
+    linear-gradient(180deg, var(--square) 14%, transparent 14%),
+    linear-gradient(90deg, transparent 86%, var(--square) 86%),
+    linear-gradient(180deg, transparent 86%, var(--square) 86%)
+    ;
+}
