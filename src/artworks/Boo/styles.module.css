@@ -1,0 +1,538 @@
+.artwork, 
+.artwork::before, 
+.artwork::after {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  --pixel: calc(350px / 22);
+}
+
+.artwork {
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(ellipse 100% 100% at 50% 50%, rgba(255,0,255,0.15), transparent 50%);
+}
+
+.artwork:hover::before {
+  display: none;
+}
+
+.artwork:hover::after {
+  display: block;
+}
+
+/* NORMAL BOO */
+.artwork::before {
+  content: "";
+  width: var(--pixel);
+  height: var(--pixel);
+  box-shadow:
+    /* ROW1 */
+    calc(9 * var(--pixel)) calc(3 * var(--pixel)) black,
+    calc(10 * var(--pixel)) calc(3 * var(--pixel)) black,
+    calc(11 * var(--pixel)) calc(3 * var(--pixel)) black,
+    calc(12 * var(--pixel)) calc(3 * var(--pixel)) black,
+    calc(13 * var(--pixel)) calc(3 * var(--pixel)) black,
+
+    /* ROW2 */
+    calc(7 * var(--pixel)) calc(4 * var(--pixel)) black,
+    calc(8 * var(--pixel)) calc(4 * var(--pixel)) black,
+    calc(9 * var(--pixel)) calc(4 * var(--pixel)) darkgrey,
+    calc(10 * var(--pixel)) calc(4 * var(--pixel)) darkgrey,
+    calc(11 * var(--pixel)) calc(4 * var(--pixel)) darkgrey,
+    calc(12 * var(--pixel)) calc(4 * var(--pixel)) darkgrey,
+    calc(13 * var(--pixel)) calc(4 * var(--pixel)) darkgrey,
+    calc(14 * var(--pixel)) calc(4 * var(--pixel)) black,
+    calc(15 * var(--pixel)) calc(4 * var(--pixel)) black,
+
+    /* ROW3 */
+    calc(6 * var(--pixel)) calc(5 * var(--pixel)) black,
+    calc(7 * var(--pixel)) calc(5 * var(--pixel)) darkgrey,
+    calc(8 * var(--pixel)) calc(5 * var(--pixel)) darkgrey,
+    calc(9 * var(--pixel)) calc(5 * var(--pixel)) gainsboro,
+    calc(10 * var(--pixel)) calc(5 * var(--pixel)) gainsboro,
+    calc(11 * var(--pixel)) calc(5 * var(--pixel)) gainsboro,
+    calc(12 * var(--pixel)) calc(5 * var(--pixel)) gainsboro,
+    calc(13 * var(--pixel)) calc(5 * var(--pixel)) gainsboro,
+    calc(14 * var(--pixel)) calc(5 * var(--pixel)) darkgrey,
+    calc(15 * var(--pixel)) calc(5 * var(--pixel)) darkgrey,
+    calc(16 * var(--pixel)) calc(5 * var(--pixel)) black,
+
+    /* ROW4 */
+    calc(5 * var(--pixel)) calc(6 * var(--pixel)) black,
+    calc(6 * var(--pixel)) calc(6 * var(--pixel)) darkgrey,
+    calc(7 * var(--pixel)) calc(6 * var(--pixel)) gainsboro,
+    calc(8 * var(--pixel)) calc(6 * var(--pixel)) gainsboro,
+    calc(9 * var(--pixel)) calc(6 * var(--pixel)) white,
+    calc(10 * var(--pixel)) calc(6 * var(--pixel)) white,
+    calc(11 * var(--pixel)) calc(6 * var(--pixel)) white,
+    calc(12 * var(--pixel)) calc(6 * var(--pixel)) white,
+    calc(13 * var(--pixel)) calc(6 * var(--pixel)) white,
+    calc(14 * var(--pixel)) calc(6 * var(--pixel)) gainsboro,
+    calc(15 * var(--pixel)) calc(6 * var(--pixel)) gainsboro,
+    calc(16 * var(--pixel)) calc(6 * var(--pixel)) darkgrey,
+    calc(17 * var(--pixel)) calc(6 * var(--pixel)) black,
+
+    /* ROW5 */
+    calc(4 * var(--pixel)) calc(7 * var(--pixel)) black,
+    calc(5 * var(--pixel)) calc(7 * var(--pixel)) darkgrey,
+    calc(6 * var(--pixel)) calc(7 * var(--pixel)) gainsboro,
+    calc(7 * var(--pixel)) calc(7 * var(--pixel)) white,
+    calc(8 * var(--pixel)) calc(7 * var(--pixel)) white,
+    calc(9 * var(--pixel)) calc(7 * var(--pixel)) white,
+    calc(10 * var(--pixel)) calc(7 * var(--pixel)) white,
+    calc(11 * var(--pixel)) calc(7 * var(--pixel)) white,
+    calc(12 * var(--pixel)) calc(7 * var(--pixel)) white,
+    calc(13 * var(--pixel)) calc(7 * var(--pixel)) black,
+    calc(14 * var(--pixel)) calc(7 * var(--pixel)) white,
+    calc(15 * var(--pixel)) calc(7 * var(--pixel)) black,
+    calc(16 * var(--pixel)) calc(7 * var(--pixel)) darkgrey,
+    calc(17 * var(--pixel)) calc(7 * var(--pixel)) black,
+
+    /* ROW6 */
+    calc(3 * var(--pixel)) calc(8 * var(--pixel)) black,
+    calc(4 * var(--pixel)) calc(8 * var(--pixel)) darkgrey,
+    calc(5 * var(--pixel)) calc(8 * var(--pixel)) gainsboro,
+    calc(6 * var(--pixel)) calc(8 * var(--pixel)) black,
+    calc(7 * var(--pixel)) calc(8 * var(--pixel)) black,
+    calc(8 * var(--pixel)) calc(8 * var(--pixel)) black,
+    calc(9 * var(--pixel)) calc(8 * var(--pixel)) white,
+    calc(10 * var(--pixel)) calc(8 * var(--pixel)) white,
+    calc(11 * var(--pixel)) calc(8 * var(--pixel)) white,
+    calc(12 * var(--pixel)) calc(8 * var(--pixel)) white,
+    calc(13 * var(--pixel)) calc(8 * var(--pixel)) black,
+    calc(14 * var(--pixel)) calc(8 * var(--pixel)) white,
+    calc(15 * var(--pixel)) calc(8 * var(--pixel)) black,
+    calc(16 * var(--pixel)) calc(8 * var(--pixel)) gainsboro,
+    calc(17 * var(--pixel)) calc(8 * var(--pixel)) darkgrey,
+    calc(18 * var(--pixel)) calc(8 * var(--pixel)) black,
+
+    /* ROW7 */
+    calc(3 * var(--pixel)) calc(9 * var(--pixel)) black,
+    calc(4 * var(--pixel)) calc(9 * var(--pixel)) darkgrey,
+    calc(5 * var(--pixel)) calc(9 * var(--pixel)) gainsboro,
+    calc(6 * var(--pixel)) calc(9 * var(--pixel)) black,
+    calc(7 * var(--pixel)) calc(9 * var(--pixel)) white,
+    calc(8 * var(--pixel)) calc(9 * var(--pixel)) white,
+    calc(9 * var(--pixel)) calc(9 * var(--pixel)) black,
+    calc(10 * var(--pixel)) calc(9 * var(--pixel)) white,
+    calc(11 * var(--pixel)) calc(9 * var(--pixel)) white,
+    calc(12 * var(--pixel)) calc(9 * var(--pixel)) white,
+    calc(13 * var(--pixel)) calc(9 * var(--pixel)) black,
+    calc(14 * var(--pixel)) calc(9 * var(--pixel)) white,
+    calc(15 * var(--pixel)) calc(9 * var(--pixel)) black,
+    calc(16 * var(--pixel)) calc(9 * var(--pixel)) gainsboro,
+    calc(17 * var(--pixel)) calc(9 * var(--pixel)) darkgrey,
+    calc(18 * var(--pixel)) calc(9 * var(--pixel)) black,
+
+    /* ROW8 */
+    calc(4 * var(--pixel)) calc(10 * var(--pixel)) black,
+    calc(5 * var(--pixel)) calc(10 * var(--pixel)) gainsboro,
+    calc(6 * var(--pixel)) calc(10 * var(--pixel)) black,
+    calc(7 * var(--pixel)) calc(10 * var(--pixel)) white,
+    calc(8 * var(--pixel)) calc(10 * var(--pixel)) white,
+    calc(9 * var(--pixel)) calc(10 * var(--pixel)) white,
+    calc(10 * var(--pixel)) calc(10 * var(--pixel)) white,
+    calc(11 * var(--pixel)) calc(10 * var(--pixel)) white,
+    calc(12 * var(--pixel)) calc(10 * var(--pixel)) white,
+    calc(13 * var(--pixel)) calc(10 * var(--pixel)) white,
+    calc(14 * var(--pixel)) calc(10 * var(--pixel)) white,
+    calc(15 * var(--pixel)) calc(10 * var(--pixel)) white,
+    calc(16 * var(--pixel)) calc(10 * var(--pixel)) gainsboro,
+    calc(17 * var(--pixel)) calc(10 * var(--pixel)) darkgrey,
+    calc(18 * var(--pixel)) calc(10 * var(--pixel)) black,
+
+    /* ROW9 */
+    calc(3 * var(--pixel)) calc(11 * var(--pixel)) black,
+    calc(4 * var(--pixel)) calc(11 * var(--pixel)) darkgrey,
+    calc(5 * var(--pixel)) calc(11 * var(--pixel)) gainsboro,
+    calc(6 * var(--pixel)) calc(11 * var(--pixel)) white,
+    calc(7 * var(--pixel)) calc(11 * var(--pixel)) black,
+    calc(8 * var(--pixel)) calc(11 * var(--pixel)) white,
+    calc(9 * var(--pixel)) calc(11 * var(--pixel)) white,
+    calc(10 * var(--pixel)) calc(11 * var(--pixel)) white,
+    calc(11 * var(--pixel)) calc(11 * var(--pixel)) white,
+    calc(12 * var(--pixel)) calc(11 * var(--pixel)) crimson,
+    calc(13 * var(--pixel)) calc(11 * var(--pixel)) white,
+    calc(14 * var(--pixel)) calc(11 * var(--pixel)) crimson,
+    calc(15 * var(--pixel)) calc(11 * var(--pixel)) white,
+    calc(16 * var(--pixel)) calc(11 * var(--pixel)) crimson,
+    calc(17 * var(--pixel)) calc(11 * var(--pixel)) darkgrey,
+    calc(18 * var(--pixel)) calc(11 * var(--pixel)) black,
+
+    /* ROW10 */
+    calc(3 * var(--pixel)) calc(12 * var(--pixel)) black,
+    calc(4 * var(--pixel)) calc(12 * var(--pixel)) darkgrey,
+    calc(5 * var(--pixel)) calc(12 * var(--pixel)) darkgrey,
+    calc(6 * var(--pixel)) calc(12 * var(--pixel)) gainsboro,
+    calc(7 * var(--pixel)) calc(12 * var(--pixel)) white,
+    calc(8 * var(--pixel)) calc(12 * var(--pixel)) white,
+    calc(9 * var(--pixel)) calc(12 * var(--pixel)) white,
+    calc(10 * var(--pixel)) calc(12 * var(--pixel)) white,
+    calc(11 * var(--pixel)) calc(12 * var(--pixel)) white,
+    calc(12 * var(--pixel)) calc(12 * var(--pixel)) crimson,
+    calc(13 * var(--pixel)) calc(12 * var(--pixel)) crimson,
+    calc(14 * var(--pixel)) calc(12 * var(--pixel)) crimson,
+    calc(15 * var(--pixel)) calc(12 * var(--pixel)) crimson,
+    calc(16 * var(--pixel)) calc(12 * var(--pixel)) crimson,
+    calc(17 * var(--pixel)) calc(12 * var(--pixel)) darkgrey,
+    calc(18 * var(--pixel)) calc(12 * var(--pixel)) black,
+
+    /* ROW11 */
+    calc(3 * var(--pixel)) calc(13 * var(--pixel)) black,
+    calc(4 * var(--pixel)) calc(13 * var(--pixel)) darkgrey,
+    calc(5 * var(--pixel)) calc(13 * var(--pixel)) gainsboro,
+    calc(6 * var(--pixel)) calc(13 * var(--pixel)) white,
+    calc(7 * var(--pixel)) calc(13 * var(--pixel)) white,
+    calc(8 * var(--pixel)) calc(13 * var(--pixel)) white,
+    calc(9 * var(--pixel)) calc(13 * var(--pixel)) white,
+    calc(10 * var(--pixel)) calc(13 * var(--pixel)) white,
+    calc(11 * var(--pixel)) calc(13 * var(--pixel)) white,
+    calc(12 * var(--pixel)) calc(13 * var(--pixel)) crimson,
+    calc(13 * var(--pixel)) calc(13 * var(--pixel)) crimson,
+    calc(14 * var(--pixel)) calc(13 * var(--pixel)) crimson,
+    calc(15 * var(--pixel)) calc(13 * var(--pixel)) crimson,
+    calc(16 * var(--pixel)) calc(13 * var(--pixel)) crimson,
+    calc(17 * var(--pixel)) calc(13 * var(--pixel)) darkgrey,
+    calc(18 * var(--pixel)) calc(13 * var(--pixel)) black,
+
+    /* ROW12 */
+    calc(3 * var(--pixel)) calc(14 * var(--pixel)) black,
+    calc(4 * var(--pixel)) calc(14 * var(--pixel)) darkgrey,
+    calc(5 * var(--pixel)) calc(14 * var(--pixel)) gainsboro,
+    calc(6 * var(--pixel)) calc(14 * var(--pixel)) white,
+    calc(7 * var(--pixel)) calc(14 * var(--pixel)) white,
+    calc(8 * var(--pixel)) calc(14 * var(--pixel)) white,
+    calc(9 * var(--pixel)) calc(14 * var(--pixel)) white,
+    calc(10 * var(--pixel)) calc(14 * var(--pixel)) white,
+    calc(11 * var(--pixel)) calc(14 * var(--pixel)) crimson,
+    calc(12 * var(--pixel)) calc(14 * var(--pixel)) crimson,
+    calc(13 * var(--pixel)) calc(14 * var(--pixel)) crimson,
+    calc(14 * var(--pixel)) calc(14 * var(--pixel)) crimson,
+    calc(15 * var(--pixel)) calc(14 * var(--pixel)) crimson,
+    calc(16 * var(--pixel)) calc(14 * var(--pixel)) darkgrey,
+    calc(17 * var(--pixel)) calc(14 * var(--pixel)) black,
+   
+    /* ROW13 */
+    calc(4 * var(--pixel)) calc(15 * var(--pixel)) black,
+    calc(5 * var(--pixel)) calc(15 * var(--pixel)) darkgrey,
+    calc(6 * var(--pixel)) calc(15 * var(--pixel)) gainsboro,
+    calc(7 * var(--pixel)) calc(15 * var(--pixel)) gainsboro,
+    calc(8 * var(--pixel)) calc(15 * var(--pixel)) white,
+    calc(9 * var(--pixel)) calc(15 * var(--pixel)) white,
+    calc(10 * var(--pixel)) calc(15 * var(--pixel)) white,
+    calc(11 * var(--pixel)) calc(15 * var(--pixel)) crimson,
+    calc(12 * var(--pixel)) calc(15 * var(--pixel)) white,
+    calc(13 * var(--pixel)) calc(15 * var(--pixel)) crimson,
+    calc(14 * var(--pixel)) calc(15 * var(--pixel)) white,
+    calc(15 * var(--pixel)) calc(15 * var(--pixel)) crimson,
+    calc(16 * var(--pixel)) calc(15 * var(--pixel)) darkgrey,
+    calc(17 * var(--pixel)) calc(15 * var(--pixel)) black,
+
+    /* ROW14 */
+    calc(5 * var(--pixel)) calc(16 * var(--pixel)) black,
+    calc(6 * var(--pixel)) calc(16 * var(--pixel)) darkgrey,
+    calc(7 * var(--pixel)) calc(16 * var(--pixel)) darkgrey,
+    calc(8 * var(--pixel)) calc(16 * var(--pixel)) gainsboro,
+    calc(9 * var(--pixel)) calc(16 * var(--pixel)) gainsboro,
+    calc(10 * var(--pixel)) calc(16 * var(--pixel)) gainsboro,
+    calc(11 * var(--pixel)) calc(16 * var(--pixel)) gainsboro,
+    calc(12 * var(--pixel)) calc(16 * var(--pixel)) gainsboro,
+    calc(13 * var(--pixel)) calc(16 * var(--pixel)) gainsboro,
+    calc(14 * var(--pixel)) calc(16 * var(--pixel)) darkgrey,
+    calc(15 * var(--pixel)) calc(16 * var(--pixel)) darkgrey,
+    calc(16 * var(--pixel)) calc(16 * var(--pixel)) black,
+
+    /* ROW15 */
+    calc(6 * var(--pixel)) calc(17 * var(--pixel)) black,
+    calc(7 * var(--pixel)) calc(17 * var(--pixel)) black,
+    calc(8 * var(--pixel)) calc(17 * var(--pixel)) darkgrey,
+    calc(9 * var(--pixel)) calc(17 * var(--pixel)) darkgrey,
+    calc(10 * var(--pixel)) calc(17 * var(--pixel)) darkgrey,
+    calc(11 * var(--pixel)) calc(17 * var(--pixel)) darkgrey,
+    calc(12 * var(--pixel)) calc(17 * var(--pixel)) darkgrey,
+    calc(13 * var(--pixel)) calc(17 * var(--pixel)) darkgrey,
+    calc(14 * var(--pixel)) calc(17 * var(--pixel)) black,
+    calc(15 * var(--pixel)) calc(17 * var(--pixel)) black,
+
+    /* ROW16 */
+    calc(8 * var(--pixel)) calc(18 * var(--pixel)) black,
+    calc(9 * var(--pixel)) calc(18 * var(--pixel)) black,
+    calc(10 * var(--pixel)) calc(18 * var(--pixel)) black,
+    calc(11 * var(--pixel)) calc(18 * var(--pixel)) black,
+    calc(12 * var(--pixel)) calc(18 * var(--pixel)) black,
+    calc(13 * var(--pixel)) calc(18 * var(--pixel)) black
+    ;
+
+  animation: boo-float 3s ease-in-out infinite alternate;
+}
+
+@keyframes boo-float {
+  from {
+    top: calc(-2 * var(--pixel));
+  }
+  to {
+    top: calc(1 * var(--pixel));
+  }
+}
+
+/* SHY BOO */
+.artwork::after {
+  display: none;
+  content: "";
+  width: var(--pixel);
+  height: var(--pixel);
+  box-shadow:
+    /* ROW1 */
+    calc(9 * var(--pixel)) calc(3 * var(--pixel)) black,
+    calc(10 * var(--pixel)) calc(3 * var(--pixel)) black,
+    calc(11 * var(--pixel)) calc(3 * var(--pixel)) black,
+    calc(12 * var(--pixel)) calc(3 * var(--pixel)) black,
+    calc(13 * var(--pixel)) calc(3 * var(--pixel)) black,
+
+    /* ROW2 */
+    calc(7 * var(--pixel)) calc(4 * var(--pixel)) black,
+    calc(8 * var(--pixel)) calc(4 * var(--pixel)) black,
+    calc(9 * var(--pixel)) calc(4 * var(--pixel)) darkgrey,
+    calc(10 * var(--pixel)) calc(4 * var(--pixel)) darkgrey,
+    calc(11 * var(--pixel)) calc(4 * var(--pixel)) darkgrey,
+    calc(12 * var(--pixel)) calc(4 * var(--pixel)) darkgrey,
+    calc(13 * var(--pixel)) calc(4 * var(--pixel)) darkgrey,
+    calc(14 * var(--pixel)) calc(4 * var(--pixel)) black,
+    calc(15 * var(--pixel)) calc(4 * var(--pixel)) black,
+
+    /* ROW3 */
+    calc(5 * var(--pixel)) calc(5 * var(--pixel)) black,
+    calc(6 * var(--pixel)) calc(5 * var(--pixel)) black,
+    calc(7 * var(--pixel)) calc(5 * var(--pixel)) darkgrey,
+    calc(8 * var(--pixel)) calc(5 * var(--pixel)) darkgrey,
+    calc(9 * var(--pixel)) calc(5 * var(--pixel)) darkgrey,
+    calc(10 * var(--pixel)) calc(5 * var(--pixel)) gainsboro,
+    calc(11 * var(--pixel)) calc(5 * var(--pixel)) gainsboro,
+    calc(12 * var(--pixel)) calc(5 * var(--pixel)) gainsboro,
+    calc(13 * var(--pixel)) calc(5 * var(--pixel)) gainsboro,
+    calc(14 * var(--pixel)) calc(5 * var(--pixel)) darkgrey,
+    calc(15 * var(--pixel)) calc(5 * var(--pixel)) darkgrey,
+    calc(16 * var(--pixel)) calc(5 * var(--pixel)) black,
+
+    /* ROW4 */
+    calc(3 * var(--pixel)) calc(6 * var(--pixel)) black,
+    calc(4 * var(--pixel)) calc(6 * var(--pixel)) black,
+    calc(5 * var(--pixel)) calc(6 * var(--pixel)) darkgrey,
+    calc(6 * var(--pixel)) calc(6 * var(--pixel)) darkgrey,
+    calc(7 * var(--pixel)) calc(6 * var(--pixel)) gainsboro,
+    calc(8 * var(--pixel)) calc(6 * var(--pixel)) black,
+    calc(9 * var(--pixel)) calc(6 * var(--pixel)) black,
+    calc(10 * var(--pixel)) calc(6 * var(--pixel)) black,
+    calc(11 * var(--pixel)) calc(6 * var(--pixel)) white,
+    calc(12 * var(--pixel)) calc(6 * var(--pixel)) white,
+    calc(13 * var(--pixel)) calc(6 * var(--pixel)) black,
+    calc(14 * var(--pixel)) calc(6 * var(--pixel)) black,
+    calc(15 * var(--pixel)) calc(6 * var(--pixel)) black,
+    calc(16 * var(--pixel)) calc(6 * var(--pixel)) darkgrey,
+    calc(17 * var(--pixel)) calc(6 * var(--pixel)) black,
+
+    /* ROW5 */
+    calc(3 * var(--pixel)) calc(7 * var(--pixel)) black,
+    calc(4 * var(--pixel)) calc(7 * var(--pixel)) darkgrey,
+    calc(5 * var(--pixel)) calc(7 * var(--pixel)) gainsboro,
+    calc(6 * var(--pixel)) calc(7 * var(--pixel)) gainsboro,
+    calc(7 * var(--pixel)) calc(7 * var(--pixel)) white,
+    calc(8 * var(--pixel)) calc(7 * var(--pixel)) white,
+    calc(9 * var(--pixel)) calc(7 * var(--pixel)) white,
+    calc(10 * var(--pixel)) calc(7 * var(--pixel)) black,
+    calc(11 * var(--pixel)) calc(7 * var(--pixel)) white,
+    calc(12 * var(--pixel)) calc(7 * var(--pixel)) white,
+    calc(13 * var(--pixel)) calc(7 * var(--pixel)) black,
+    calc(14 * var(--pixel)) calc(7 * var(--pixel)) white,
+    calc(15 * var(--pixel)) calc(7 * var(--pixel)) white,
+    calc(16 * var(--pixel)) calc(7 * var(--pixel)) darkgrey,
+    calc(17 * var(--pixel)) calc(7 * var(--pixel)) black,
+
+    /* ROW6 */
+    calc(4 * var(--pixel)) calc(8 * var(--pixel)) black,
+    calc(5 * var(--pixel)) calc(8 * var(--pixel)) darkgrey,
+    calc(6 * var(--pixel)) calc(8 * var(--pixel)) white,
+    calc(7 * var(--pixel)) calc(8 * var(--pixel)) white,
+    calc(8 * var(--pixel)) calc(8 * var(--pixel)) white,
+    calc(9 * var(--pixel)) calc(8 * var(--pixel)) white,
+    calc(10 * var(--pixel)) calc(8 * var(--pixel)) black,
+    calc(11 * var(--pixel)) calc(8 * var(--pixel)) white,
+    calc(12 * var(--pixel)) calc(8 * var(--pixel)) white,
+    calc(13 * var(--pixel)) calc(8 * var(--pixel)) black,
+    calc(14 * var(--pixel)) calc(8 * var(--pixel)) white,
+    calc(15 * var(--pixel)) calc(8 * var(--pixel)) white,
+    calc(16 * var(--pixel)) calc(8 * var(--pixel)) gainsboro,
+    calc(17 * var(--pixel)) calc(8 * var(--pixel)) darkgrey,
+    calc(18 * var(--pixel)) calc(8 * var(--pixel)) black,
+
+    /* ROW7 */
+    calc(3 * var(--pixel)) calc(9 * var(--pixel)) black,
+    calc(4 * var(--pixel)) calc(9 * var(--pixel)) black,
+    calc(5 * var(--pixel)) calc(9 * var(--pixel)) darkgrey,
+    calc(6 * var(--pixel)) calc(9 * var(--pixel)) white,
+    calc(7 * var(--pixel)) calc(9 * var(--pixel)) white,
+    calc(8 * var(--pixel)) calc(9 * var(--pixel)) white,
+    calc(9 * var(--pixel)) calc(9 * var(--pixel)) black,
+    calc(10 * var(--pixel)) calc(9 * var(--pixel)) white,
+    calc(11 * var(--pixel)) calc(9 * var(--pixel)) white,
+    calc(12 * var(--pixel)) calc(9 * var(--pixel)) white,
+    calc(13 * var(--pixel)) calc(9 * var(--pixel)) white,
+    calc(14 * var(--pixel)) calc(9 * var(--pixel)) black,
+    calc(15 * var(--pixel)) calc(9 * var(--pixel)) white,
+    calc(16 * var(--pixel)) calc(9 * var(--pixel)) gainsboro,
+    calc(17 * var(--pixel)) calc(9 * var(--pixel)) darkgrey,
+    calc(18 * var(--pixel)) calc(9 * var(--pixel)) black,
+
+    /* ROW8 */
+    calc(3 * var(--pixel)) calc(10 * var(--pixel)) black,
+    calc(4 * var(--pixel)) calc(10 * var(--pixel)) black,
+    calc(5 * var(--pixel)) calc(10 * var(--pixel)) darkgrey,
+    calc(6 * var(--pixel)) calc(10 * var(--pixel)) white,
+    calc(7 * var(--pixel)) calc(10 * var(--pixel)) white,
+    calc(8 * var(--pixel)) calc(10 * var(--pixel)) black,
+    calc(9 * var(--pixel)) calc(10 * var(--pixel)) white,
+    calc(10 * var(--pixel)) calc(10 * var(--pixel)) white,
+    calc(11 * var(--pixel)) calc(10 * var(--pixel)) white,
+    calc(12 * var(--pixel)) calc(10 * var(--pixel)) white,
+    calc(13 * var(--pixel)) calc(10 * var(--pixel)) white,
+    calc(14 * var(--pixel)) calc(10 * var(--pixel)) white,
+    calc(15 * var(--pixel)) calc(10 * var(--pixel)) black,
+    calc(16 * var(--pixel)) calc(10 * var(--pixel)) gainsboro,
+    calc(17 * var(--pixel)) calc(10 * var(--pixel)) darkgrey,
+    calc(18 * var(--pixel)) calc(10 * var(--pixel)) black,
+
+    /* ROW9 */
+    calc(3 * var(--pixel)) calc(11 * var(--pixel)) black,
+    calc(4 * var(--pixel)) calc(11 * var(--pixel)) darkgrey,
+    calc(5 * var(--pixel)) calc(11 * var(--pixel)) gainsboro,
+    calc(6 * var(--pixel)) calc(11 * var(--pixel)) white,
+    calc(7 * var(--pixel)) calc(11 * var(--pixel)) white,
+    calc(8 * var(--pixel)) calc(11 * var(--pixel)) white,
+    calc(9 * var(--pixel)) calc(11 * var(--pixel)) black,
+    calc(10 * var(--pixel)) calc(11 * var(--pixel)) black,
+    calc(11 * var(--pixel)) calc(11 * var(--pixel)) black,
+    calc(12 * var(--pixel)) calc(11 * var(--pixel)) black,
+    calc(13 * var(--pixel)) calc(11 * var(--pixel)) black,
+    calc(14 * var(--pixel)) calc(11 * var(--pixel)) white,
+    calc(15 * var(--pixel)) calc(11 * var(--pixel)) white,
+    calc(16 * var(--pixel)) calc(11 * var(--pixel)) gainsboro,
+    calc(17 * var(--pixel)) calc(11 * var(--pixel)) darkgrey,
+    calc(18 * var(--pixel)) calc(11 * var(--pixel)) black,
+
+    /* ROW10 */
+    calc(4 * var(--pixel)) calc(12 * var(--pixel)) black,
+    calc(5 * var(--pixel)) calc(12 * var(--pixel)) gainsboro,
+    calc(6 * var(--pixel)) calc(12 * var(--pixel)) white,
+    calc(7 * var(--pixel)) calc(12 * var(--pixel)) white,
+    calc(8 * var(--pixel)) calc(12 * var(--pixel)) black,
+    calc(9 * var(--pixel)) calc(12 * var(--pixel)) black,
+    calc(10 * var(--pixel)) calc(12 * var(--pixel)) black,
+    calc(11 * var(--pixel)) calc(12 * var(--pixel)) black,
+    calc(12 * var(--pixel)) calc(12 * var(--pixel)) black,
+    calc(13 * var(--pixel)) calc(12 * var(--pixel)) black,
+    calc(14 * var(--pixel)) calc(12 * var(--pixel)) black,
+    calc(15 * var(--pixel)) calc(12 * var(--pixel)) white,
+    calc(16 * var(--pixel)) calc(12 * var(--pixel)) gainsboro,
+    calc(17 * var(--pixel)) calc(12 * var(--pixel)) darkgrey,
+    calc(18 * var(--pixel)) calc(12 * var(--pixel)) black,
+
+    /* ROW11 */
+    calc(3 * var(--pixel)) calc(13 * var(--pixel)) black,
+    calc(4 * var(--pixel)) calc(13 * var(--pixel)) darkgrey,
+    calc(5 * var(--pixel)) calc(13 * var(--pixel)) gainsboro,
+    calc(6 * var(--pixel)) calc(13 * var(--pixel)) white,
+    calc(7 * var(--pixel)) calc(13 * var(--pixel)) black,
+    calc(8 * var(--pixel)) calc(13 * var(--pixel)) black,
+    calc(9 * var(--pixel)) calc(13 * var(--pixel)) black,
+    calc(10 * var(--pixel)) calc(13 * var(--pixel)) black,
+    calc(11 * var(--pixel)) calc(13 * var(--pixel)) black,
+    calc(12 * var(--pixel)) calc(13 * var(--pixel)) black,
+    calc(13 * var(--pixel)) calc(13 * var(--pixel)) black,
+    calc(14 * var(--pixel)) calc(13 * var(--pixel)) black,
+    calc(15 * var(--pixel)) calc(13 * var(--pixel)) black,
+    calc(16 * var(--pixel)) calc(13 * var(--pixel)) gainsboro,
+    calc(17 * var(--pixel)) calc(13 * var(--pixel)) darkgrey,
+    calc(18 * var(--pixel)) calc(13 * var(--pixel)) black,
+
+    /* ROW12 */
+    calc(3 * var(--pixel)) calc(14 * var(--pixel)) black,
+    calc(4 * var(--pixel)) calc(14 * var(--pixel)) darkgrey,
+    calc(5 * var(--pixel)) calc(14 * var(--pixel)) gainsboro,
+    calc(6 * var(--pixel)) calc(14 * var(--pixel)) white,
+    calc(7 * var(--pixel)) calc(14 * var(--pixel)) black,
+    calc(8 * var(--pixel)) calc(14 * var(--pixel)) black,
+    calc(9 * var(--pixel)) calc(14 * var(--pixel)) white,
+    calc(10 * var(--pixel)) calc(14 * var(--pixel)) white,
+    calc(11 * var(--pixel)) calc(14 * var(--pixel)) white,
+    calc(12 * var(--pixel)) calc(14 * var(--pixel)) white,
+    calc(13 * var(--pixel)) calc(14 * var(--pixel)) white,
+    calc(14 * var(--pixel)) calc(14 * var(--pixel)) white,
+    calc(15 * var(--pixel)) calc(14 * var(--pixel)) black,
+    calc(16 * var(--pixel)) calc(14 * var(--pixel)) gainsboro,
+    calc(17 * var(--pixel)) calc(14 * var(--pixel)) black,
+   
+    /* ROW13 */
+    calc(4 * var(--pixel)) calc(15 * var(--pixel)) black,
+    calc(5 * var(--pixel)) calc(15 * var(--pixel)) darkgrey,
+    calc(6 * var(--pixel)) calc(15 * var(--pixel)) gainsboro,
+    calc(7 * var(--pixel)) calc(15 * var(--pixel)) black,
+    calc(8 * var(--pixel)) calc(15 * var(--pixel)) white,
+    calc(9 * var(--pixel)) calc(15 * var(--pixel)) white,
+    calc(10 * var(--pixel)) calc(15 * var(--pixel)) white,
+    calc(11 * var(--pixel)) calc(15 * var(--pixel)) white,
+    calc(12 * var(--pixel)) calc(15 * var(--pixel)) white,
+    calc(13 * var(--pixel)) calc(15 * var(--pixel)) white,
+    calc(14 * var(--pixel)) calc(15 * var(--pixel)) white,
+    calc(15 * var(--pixel)) calc(15 * var(--pixel)) gainsboro,
+    calc(16 * var(--pixel)) calc(15 * var(--pixel)) darkgrey,
+    calc(17 * var(--pixel)) calc(15 * var(--pixel)) black,
+
+    /* ROW14 */
+    calc(5 * var(--pixel)) calc(16 * var(--pixel)) black,
+    calc(6 * var(--pixel)) calc(16 * var(--pixel)) darkgrey,
+    calc(7 * var(--pixel)) calc(16 * var(--pixel)) darkgrey,
+    calc(8 * var(--pixel)) calc(16 * var(--pixel)) gainsboro,
+    calc(9 * var(--pixel)) calc(16 * var(--pixel)) gainsboro,
+    calc(10 * var(--pixel)) calc(16 * var(--pixel)) gainsboro,
+    calc(11 * var(--pixel)) calc(16 * var(--pixel)) gainsboro,
+    calc(12 * var(--pixel)) calc(16 * var(--pixel)) gainsboro,
+    calc(13 * var(--pixel)) calc(16 * var(--pixel)) darkgrey,
+    calc(14 * var(--pixel)) calc(16 * var(--pixel)) darkgrey,
+    calc(15 * var(--pixel)) calc(16 * var(--pixel)) black,
+    calc(16 * var(--pixel)) calc(16 * var(--pixel)) black,
+
+    /* ROW15 */
+    calc(6 * var(--pixel)) calc(17 * var(--pixel)) black,
+    calc(7 * var(--pixel)) calc(17 * var(--pixel)) black,
+    calc(8 * var(--pixel)) calc(17 * var(--pixel)) darkgrey,
+    calc(9 * var(--pixel)) calc(17 * var(--pixel)) darkgrey,
+    calc(10 * var(--pixel)) calc(17 * var(--pixel)) darkgrey,
+    calc(11 * var(--pixel)) calc(17 * var(--pixel)) darkgrey,
+    calc(12 * var(--pixel)) calc(17 * var(--pixel)) darkgrey,
+    calc(13 * var(--pixel)) calc(17 * var(--pixel)) black,
+    calc(14 * var(--pixel)) calc(17 * var(--pixel)) black,
+    calc(15 * var(--pixel)) calc(17 * var(--pixel)) black,
+
+    /* ROW16 */
+    calc(8 * var(--pixel)) calc(18 * var(--pixel)) black,
+    calc(9 * var(--pixel)) calc(18 * var(--pixel)) black,
+    calc(10 * var(--pixel)) calc(18 * var(--pixel)) black,
+    calc(11 * var(--pixel)) calc(18 * var(--pixel)) black,
+    calc(12 * var(--pixel)) calc(18 * var(--pixel)) black,
+    calc(13 * var(--pixel)) calc(18 * var(--pixel)) black
+    ;
+
+  animation: boo-shake 120ms linear infinite alternate;
+}
+
+@keyframes boo-shake {
+  from {
+    left: calc(-0.2 * var(--pixel));
+  }
+  to {
+    left: calc(0.2 * var(--pixel));
+  }
+}
