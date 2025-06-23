@@ -27,21 +27,24 @@ export default function EmbedContainer() {
   if (!artwork || !metadata) return null;
 
   return (
-    <div className={styles.embedcontainer}>
-      <ArtworkFrame>{artwork}</ArtworkFrame>
-      <div className={styles.footer}>
-        <h1 className={styles.title}>
-          {metadata.title} by {metadata.creator}
-        </h1>
-        <a
-          className={styles.embedlink}
-          href={window.location.origin}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          &copy; MoCSSA
-        </a>
+    <>
+      <meta name="robots" content="noindex, nofollow" />
+      <div className={styles.embedcontainer}>
+        <ArtworkFrame>{artwork}</ArtworkFrame>
+        <div className={styles.footer}>
+          <h1 className={styles.title}>
+            {metadata.title} by {metadata.creator}
+          </h1>
+          <a
+            className={styles.embedlink}
+            href={window.location.origin}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            &copy; MoCSSA
+          </a>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
