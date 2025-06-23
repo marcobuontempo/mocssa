@@ -59,110 +59,115 @@ export default function ArtworkModal() {
   const iframeCode = `<iframe src="${currentUrl.replace("artwork", "embed")}" width="350" height="350" frameborder="0" title="CSS Artwork: ${metadata.title}" ></iframe>`;
 
   return (
-    <div className={styles.modal}>
-      <button className={styles.exit} onClick={handleCloseModal}>
-        <img src="/svg/xmark.svg" alt="Close Modal" height={48} width={48} />
-      </button>
-      <div className={styles.header}>
-        <h2 className={styles.title}>{metadata.title}</h2>
-        <h3 className={styles.creator}>by {metadata.creator}</h3>
-      </div>
-
-      <ArtworkFrame>{artwork}</ArtworkFrame>
-
-      <div className={styles.information}>
-        <p className={styles.attribution}>{metadata.attribution}</p>
-        <div>
-          <p className={styles.category_title}>categories:</p>
-          <ul className={styles.categories}>
-            {!metadata.categories || metadata.categories.length === 0 ? (
-              <li>none</li>
-            ) : (
-              metadata.categories.map((category) => (
-                <li
-                  key={category}
-                  className={styles[`${category.split(" ").join("")}`]}
-                >
-                  {category}
-                </li>
-              ))
-            )}
-          </ul>
+    <>
+      <title>{`Museum of CSS Art (${metadata.title} by ${metadata.creator})`}</title>
+      <meta name="description" content={`Museum of CSS Art. Pure-CSS artwork. "${metadata.title} - by ${metadata.creator}. ${metadata.attribution}`} />
+      
+      <div className={styles.modal}>
+        <button className={styles.exit} onClick={handleCloseModal}>
+          <img src="/svg/xmark.svg" alt="Close Modal" height={48} width={48} />
+        </button>
+        <div className={styles.header}>
+          <h2 className={styles.title}>{metadata.title}</h2>
+          <h3 className={styles.creator}>by {metadata.creator}</h3>
         </div>
-        <a
-          className={styles.github}
-          href={`https://github.com/marcobuontempo/mocssa/tree/main/src/artworks/${artworkSourceURL}`}
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <span>GitHub Source Code</span>
-          <img
-            className={styles.linkicon}
-            src="/svg/link.svg"
-            alt="Open GitHub Source Icon"
-            height={12}
-            width={12}
-          />
-        </a>
 
-        <div>
-          <h3>Embed iframe:</h3>
-          <input className={styles.iframeinput} name="iframeembed" type="text" value={iframeCode} readOnly />
-          <button className={styles.iframecopy} onClick={() => copyToClipboard(iframeCode)}>
+        <ArtworkFrame>{artwork}</ArtworkFrame>
+
+        <div className={styles.information}>
+          <p className={styles.attribution}>{metadata.attribution}</p>
+          <div>
+            <p className={styles.category_title}>categories:</p>
+            <ul className={styles.categories}>
+              {!metadata.categories || metadata.categories.length === 0 ? (
+                <li>none</li>
+              ) : (
+                metadata.categories.map((category) => (
+                  <li
+                    key={category}
+                    className={styles[`${category.split(" ").join("")}`]}
+                  >
+                    {category}
+                  </li>
+                ))
+              )}
+            </ul>
+          </div>
+          <a
+            className={styles.github}
+            href={`https://github.com/marcobuontempo/mocssa/tree/main/src/artworks/${artworkSourceURL}`}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>GitHub Source Code</span>
             <img
-              src="/svg/clipboard.svg"
-              alt="Copy iframe code to Clipboard Icon"
+              className={styles.linkicon}
+              src="/svg/link.svg"
+              alt="Open GitHub Source Icon"
               height={12}
               width={12}
             />
-          </button>
-        </div>
+          </a>
 
-        <div>
-          <h3>Share to:</h3>
           <div>
-            <a
-              href={`https://www.reddit.com/submit?url=${currentUrl}&title=${shareMessage}`}
-              rel="noopener noreferrer"
-              target="_blank"
-              className={styles.sharelink}
-            >
+            <h3>Embed iframe:</h3>
+            <input className={styles.iframeinput} name="iframeembed" type="text" value={iframeCode} readOnly />
+            <button className={styles.iframecopy} onClick={() => copyToClipboard(iframeCode)}>
               <img
-                src="/svg/reddit.svg"
-                alt="Share to Reddit Icon"
-                height={24}
-                width={24}
+                src="/svg/clipboard.svg"
+                alt="Copy iframe code to Clipboard Icon"
+                height={12}
+                width={12}
               />
-            </a>
-            <a
-              href={`https://twitter.com/intent/tweet?url=${currentUrl}&text=${shareMessage}`}
-              rel="noopener noreferrer"
-              target="_blank"
-              className={styles.sharelink}
-            >
-              <img
-                src="/svg/twitter.svg"
-                alt="Share to Twitter/X Icon"
-                height={24}
-                width={24}
-              />
-            </a>
-            <a
-              href={`https://mastodon.social/share?text=${shareMessage}: ${currentUrl}`}
-              rel="noopener noreferrer"
-              target="_blank"
-              className={styles.sharelink}
-            >
-              <img
-                src="/svg/mastodon.svg"
-                alt="Share to Mastodon Icon"
-                height={24}
-                width={24}
-              />
-            </a>
+            </button>
+          </div>
+
+          <div>
+            <h3>Share to:</h3>
+            <div>
+              <a
+                href={`https://www.reddit.com/submit?url=${currentUrl}&title=${shareMessage}`}
+                rel="noopener noreferrer"
+                target="_blank"
+                className={styles.sharelink}
+              >
+                <img
+                  src="/svg/reddit.svg"
+                  alt="Share to Reddit Icon"
+                  height={24}
+                  width={24}
+                />
+              </a>
+              <a
+                href={`https://twitter.com/intent/tweet?url=${currentUrl}&text=${shareMessage}`}
+                rel="noopener noreferrer"
+                target="_blank"
+                className={styles.sharelink}
+              >
+                <img
+                  src="/svg/twitter.svg"
+                  alt="Share to Twitter/X Icon"
+                  height={24}
+                  width={24}
+                />
+              </a>
+              <a
+                href={`https://mastodon.social/share?text=${shareMessage}: ${currentUrl}`}
+                rel="noopener noreferrer"
+                target="_blank"
+                className={styles.sharelink}
+              >
+                <img
+                  src="/svg/mastodon.svg"
+                  alt="Share to Mastodon Icon"
+                  height={24}
+                  width={24}
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
