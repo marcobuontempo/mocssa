@@ -62,7 +62,8 @@ export default function ArtworkModal() {
     <>
       <title>{`Museum of CSS Art (${metadata.title} by ${metadata.creator})`}</title>
       <meta name="description" content={`Museum of CSS Art. Pure-CSS artwork. "${metadata.title} - by ${metadata.creator}. ${metadata.attribution}`} />
-      
+      <link rel="canonical" href={currentUrl} />
+
       <div className={styles.modal}>
         <button className={styles.exit} onClick={handleCloseModal}>
           <img src="/svg/xmark.svg" alt="Close Modal" height={48} width={48} />
