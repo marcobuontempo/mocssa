@@ -57,7 +57,6 @@ export default function Header({ darkMode, setDarkMode }: Props) {
           height={12}
           width={12}
         />
-        
       </button>
       <div className={styles.hr}></div>
       <div className={styles.subcontainer}>
@@ -65,6 +64,9 @@ export default function Header({ darkMode, setDarkMode }: Props) {
         <p className={styles.info}>
           A collection of artwork creations made with only HTML and CSS.
           Exploring CSS as a medium for artistic expression.
+        </p>
+        <p className={styles.notice}>
+          (best viewed in a Chromium-based browser - i.e. Chrome, Edge, Brave, etc.)
         </p>
         <button className={styles.filterbutton} onClick={toggleFilterDisplay}>
           Filter Options →

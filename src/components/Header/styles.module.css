@@ -94,12 +94,24 @@
   text-transform: uppercase;
 }
 
-.info {
-  padding: 1.5rem 2rem;
+.info, .notice {
+  padding: 0 2rem;
   font-family: "Work Sans", sans-serif;
   font-weight: 300;
 }
 
+.info {
+  padding-top: 1.5rem;
+}
+
+.notice {
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+  font-style: italic;
+  font-size: 0.8rem;
+  text-align: center;
+  opacity: 0.7;
+}
 
 .filterbutton {
   background: none;
