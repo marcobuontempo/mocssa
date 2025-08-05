@@ -38,4 +38,6 @@ export const curatedOrder = [
   "Chrome",
   "Tetris",
   "Evil Eye",
+  "Boo",
+  "Playstation",
 ];
