@@ -13,7 +13,7 @@
 }
 
 .artwork {
-  max-height: 400px;
+  max-height: 25rem;
   background:
     radial-gradient(ellipse 50% 50% at 50% 50%, var(--c1) 83%, transparent 83%),
     radial-gradient(ellipse 50% 50% at 50% 50%, black 83.5%, transparent 83.5%),
@@ -52,10 +52,10 @@
   right: 0;
   left: 0;
   height: 100%;
-  font-size: 68px;
-  line-height: 350px;
+  font-size: 4.25rem;
+  line-height: 21.875rem;
   transform: scaleY(0.9);
-  letter-spacing: -2px;
+  letter-spacing: -0.125rem;
   font-weight: bold;
   font-family: Arial, sans-serif;
 }

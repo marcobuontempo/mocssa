@@ -31,7 +31,7 @@ The gallery is a simple grid display of all the artworks. There is no overarchin
 
 Each artwork in MoCSSA follows this structure:
 
-- **Dimensions** - 350px \* 350px
+- **Dimensions** - 21.875rem \* 21.875rem (i.e. 350px \* 350px)
 - **Title** - the title of the piece
 - **Attribution** - Credit to any original artwork that inspired the piece, or otherwise 'Original Design'
 - **Creator** - The name or handle of the CSS Artwork's creator
@@ -45,7 +45,7 @@ Each artwork in MoCSSA follows this structure:
 
 To maintain quality and consistency in the gallery, please adhere to the following guidelines when submitting your artwork:
 
-- **CSS Only** - The artwork should be created using pure CSS (no images, external libraries, or SVG implementations)
+- **CSS Only** - The artwork should be created using pure CSS (no images, external libraries, or SVG implementations). `rem` units are preferred over `px` for general sizing/positioning (excluding borders/shadows).
 - **Performance** - If using animation, ensure your artwork runs smoothly
 - **Originality** - If your work is inspired by another design, please include proper attribution
 - **Unique** - Repeats of existing artwork designs will likely not be accepted, unless they offer some substantial uniqueness

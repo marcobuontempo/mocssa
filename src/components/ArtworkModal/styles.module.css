@@ -11,7 +11,7 @@
   background: var(--background-colour);
   color: var(--text-colour);
   z-index: 99;
-  padding: 10px;
+  padding: 0.625rem;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -42,17 +42,17 @@
 }
 
 .header {
-  padding: 10px 0px;
+  padding: 0.625rem 0rem;
 }
 
 .title {
   font-weight: bold;
-  padding-bottom: 5px;
-  font-size: 50px;
+  padding-bottom: 0.3125rem;
+  font-size: 3.125rem;
 }
 
 .creator {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-style: italic;
 }
 
@@ -61,8 +61,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  padding: 10px;
+  gap: 0.9375rem;
+  padding: 0.625rem;
 }
 
 .attribution {
@@ -75,7 +75,7 @@
 
 .categories {
   display: flex;
-  gap: 15px;
+  gap: 0.9375rem;
   justify-content: space-around;
 }
 
@@ -104,7 +104,7 @@
   background: var(--accent-colour);
   color: var(--background-colour);
   font-weight: bold;
-  padding: 5px;
+  padding: 0.3125rem;
 }
 
 .github:hover {
@@ -116,8 +116,8 @@
 }
 
 .linkicon {
-  height: 12px;
-  width: 12px;
+  height: 0.75rem;
+  width: 0.75rem;
 }
 
 .iframeinput {
@@ -131,8 +131,8 @@
 }
 
 .iframecopy img {
-  height: 12px;
-  width: 12px;
+  height: 0.75rem;
+  width: 0.75rem;
   filter: invert(1);
 }
 
@@ -150,8 +150,8 @@
 }
 
 .sharelink {
-  height: 24px;
-  width: 24px;
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 .sharelink:hover img, .iframecopy:hover img {

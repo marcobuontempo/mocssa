@@ -6,7 +6,7 @@
   position: absolute;
   margin: auto;
 
-  --pixel-size: 7px;
+  --pixel-size: 0.4375rem;
 
   /* PALETTE COLOURS */
   --c1: rgb(235, 235, 235);
@@ -4981,20 +4981,20 @@
 
 @keyframes move-barrel {
   from {
-    transform: translateX(0px);
+    transform: translateX(0rem);
   }
 
   to {
-    transform: translateX(6px);
+    transform: translateX(0.375rem);
   }
 }
 
 @keyframes move-waves {
   from {
-    transform: translateX(0px);
+    transform: translateX(0rem);
   }
 
   to {
-    transform: translateX(-2px);
+    transform: translateX(-0.125rem);
   }
 }

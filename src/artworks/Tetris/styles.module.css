@@ -16,8 +16,8 @@
   --c7: red;
   --c8: var(--f1);
   --bg: midnightblue;
-  --pixel: 24px;
-  --gap: 1px;
+  --pixel: 1.5rem;
+  --gap: 0.0625rem;
   --offset: 5%;
 }
 

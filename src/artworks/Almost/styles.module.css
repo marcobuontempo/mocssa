@@ -11,25 +11,25 @@
   --dvd: red;
 
   /* POSITIONS WHERE DVD ICON HITS EDGE */
-  --top-edge: -178px;
-  --bottom-edge: 140px;
-  --left-edge: -140px;
-  --right-edge: 136px;
+  --top-edge: -11.125rem;
+  --bottom-edge: 8.75rem;
+  --left-edge: -8.75rem;
+  --right-edge: 8.5rem;
   /* EACH POSITION FOR DVD MOVEMENT */
-  --pos1: translate(calc(var(--left-edge) + 0px), calc(var(--top-edge) + 40px));
-  --pos2: translate(calc(var(--left-edge) + 50px), calc(var(--bottom-edge) + 0px));
-  --pos3: translate(calc(var(--right-edge) + 0px), calc(var(--top-edge) + 150px));
-  --pos4: translate(calc(var(--left-edge) + 100px), calc(var(--top-edge) + 0px));
-  --pos5: translate(calc(var(--left-edge) + 0px), calc(var(--top-edge) + 200px));
-  --pos6: translate(calc(var(--right-edge) - 70px), calc(var(--bottom-edge) + 0px));
-  --pos7: translate(calc(var(--right-edge) + 0px), calc(var(--bottom-edge) - 90px));
-  --pos8: translate(calc(var(--left-edge) + 210px), calc(var(--top-edge) + 0px));
-  --pos9: translate(calc(var(--left-edge) + 0px), calc(var(--bottom-edge) - 30px));
-  --pos10: translate(calc(var(--left-edge) + 30px), calc(var(--bottom-edge) + 0px));
-  --pos11: translate(calc(var(--right-edge) + 0px), calc(var(--top-edge) + 20px));
-  --pos12: translate(calc(var(--right-edge) - 10px), calc(var(--top-edge) + 0px));
-  --pos13: translate(calc(var(--left-edge) + 180px), calc(var(--bottom-edge) + 0px));
-  --pos14: translate(calc(var(--left-edge) + 25px), calc(var(--top-edge) + 0px));
+  --pos1: translate(calc(var(--left-edge) + 0rem), calc(var(--top-edge) + 2.5rem));
+  --pos2: translate(calc(var(--left-edge) + 3.125rem), calc(var(--bottom-edge) + 0rem));
+  --pos3: translate(calc(var(--right-edge) + 0rem), calc(var(--top-edge) + 9.375rem));
+  --pos4: translate(calc(var(--left-edge) + 6.25rem), calc(var(--top-edge) + 0rem));
+  --pos5: translate(calc(var(--left-edge) + 0rem), calc(var(--top-edge) + 12.5rem));
+  --pos6: translate(calc(var(--right-edge) - 4.375rem), calc(var(--bottom-edge) + 0rem));
+  --pos7: translate(calc(var(--right-edge) + 0rem), calc(var(--bottom-edge) - 5.625rem));
+  --pos8: translate(calc(var(--left-edge) + 13.125rem), calc(var(--top-edge) + 0rem));
+  --pos9: translate(calc(var(--left-edge) + 0rem), calc(var(--bottom-edge) - 1.875rem));
+  --pos10: translate(calc(var(--left-edge) + 1.875rem), calc(var(--bottom-edge) + 0rem));
+  --pos11: translate(calc(var(--right-edge) + 0rem), calc(var(--top-edge) + 1.25rem));
+  --pos12: translate(calc(var(--right-edge) - 0.625rem), calc(var(--top-edge) + 0rem));
+  --pos13: translate(calc(var(--left-edge) + 11.25rem), calc(var(--bottom-edge) + 0rem));
+  --pos14: translate(calc(var(--left-edge) + 1.5625rem), calc(var(--top-edge) + 0rem));
 }
 
 /* SET ANIMATIONS */
@@ -59,9 +59,9 @@
   text-align: center;
   font-weight: bold;
   font-family: 'Arial Black';
-  font-size: 8px;
-  letter-spacing: 3px;
-  line-height: 130px;
+  font-size: 0.5rem;
+  letter-spacing: 0.1875rem;
+  line-height: 8.125rem;
   background:
     /* BOTTOM "VIDEO" */
     radial-gradient(ellipse 100% 14.5% at 50% 92.5%, var(--dvd) 50%, transparent 50%),

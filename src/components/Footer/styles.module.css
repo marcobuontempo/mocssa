@@ -8,7 +8,7 @@
 }
 
 .links, .copyright {
-  padding: 0px 0.5rem;
+  padding: 0rem 0.5rem;
   color: var(--text-colour);
   text-decoration-color: var(--background-colour);
   text-decoration-thickness: 0.1rem;

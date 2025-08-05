@@ -8,7 +8,7 @@
   height: 100%;
   position: absolute;
   margin: auto;
-  --pixel: 14px;
+  --pixel: 0.875rem;
   --s1: black;
   --s2: grey;
   --s3: silver;

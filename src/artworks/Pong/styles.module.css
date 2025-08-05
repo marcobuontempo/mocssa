@@ -10,7 +10,7 @@
 /* BACKGROUND */
 .artwork {
   overflow: hidden;
-  letter-spacing: 3px;
+  letter-spacing: 0.1875rem;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-size: 100%;
   font-weight: bold;

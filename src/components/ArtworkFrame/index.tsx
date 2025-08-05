@@ -17,7 +17,7 @@ export default function ArtworkFrame({
   creator,
   sourceURL,
 }: Props) {
-  const originalWidth = 350;
+  const originalWidth = 21.875; // rem units
   const location = useLocation();
   const [scale, setScale] = useState(1);
 
@@ -45,10 +45,10 @@ export default function ArtworkFrame({
       className={styles.frame}
       ref={ref}
       style={{
-        width: `${originalWidth}px`,
-        height: `${originalWidth}px`,
-        minWidth: `${originalWidth}px`,
-        minHeight: `${originalWidth}px`,
+        width: `${originalWidth}rem`,
+        height: `${originalWidth}rem`,
+        minWidth: `${originalWidth}rem`,
+        minHeight: `${originalWidth}rem`,
         transform: `scale(${scale})`,
       }}
     >

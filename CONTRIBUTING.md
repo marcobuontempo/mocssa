@@ -54,7 +54,7 @@ Thank you for considering contributing to MoCSSA! Follow the steps below to add 
 - This project uses [CSS Modules](https://github.com/css-modules/css-modules) to prevent conflicting CSS rules between artworks. So keep this in mind when defining custom styles (i.e. `className={styles.myCustomClassName}`).
 - Double-check your `metadata.json` file is correct before submitting your design. If your artwork isn't applicable to any of the pre-existing categories (one div, animated, etc.), simply provide an empty array (i.e. `"categories": []`).
 - If you get stuck on styles and functionality, just reference the code of any existing artworks in `mocssa/src/artworks` if required!
-  > **Note:** as per the README, all artworks are 350px \* 350px (as defined by their parent container)
+  > **Note:** as per the README, all artworks are 21.875rem \* 21.875rem (i.e. 350px \* 350px), as defined by their parent container)
 
 ## 6. Commit Your Changes
 

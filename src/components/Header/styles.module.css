@@ -67,8 +67,8 @@
 }
 
 .themeicon {
-  height: 16px;
-  width: 16px;
+  height: 1rem;
+  width: 1rem;
   filter: brightness(0) saturate(100%) invert(79%) sepia(72%) saturate(1797%) hue-rotate(2deg) brightness(101%) contrast(113%);
 }
 

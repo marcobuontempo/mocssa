@@ -1,7 +1,7 @@
 .container {
   position: relative;
-  width: 350px;
-  height: 350px;
-  min-width: 350px;
+  width: 21.875rem;
+  height: 21.875rem;
+  min-width: 21.875rem;
   overflow: hidden;
 }
