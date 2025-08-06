@@ -39,9 +39,9 @@
   font-family: monospace;
   font-weight: 500;
   color: rgb(70, 70, 70);
-  letter-spacing: 0.1em;
-  font-size: 3.4em;
-  right: 10%;
+  letter-spacing: 0.1rem;
+  font-size: 3rem;
+  right: 1.6rem;
   left: auto;
-  top: 42.5%;
+  top: 9.25rem;
 }
