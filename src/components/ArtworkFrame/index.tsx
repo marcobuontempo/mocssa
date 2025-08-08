@@ -57,7 +57,7 @@ export default function ArtworkFrame({
           <ArtworkContainer>{artwork}</ArtworkContainer>
           {title && creator && sourceURL && (
             <Link
-              to={`/artwork/${sourceURL}/${location.search}`}
+              to={`artwork/${sourceURL}${location.search}`}
               className={styles.information}
               state={{ backgroundLocation: location }}
             >

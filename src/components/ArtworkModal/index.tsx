@@ -4,6 +4,7 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { ArtworkMetadata } from "../../types/artworkMetadataType";
 import ArtworkFrame from "../ArtworkFrame";
 import { copyToClipboard } from "../../utils/copyToClipboard";
+import CustomCursor from "../CustomCursor";
 
 export default function ArtworkModal() {
   const location = useLocation();
@@ -56,12 +57,22 @@ export default function ArtworkModal() {
   const shareMessage = encodeURIComponent(
     `Check out this CSS code-only artwork! "${metadata.title}" by ${metadata.creator} - Museum of CSS Art`
   );
-  const iframeCode = `<iframe src="${currentUrl.replace("artwork", "embed")}" width="350" height="350" frameborder="0" title="CSS Artwork: ${metadata.title}" ></iframe>`;
+  const iframeCode = `<iframe src="${currentUrl.replace(
+    "artwork",
+    "embed"
+  )}" width="350" height="350" frameborder="0" title="CSS Artwork: ${
+    metadata.title
+  }" ></iframe>`;
 
   return (
     <>
+      <CustomCursor />
+
       <title>{`Museum of CSS Art (${metadata.title} by ${metadata.creator})`}</title>
-      <meta name="description" content={`Museum of CSS Art. Pure-CSS artwork. "${metadata.title} - by ${metadata.creator}. ${metadata.attribution}`} />
+      <meta
+        name="description"
+        content={`Museum of CSS Art. Pure-CSS artwork. "${metadata.title} - by ${metadata.creator}. ${metadata.attribution}`}
+      />
       <link rel="canonical" href={currentUrl} />
 
       <div className={styles.modal}>
@@ -112,8 +123,17 @@ export default function ArtworkModal() {
 
           <div>
             <h3>Embed iframe:</h3>
-            <input className={styles.iframeinput} name="iframeembed" type="text" value={iframeCode} readOnly />
-            <button className={styles.iframecopy} onClick={() => copyToClipboard(iframeCode)}>
+            <input
+              className={styles.iframeinput}
+              name="iframeembed"
+              type="text"
+              value={iframeCode}
+              readOnly
+            />
+            <button
+              className={styles.iframecopy}
+              onClick={() => copyToClipboard(iframeCode)}
+            >
               <img
                 src="/svg/clipboard.svg"
                 alt="Copy iframe code to Clipboard Icon"
