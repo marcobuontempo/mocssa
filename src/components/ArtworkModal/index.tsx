@@ -4,7 +4,6 @@ import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { ArtworkMetadata } from "../../types/artworkMetadataType";
 import ArtworkFrame from "../ArtworkFrame";
 import { copyToClipboard } from "../../utils/copyToClipboard";
-import CustomCursor from "../CustomCursor";
 
 export default function ArtworkModal() {
   const location = useLocation();
@@ -66,8 +65,6 @@ export default function ArtworkModal() {
 
   return (
     <>
-      <CustomCursor />
-
       <title>{`Museum of CSS Art (${metadata.title} by ${metadata.creator})`}</title>
       <meta
         name="description"

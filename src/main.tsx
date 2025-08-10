@@ -16,8 +16,9 @@ createRoot(document.getElementById("root")!).render(
     />
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/artwork/:artworkSourceURL" element={<ArtworkModal />} />
+        <Route path="/" element={<App />}>
+          <Route path="/artwork/:artworkSourceURL" element={<ArtworkModal />} />
+        </Route>
         <Route path="/embed/:artworkSourceURL" element={<EmbedContainer />} />
       </Routes>
     </BrowserRouter>
