@@ -20,8 +20,8 @@
   color: black;
   font-family: monospace;
   white-space: pre;
-  line-height: 0.75rem;
-  padding: 9.5rem 8.5rem;
+  line-height: 0.77rem;
+  padding: 9.5rem 8rem;
   overflow: hidden;
   background:
     linear-gradient(180deg, var(--bg) 30%, transparent 30% 60%, var(--bg) 60%),

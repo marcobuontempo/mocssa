@@ -28,22 +28,23 @@
   width: 30%;
   height: 30%;
   border-radius: 50%;
-  border: 3px ridge black;
+  border: 2px outset rgba(0, 0, 0, 0.2);
   background: 
     radial-gradient(ellipse 270% 80% at 92% 6%, rgba(255,255,255,0.7) 0%, transparent 15%),
     var(--button);
   appearance: none;
   box-shadow:
     -4px 4px 8px rgba(0, 0, 0, 0.3),
-    0 0 6px rgba(0, 0, 0, 0.1);  
-  transition: box-shadow, border 400ms ease;
+    0 0 6px rgba(0, 0, 0, 0.7);  
+  transition: box-shadow 400ms ease;
+  transition: border 50ms ease;
 }
 
 .triangle:checked,
 .circle:checked,
 .cross:checked,
 .square:checked {
-  border: 3px groove black;
+  border: 2px outset rgba(255, 255, 255, 0.2);
   transform: scale(0.96);
 }
 
