@@ -1,0 +1,169 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  --c1: lightskyblue;
+  --c2: mediumaquamarine;
+  --c3: yellow;
+  --c4: coral;
+  --c5: crimson;
+  --c6: darkorchid;
+  --c7: lavender;
+  --bg: rgb(20, 20, 20);
+
+  animation: rotate-colour 2100ms linear infinite;
+}
+
+.artwork {
+  border: 20px solid var(--background-colour);
+  border-radius: 6rem;
+  background: linear-gradient(
+      180deg,
+      var(--bg) 0% 60%,
+      transparent 60% 75%,
+      var(--bg) 75%
+    ),
+    conic-gradient(
+      from 0deg at 22% 50%,
+      transparent 136.5deg,
+      var(--c7) 136.5deg 139.5deg,
+      transparent 139.5deg 141.5deg,
+      var(--c6) 140.5deg 145deg,
+      transparent 145deg 147deg,
+      var(--c5) 147deg 151.5deg,
+      transparent 151.5deg 153.5deg,
+      var(--c4) 153.5deg 158.5deg,
+      transparent 158.5deg 161deg,
+      var(--c3) 161deg 166deg,
+      transparent 166deg 168.5deg,
+      var(--c2) 168.5deg 174deg,
+      transparent 174deg 177deg,
+      var(--c1) 177deg 183deg,
+      transparent 183deg
+    ),
+    var(--bg);
+}
+
+.artwork::before {
+  content: "";
+  width: 10%;
+  height: 60%;
+  top: 0;
+  bottom: auto;
+  left: 21.5%;
+  right: auto;
+  background: linear-gradient(
+    90deg,
+    var(--c1) 0% 10%,
+    transparent 10% 15%,
+    var(--c2) 15% 25%,
+    transparent 25% 30%,
+    var(--c3) 30% 40%,
+    transparent 40% 45%,
+    var(--c4) 45% 55%,
+    transparent 55% 60%,
+    var(--c5) 60% 70%,
+    transparent 70% 75%,
+    var(--c6) 75% 85%,
+    transparent 85% 90%,
+    var(--c7) 90% 100%
+  );
+}
+
+.artwork::after {
+  content: "";
+  width: 100%;
+  height: 32.5%;
+  top: auto;
+  bottom: -7.25%;
+  background: conic-gradient(
+    from 0deg at 24% -40%,
+    transparent 121.5deg,
+    var(--c7) 121.5deg 124.25deg,
+    transparent 124.25deg 126.5deg,
+    var(--c6) 126.5deg 130.5deg,
+    transparent 130.5deg 133deg,
+    var(--c5) 133deg 138.5deg,
+    transparent 138.5deg 141.5deg,
+    var(--c4) 141.5deg 149.5deg,
+    transparent 149.5deg 153.5deg,
+    var(--c3) 153.5deg 162.5deg,
+    transparent 162.5deg 167deg,
+    var(--c2) 167deg 177.5deg,
+    transparent 177.5deg 183deg,
+    var(--c1) 183deg 194deg,
+    transparent 194deg
+  );
+}
+
+@keyframes rotate-colour {
+  0% {
+    --c1: lightskyblue;
+    --c2: mediumaquamarine;
+    --c3: yellow;
+    --c4: coral;
+    --c5: crimson;
+    --c6: darkorchid;
+    --c7: lavender;
+  }
+  14.29% {
+    --c1: mediumaquamarine;
+    --c2: yellow;
+    --c3: coral;
+    --c4: crimson;
+    --c5: darkorchid;
+    --c6: lavender;
+    --c7: lightskyblue;
+  }
+  28.57% {
+    --c1: yellow;
+    --c2: coral;
+    --c3: crimson;
+    --c4: darkorchid;
+    --c5: lavender;
+    --c6: lightskyblue;
+    --c7: mediumaquamarine;
+  }
+  42.86% {
+    --c1: coral;
+    --c2: crimson;
+    --c3: darkorchid;
+    --c4: lavender;
+    --c5: lightskyblue;
+    --c6: mediumaquamarine;
+    --c7: yellow;
+  }
+  57.14% {
+    --c1: crimson;
+    --c2: darkorchid;
+    --c3: lavender;
+    --c4: lightskyblue;
+    --c5: mediumaquamarine;
+    --c6: yellow;
+    --c7: coral;
+  }
+  71.43% {
+    --c1: darkorchid;
+    --c2: lavender;
+    --c3: lightskyblue;
+    --c4: mediumaquamarine;
+    --c5: yellow;
+    --c6: coral;
+    --c7: crimson;
+  }
+  85.71% {
+    --c1: lavender;
+    --c2: lightskyblue;
+    --c3: mediumaquamarine;
+    --c4: yellow;
+    --c5: coral;
+    --c6: crimson;
+    --c7: darkorchid;
+  }
+}
