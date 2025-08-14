@@ -1,0 +1,25 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.artwork {
+  background: radial-gradient(
+      ellipse 100% 100% at 28% 27.5%,
+      black 3%,
+      transparent 3%
+    ),
+    radial-gradient(ellipse 100% 100% at 72% 27.5%, black 3%, transparent 3%),
+    radial-gradient(
+      ellipse 185% 90% at 50% 31.5%,
+      rgba(255, 195, 0) 4%,
+      transparent 4%
+    ),
+    rgb(255, 255, 120);
+}

@@ -41,4 +41,8 @@ export const curatedOrder = [
   "Boo",
   "Playstation",
   "Cubed",
+  "Insta",
+  "Chick",
+  "Spill",
+  "Rego",
 ];
