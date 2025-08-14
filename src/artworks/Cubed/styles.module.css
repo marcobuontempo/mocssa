@@ -1,0 +1,49 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: auto;
+  --bg: rgb(65, 105, 225);
+  --c1: rgb(64, 224, 208);
+  --c2: rgb(32, 178, 170);
+  --c3: rgb(0, 128, 128);
+}
+
+.artwork {
+  background:
+    linear-gradient(90deg, var(--bg) 20%, transparent 20% 80%, var(--bg) 80%),
+    linear-gradient(180deg, var(--bg) 20%, transparent 20% 80%, var(--bg) 80%),
+    linear-gradient(25deg, var(--bg) 30%, transparent 30% 70%, var(--bg) 70%),
+    linear-gradient(335deg, var(--bg) 30%, transparent 30% 70%, var(--bg) 70%),
+    conic-gradient(from 0deg at 50% 50%, var(--c1) 0deg 62.75deg, var(--c2) 62.75deg 180deg, var(--c3) 180deg 297.5deg, var(--c1) 297.25deg);
+}
+
+.artwork::before {
+  content: "";
+  width: 35%;
+  height: 35%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background:
+    linear-gradient(25deg, var(--c3) 16%, transparent 16% 83.5%, var(--c1) 83.5%),
+    linear-gradient(335deg, var(--c2) 16%, transparent 16% 83.5%, var(--c1) 83.5%),
+    conic-gradient(from 62.5deg at 50% 50%, var(--c3) 0deg 55deg, var(--c1) 55deg 180deg, var(--c2) 180deg 297.5deg, var(--c3) 297.25deg);
+}
+
+.artwork::after {
+  content: "";
+  width: 20%;
+  height: 20%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background:
+  linear-gradient(25deg, var(--c1) 16%, transparent 16% 84%, var(--c3) 84%),
+  linear-gradient(335deg, var(--c1) 16%, transparent 16% 84%, var(--c2) 84%),
+    conic-gradient(from 0deg at 50% 50%, var(--c1) 0deg 62.5deg, var(--c2) 62.5deg 180deg, var(--c3) 180deg 297.5deg, var(--c1) 297.25deg);
+}
