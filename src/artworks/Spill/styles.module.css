@@ -17,6 +17,8 @@
   --c7: lavender;
   --bg: rgb(20, 20, 20);
 
+  transform: translateZ(0);
+  will-change: background;
   animation: rotate-colour 2100ms linear infinite;
 }
 

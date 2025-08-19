@@ -266,6 +266,8 @@
     calc(13 * var(--pixel)) calc(18 * var(--pixel)) black
     ;
 
+  transform: translateZ(0);
+  will-change: top;
   animation: boo-float 3s ease-in-out infinite alternate;
 }
 
@@ -524,7 +526,9 @@
     calc(12 * var(--pixel)) calc(18 * var(--pixel)) black,
     calc(13 * var(--pixel)) calc(18 * var(--pixel)) black
     ;
-
+  
+  transform: translateZ(0);
+  will-change: left;
   animation: boo-shake 120ms linear infinite alternate;
 }
 

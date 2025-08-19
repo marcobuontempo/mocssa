@@ -31,15 +31,19 @@
 .fade {
   animation-fill-mode: both;
   font-size: 0.8em;
-  transition: font-size 1000ms ease-in-out;
+  max-width: 100%;
+  display: inline-block;
+  transition: font-size 1000ms ease-in-out, max-width 1000ms ease-in-out;
 }
 
 .shrink .fade {
-  font-size: 0em;
+  font-size: 0;
+  max-width: 0;
 }
 
 .title:hover .fade {
   font-size: 0.8em;
+  max-width: 100%;
 }
 
 .themetoggle {

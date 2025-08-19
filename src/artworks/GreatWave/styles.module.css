@@ -2582,6 +2582,8 @@
 /* FRONT WAVES */
 .artwork::after {
   content: "";
+  will-change: transform;
+  transform: translateZ(0);
   animation: move-waves 4s ease-out infinite alternate;
   top: 0;
   left: 0;
@@ -4981,20 +4983,20 @@
 
 @keyframes move-barrel {
   from {
-    transform: translateX(0rem);
+    transform: translateX(0rem) translateZ(0);
   }
 
   to {
-    transform: translateX(0.375rem);
+    transform: translateX(0.375rem) translateZ(0);
   }
 }
 
 @keyframes move-waves {
   from {
-    transform: translateX(0rem);
+    transform: translateX(0rem) translateZ(0);
   }
 
   to {
-    transform: translateX(-0.125rem);
+    transform: translateX(-0.125rem) translateZ(0);
   }
 }

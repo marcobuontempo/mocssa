@@ -24,9 +24,9 @@
   padding: 9.5rem 8rem;
   overflow: hidden;
   background:
-    linear-gradient(180deg, var(--bg) 30%, transparent 30% 60%, var(--bg) 60%),
     linear-gradient(90deg, var(--bg) 10%, var(--c3) 10% 90%, transparent 90%),
     var(--bg);
+  will-change: color, background;
   animation: remove-popup-2 3500ms linear infinite;
 }
 
@@ -98,6 +98,7 @@
     2px 2px black,
     -2px -2px white;
 
+  will-change: visibility;
   animation: remove-popup-1 3500ms linear infinite;  
 }
 
@@ -131,7 +132,9 @@
   ;
 
   background-repeat: no-repeat;
-
+  
+  transform: translateZ(0);
+  will-change: right, bottom;
   animation: move-artwork 3500ms linear infinite;
 }
 

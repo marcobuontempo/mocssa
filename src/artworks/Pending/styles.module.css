@@ -27,15 +27,16 @@
       var(--c1),
       transparent
     );
-  transform: rotate(0deg);
+  transform: rotate(0deg) translateZ(0);
+  will-change: transform;
   animation: rotate-artwork 2500ms infinite linear;
 }
 
 @keyframes rotate-artwork {
   from {
-    transform: rotate(0deg);
+    transform: rotate(0deg) translateZ(0);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(360deg) translateZ(0);
   }
 }

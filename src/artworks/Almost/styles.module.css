@@ -5,6 +5,7 @@
   height: 100%;
   position: absolute;
   margin: auto;
+  transform: translateZ(0);
 
   /* COLOURS */
   --bg: grey;
@@ -16,27 +17,28 @@
   --left-edge: -8.75rem;
   --right-edge: 8.5rem;
   /* EACH POSITION FOR DVD MOVEMENT */
-  --pos1: translate(calc(var(--left-edge) + 0rem), calc(var(--top-edge) + 2.5rem));
-  --pos2: translate(calc(var(--left-edge) + 3.125rem), calc(var(--bottom-edge) + 0rem));
-  --pos3: translate(calc(var(--right-edge) + 0rem), calc(var(--top-edge) + 9.375rem));
-  --pos4: translate(calc(var(--left-edge) + 6.25rem), calc(var(--top-edge) + 0rem));
-  --pos5: translate(calc(var(--left-edge) + 0rem), calc(var(--top-edge) + 12.5rem));
-  --pos6: translate(calc(var(--right-edge) - 4.375rem), calc(var(--bottom-edge) + 0rem));
-  --pos7: translate(calc(var(--right-edge) + 0rem), calc(var(--bottom-edge) - 5.625rem));
-  --pos8: translate(calc(var(--left-edge) + 13.125rem), calc(var(--top-edge) + 0rem));
-  --pos9: translate(calc(var(--left-edge) + 0rem), calc(var(--bottom-edge) - 1.875rem));
-  --pos10: translate(calc(var(--left-edge) + 1.875rem), calc(var(--bottom-edge) + 0rem));
-  --pos11: translate(calc(var(--right-edge) + 0rem), calc(var(--top-edge) + 1.25rem));
-  --pos12: translate(calc(var(--right-edge) - 0.625rem), calc(var(--top-edge) + 0rem));
-  --pos13: translate(calc(var(--left-edge) + 11.25rem), calc(var(--bottom-edge) + 0rem));
-  --pos14: translate(calc(var(--left-edge) + 1.5625rem), calc(var(--top-edge) + 0rem));
+  --pos1: translate(calc(var(--left-edge) + 0rem), calc(var(--top-edge) + 2.5rem)) translateZ(0);
+  --pos2: translate(calc(var(--left-edge) + 3.125rem), calc(var(--bottom-edge) + 0rem)) translateZ(0);
+  --pos3: translate(calc(var(--right-edge) + 0rem), calc(var(--top-edge) + 9.375rem)) translateZ(0);
+  --pos4: translate(calc(var(--left-edge) + 6.25rem), calc(var(--top-edge) + 0rem)) translateZ(0);
+  --pos5: translate(calc(var(--left-edge) + 0rem), calc(var(--top-edge) + 12.5rem)) translateZ(0);
+  --pos6: translate(calc(var(--right-edge) - 4.375rem), calc(var(--bottom-edge) + 0rem)) translateZ(0);
+  --pos7: translate(calc(var(--right-edge) + 0rem), calc(var(--bottom-edge) - 5.625rem)) translateZ(0);
+  --pos8: translate(calc(var(--left-edge) + 13.125rem), calc(var(--top-edge) + 0rem)) translateZ(0);
+  --pos9: translate(calc(var(--left-edge) + 0rem), calc(var(--bottom-edge) - 1.875rem)) translateZ(0);
+  --pos10: translate(calc(var(--left-edge) + 1.875rem), calc(var(--bottom-edge) + 0rem)) translateZ(0);
+  --pos11: translate(calc(var(--right-edge) + 0rem), calc(var(--top-edge) + 1.25rem)) translateZ(0);
+  --pos12: translate(calc(var(--right-edge) - 0.625rem), calc(var(--top-edge) + 0rem)) translateZ(0);
+  --pos13: translate(calc(var(--left-edge) + 11.25rem), calc(var(--bottom-edge) + 0rem)) translateZ(0);
+  --pos14: translate(calc(var(--left-edge) + 1.5625rem), calc(var(--top-edge) + 0rem)) translateZ(0);
 }
 
 /* SET ANIMATIONS */
 .artwork::before,
 .artwork::after {
-  transform: translate(var(--pos1));
+  transform: translate(var(--pos1)) translateZ(0);
   animation: dvd-move 35s linear infinite, dvd-colour 20s linear infinite;
+  will-change: background, transform;
 }
 
 /* BACKGROUND */

@@ -30,6 +30,8 @@
   radial-gradient(ellipse 20% 20% at 70% 35%, rgba(255, 0, 212, 0.2) 0% 30%, transparent 30%),
   radial-gradient(ellipse 85% 85% at 75% 75%, rgba(194, 191, 0, 0.2) 0% 30%, transparent 30%),
   radial-gradient(ellipse 100% 100% at 50% 50%, rgb(251, 251, 251) 0% 30%, transparent 30%);
+  transform: translateZ(0);
+  will-change: filter;
   animation: hue-rotate 5s linear infinite alternate;
 }
 

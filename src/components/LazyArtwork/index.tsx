@@ -24,7 +24,7 @@ export default function LazyArtwork({ importer }: LazyArtworkProps) {
   const ArtworkComponent = lazy(importer);
 
   return (
-    <div ref={ref}>
+    <article ref={ref}>
       {inView ? (
         <Suspense fallback={<ArtworkLoadingPlaceholder />}>
           <ArtworkComponent />
@@ -32,6 +32,6 @@ export default function LazyArtwork({ importer }: LazyArtworkProps) {
       ) : (
         <ArtworkLoadingPlaceholder />
       )}
-    </div>
+    </article>
   );
 }

@@ -183,16 +183,17 @@
     /* ROW 14 */
     calc(0 * var(--pixel-size)) calc(7 * var(--pixel-size)) black;
   
+  will-change: transform, filter;
   animation: artwork-effect 2.5s ease-out infinite alternate;
 }
 
 @keyframes artwork-effect {
   from {
-    transform: scale(1);
+    transform: scale(1) translateZ(0);
   }
 
   to {
-    transform: scale(0.8);
+    transform: scale(0.8) translateZ(0);
     filter: hue-rotate(-60deg);
   }
 }

@@ -51,6 +51,8 @@ export default function ArtworkFrame({
         minHeight: `${originalWidth}rem`,
         transform: `scale(${scale})`,
       }}
+      role="img"
+      aria-label={`Artwork: ${title} by ${creator}`}
     >
       {inView && (
         <>

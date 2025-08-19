@@ -1,0 +1,53 @@
+.artwork,
+.artwork::before,
+.artwork::after {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  --bg: rgb(3, 166, 166);
+  --c1: rgb(127, 255, 212);
+}
+
+.artwork {
+  border: 5px solid black;
+  background: var(--bg);
+  border-radius: 5px;
+}
+
+.artwork::before {
+  content: "";
+  width: 40%;
+  height: 60%;
+  left: 5%;
+  right: auto;
+  background:
+  conic-gradient(from 230deg at 50% 70.5%, var(--bg) 79deg, transparent 79deg),
+  conic-gradient(from 50deg at 50% 29.5%, var(--bg) 79deg, transparent 79deg),
+  linear-gradient(40deg, var(--bg) 3%, transparent 3% 36%, var(--bg) 36% 37%, transparent 37% 63%, var(--bg) 63% 64%, transparent 64% 97%, var(--bg) 97%),
+  linear-gradient(320deg, var(--bg) 3%, transparent 3% 36%, var(--bg) 36% 37%, transparent 37% 63%, var(--bg) 63% 64%, transparent 64% 97%, var(--bg) 97%),
+  linear-gradient(90deg, var(--c1) 0% 22.5%, transparent 22.5% 77.5%, var(--c1) 77.5%),
+  linear-gradient(0deg, var(--c1) 0% 15%, transparent 15% 42.5%, var(--c1) 42.5% 57.5%, transparent 57.5% 85%, var(--c1) 85%)
+  var(--bg);
+}
+
+.artwork::after {
+  content: "";
+  width: 40%;
+  height: 60%;
+  right: 5%;
+  left: auto;
+  background:
+  conic-gradient(from 230deg at 12% 50%, var(--bg) 79deg, transparent 79deg),
+  conic-gradient(from 50deg at 88% 50%, var(--bg) 79deg, transparent 79deg),
+  linear-gradient(40deg, var(--bg) 3%, transparent 3% 36%, var(--bg) 36% 37%, transparent 37% 63%, var(--bg) 63% 64%, transparent 64% 97%, var(--bg) 97%),
+  linear-gradient(320deg, var(--bg) 3%, transparent 3% 36%, var(--bg) 36% 37%, transparent 37% 63%, var(--bg) 63% 64%, transparent 64% 97%, var(--bg) 97%),
+  linear-gradient(0deg, var(--c1) 0% 15%, transparent 15%  85%, var(--c1) 85%),
+  linear-gradient(90deg, transparent 0% 22.5%, var(--bg) 22.5% 77.5%, transparent 77.5%),
+  linear-gradient(40deg, var(--c1) 36%, var(--bg) 36% 37%, transparent 37% 64%, var(--c1) 64%),
+  linear-gradient(320deg, var(--c1) 36%, var(--bg) 36% 37%, transparent 37% 64%, var(--c1) 64%)
+  var(--bg);
+}

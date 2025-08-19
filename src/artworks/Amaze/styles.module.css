@@ -25,6 +25,8 @@
     radial-gradient(ellipse 100% 100% at 100% 0%, var(--stripes) 50%, transparent 50% 100%),
     radial-gradient(ellipse 100% 100% at 100% 100%, var(--stripes) 50%, transparent 50% 100%),
     radial-gradient(ellipse 100% 100% at 0% 50%, var(--stripes) 50%, transparent 50% 100%);
+  transform: translateZ(0);
+  will-change: background-position;
   animation: artwork-shift 3s linear infinite;
 }
 
@@ -33,10 +35,12 @@
   background-size: 10% 10%;
   background-repeat: repeat;
   background-image:
-    radial-gradient(ellipse 100% 100% at 100% 100%, var(--dots) 15%, transparent 15% 100%),
-    radial-gradient(ellipse 100% 100% at 0% 100%, var(--dots) 15%, transparent 15% 100%),
-    radial-gradient(ellipse 100% 100% at 100% 0%, var(--dots) 15%, transparent 15% 100%),
-    radial-gradient(ellipse 100% 100% at 0% 0%, var(--dots) 15%, transparent 15% 100%);
+  radial-gradient(ellipse 100% 100% at 100% 100%, var(--dots) 15%, transparent 15% 100%),
+  radial-gradient(ellipse 100% 100% at 0% 100%, var(--dots) 15%, transparent 15% 100%),
+  radial-gradient(ellipse 100% 100% at 100% 0%, var(--dots) 15%, transparent 15% 100%),
+  radial-gradient(ellipse 100% 100% at 0% 0%, var(--dots) 15%, transparent 15% 100%);
+  transform: translateZ(0);
+  will-change: background-position;
   animation: artwork-side 1.5s linear infinite alternate;
 }
 
